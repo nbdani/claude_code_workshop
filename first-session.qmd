@@ -1,0 +1,171 @@
+---
+title: "Your First Session"
+subtitle: "A guided walkthrough of Claude Code basics"
+---
+
+## Opening a Terminal
+
+If you have never used a terminal before, this section is for you. A terminal is a text-based interface to your computer. Instead of clicking on folders and files, you type commands. It looks intimidating at first, but for this workshop you only need a handful of commands.
+
+### How to open it
+
+- **Mac**: Open the **Terminal** app (search for "Terminal" in Spotlight, or find it in Applications > Utilities)
+- **Windows**: Open **PowerShell** (search for "PowerShell" in the Start menu). If you installed Windows Subsystem for Linux (WSL), you can also search for "Ubuntu" or "WSL."
+- **Linux**: You already know how to do this.
+
+You should see a blinking cursor waiting for you to type something. This is your prompt.
+
+### Navigating with `cd`
+
+The terminal always has a "current directory" --- the folder you are working in. When you first open it, you are usually in your home folder. To move into a different folder, use `cd` (change directory):
+
+```bash
+cd lincs_skills
+```
+
+This moves you into the `lincs_skills` folder. If you cloned the repository somewhere specific, you may need to provide the full path. The syntax is slightly different on Mac/Linux and Windows:
+
+::: {.panel-tabset}
+
+## Mac / Linux
+
+```bash
+cd ~/Desktop/lincs_skills
+```
+
+The `~` symbol means "my home folder." So `~/Desktop/lincs_skills` means "the lincs_skills folder on my Desktop."
+
+## Windows (PowerShell)
+
+```powershell
+cd ~\Desktop\lincs_skills
+```
+
+Windows uses backslashes (`\`) instead of forward slashes (`/`). The `~` shortcut for your home folder works in PowerShell but not in the older Command Prompt.
+
+:::
+
+### Other useful commands
+
+Most basic commands work the same on Mac, Linux, and Windows PowerShell. The main exception is listing files:
+
+| Task | Mac / Linux | Windows (PowerShell) |
+|------|-------------|----------------------|
+| List files | `ls` | `ls` or `dir` |
+| Go up one level | `cd ..` | `cd ..` |
+| Show current directory | `pwd` | `pwd` |
+| Create a new folder | `mkdir foldername` | `mkdir foldername` |
+
+::: {.callout-note}
+## Windows note
+PowerShell supports `ls` and `pwd` as aliases, so most commands in this workshop will work as written. If something does not work, try `dir` instead of `ls`. If you installed Git for Windows, you also have **Git Bash**, which behaves like a Mac/Linux terminal and may be easier to follow along with.
+:::
+
+Try typing `ls` after you `cd` into the `lincs_skills` folder. You should see the `skills/` directory and other files from the repository.
+
+### If you get lost
+
+Type `pwd` to see where you are. Type `cd ~` to go back to your home folder and start over.
+
+## Launch Claude Code
+
+Now that you are in the `lincs_skills` folder, launch Claude Code:
+
+```bash
+claude
+```
+
+Claude Code reads any `CLAUDE.md` file in the current directory at startup, so it already has context about the LINCS project. You should see the `>` prompt --- this is Claude Code's prompt, not your terminal's. From here, you type natural language, not terminal commands.
+
+## Try Some Basic Commands
+
+### Ask it to read a file
+
+```
+> Read the skills/README.md and summarize what's in this repository
+```
+
+Claude Code reads the file directly from disk --- no copying, no pasting. It reports back and waits for your next instruction.
+
+### Ask it a question
+
+```
+> What is CIDOC-CRM and why is it used for cultural heritage data?
+```
+
+It draws on its general knowledge. Later, when we load the CIDOC-CRM skill, its answers become much more precise.
+
+### Ask it to explore data
+
+```
+> What files are in the data/ directory? Describe what each one contains.
+```
+
+If you have copied the workshop data files into your working directory, Claude Code will read them and report on their structure.
+
+## Essential Commands
+
+| Command | What it does |
+|---------|-------------|
+| `/help` | Show available commands |
+| `/exit` | End the session |
+| `/clear` | Clear conversation history |
+| `/compact` | Compress conversation to save context space |
+
+## How Permissions Work
+
+Claude Code asks before taking any action on your system. You will see prompts like:
+
+```
+Claude wants to run: python3 analyze.py
+Allow? (y/n/a)
+```
+
+- **y** --- allow this one time
+- **n** --- deny
+- **a** --- allow this type of action for the rest of the session
+
+::: {.callout-tip}
+## Tip: "Accept All" during the workshop
+Pressing **a** when prompted saves time during the workshop. But get in the habit of reading what Claude Code wants to do before approving, especially for commands. The permission system is a safeguard, not a guarantee --- if you approve a destructive command without reading it, there is no undo.
+:::
+
+## Building on Context
+
+Within a session, Claude Code remembers everything. You can build iteratively:
+
+```
+> Read data/boundaries_poly.csv and describe its structure
+
+[Claude Code responds]
+
+> How many distinct sovereign entities appear in this dataset?
+
+[answers based on what it already read]
+
+> Which territories changed sovereignty most frequently?
+```
+
+This conversational flow is where Claude Code becomes much more powerful than a web chatbot. It accumulates understanding across the session.
+
+## When It Gets Something Wrong
+
+Claude Code will sometimes make mistakes. Correct it directly:
+
+```
+> That's not right — Rupert's Land was controlled by the Hudson's Bay
+> Company, not directly by Britain. Check the sovereign column again.
+```
+
+It adjusts and remembers the correction. This is a normal part of working with any LLM.
+
+## Exercise: Explore on Your Own (5 minutes)
+
+Try any of these, or make up your own:
+
+1. Ask Claude Code to count the number of boundary changes per century
+2. Ask it to list all the treaties mentioned in the `boundary_changes` table
+3. Ask it to explain the significance of the Royal Proclamation of 1763
+4. Ask it "What would a historian find most interesting about this dataset?"
+
+When you are comfortable with the basics, move on to **[GIS Data Exercises](gis-exercises.qmd)**.

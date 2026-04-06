@@ -1,0 +1,91 @@
+---
+title: "LINCS Skills"
+subtitle: "Loading domain expertise into Claude Code"
+---
+
+## What Are Skills?
+
+Skills are markdown files that give Claude Code deep, structured knowledge about a specific domain. When you invoke a skill with a slash command, Claude Code loads that reference material and uses it to inform every response for the rest of the exchange.
+
+Without skills, Claude Code knows about CIDOC-CRM and LINCS in general terms --- the way any well-read person might. With skills loaded, it has access to specific class hierarchies, property definitions, LINCS modeling patterns, and validation rules.
+
+## The LINCS Skills Repository
+
+The [lincs_skills](https://github.com/jburnford/lincs_skills) repository contains seven skills:
+
+| Slash Command | What It Does |
+|---------------|-------------|
+| `/cidoc-crm` | CIDOC-CRM v7.3.1 ontology reference --- classes, properties, extensions |
+| `/lincs-profile` | LINCS application profile --- reusable modeling patterns for persons, organizations, places, events |
+| `/lincs-validate` | Validates your model against LINCS requirements (PASS/WARN/FAIL report) |
+| `/cidoc-to-rdf` | Converts data models to RDF/Turtle with proper namespace mapping |
+| `/lincs-sparql` | SPARQL query templates for the LINCS triplestore |
+| `/person-disambig` | Wikidata person entity disambiguation |
+| `/place-disambig` | Wikidata place entity disambiguation |
+
+## Loading Skills
+
+If you launched Claude Code from inside the `lincs_skills` directory (as we did in Part 1), the skills are already available. Try:
+
+```
+> /cidoc-crm
+```
+
+Claude Code loads the full CIDOC-CRM reference. Now ask it something:
+
+```
+> What is the correct way to model a place that changed names over time?
+```
+
+Compare the answer to what you got earlier without the skill loaded --- it should be noticeably more precise, with specific class and property references.
+
+### Loading the LINCS Profile
+
+```
+> /lincs-profile
+```
+
+This loads the LINCS application profile, which defines how LINCS projects model entities. Now Claude Code knows not just CIDOC-CRM in the abstract, but the specific patterns LINCS uses.
+
+```
+> How does LINCS model a geographic place with a temporal extent?
+```
+
+## Using Skills with Codex
+
+If you are using Codex instead of Claude Code, slash commands are not available. Instead:
+
+1. Open the skill file (e.g., `skills/cidoc-crm.md`) from the downloaded ZIP
+2. Upload it to your Codex task
+3. Tell Codex: "Use the uploaded cidoc-crm.md as reference material for all CIDOC-CRM questions"
+
+The effect is similar --- Codex will use the file as context for its responses.
+
+## Exercise: Explore a Skill
+
+Pick one of these and spend a few minutes exploring:
+
+### Option A: CIDOC-CRM deep dive
+```
+> /cidoc-crm
+> Explain the difference between E53_Place and E4_Period.
+> When would I use one versus the other for modeling a territory
+> that existed for a specific time period?
+```
+
+### Option B: LINCS modeling patterns
+```
+> /lincs-profile
+> Show me a complete example of how LINCS models a historical
+> person with a name, birth date, and occupation.
+> Use proper Turtle syntax.
+```
+
+### Option C: Validation
+```
+> /lincs-validate
+> What are the most common mistakes people make when creating
+> LINCS-compatible data? Give me the checklist.
+```
+
+Once you are comfortable with how skills work, we will apply them to our Canada boundaries data in the **[HGIS-to-LINCS Exercise](hands-on.qmd)**.

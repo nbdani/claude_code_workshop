@@ -1,0 +1,224 @@
+---
+title: "Installation"
+subtitle: "Get set up before the workshop"
+---
+
+## Choose Your Path
+
+There are three ways to follow this workshop:
+
+| | **Claude Code in Terminal** | **Claude Code in VS Code** | **Codex (OpenAI)** |
+|---|---|---|---|
+| **Runs in** | Your terminal | VS Code editor | Terminal or web browser |
+| **File access** | Reads/writes files on your machine | Same --- plus you see files in the editor | Same (terminal) or upload to cloud sandbox (browser) |
+| **Setup time** | ~15 minutes | ~15 minutes | ~10 minutes |
+| **Cost** | Pay-per-use API (~$0.50--$2 for workshop) | Same | Requires ChatGPT Pro/Plus subscription |
+| **Best for** | Full power, experienced terminal users | Same power, more visual interface | If you already have a ChatGPT subscription |
+
+**Options A and B use the same underlying tool** --- Claude Code. The only difference is whether you interact through a terminal window or through a panel inside VS Code. Option C (Codex) is OpenAI's equivalent and will let you follow along with the same exercises, though slash commands work differently.
+
+::: {.callout-important}
+## Windows users
+If you are on Windows and are not already comfortable working in a terminal, **we recommend Option B (VS Code)**. Claude Code does run natively on Windows PowerShell, but the experience is smoother in VS Code, where you get a graphical chat panel alongside your files without needing to worry about terminal differences. Mac and Linux users can choose either Option A or B based on preference.
+
+For longer-term use beyond this workshop, the best way to run Claude Code on Windows is through [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install), which gives you a full Linux terminal inside Windows. Installing WSL is too large a step for a workshop, but it is worth doing on your own time if you plan to use Claude Code regularly.
+:::
+
+---
+
+## Option A: Claude Code (Terminal)
+
+### Step 1: Install Node.js
+
+Claude Code requires Node.js version 18 or higher.
+
+Open a terminal (Terminal on Mac, PowerShell on Windows) and check:
+
+```bash
+node --version
+```
+
+If you see `v18.0.0` or higher, skip to Step 2. Otherwise, download the **LTS** version from [nodejs.org](https://nodejs.org/), run the installer, restart your terminal, and verify.
+
+### Step 2: Create an Anthropic Account and API Key
+
+1. Go to [console.anthropic.com](https://console.anthropic.com/) and create an account
+2. Add a payment method (workshop use typically costs well under $2)
+3. Go to **API Keys** and click **Create Key**
+4. Copy the key --- it starts with `sk-ant-` --- and save it somewhere safe
+
+::: {.callout-note}
+## About costs
+Claude Code charges per use via the API. You can set a spending limit in your account settings. A full workshop session rarely exceeds $2.
+:::
+
+### Step 3: Install Claude Code
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+If you get a permissions error on Mac/Linux:
+
+```bash
+sudo npm install -g @anthropic-ai/claude-code
+```
+
+Verify with:
+
+```bash
+claude --version
+```
+
+### Step 4: First Launch
+
+```bash
+claude
+```
+
+Choose **API Key** when asked to authenticate, and paste your key. You should see the Claude Code prompt (a `>` waiting for input). Type `/exit` to close for now.
+
+### Step 5: Set Up the Workshop Folder
+
+First, create a folder for the workshop and move into it:
+
+```bash
+mkdir workshop
+cd workshop
+```
+
+Then clone the LINCS skills repository into it:
+
+```bash
+git clone https://github.com/jburnford/lincs_skills.git
+cd lincs_skills
+```
+
+::: {.callout-note}
+## If you don't have git
+If `git clone` gives you "command not found," you can download the repository manually:
+
+1. Go to [github.com/jburnford/lincs_skills](https://github.com/jburnford/lincs_skills)
+2. Click the green **Code** button
+3. Click **Download ZIP**
+4. Unzip the file into your `workshop` folder
+5. In your terminal, navigate into it: `cd workshop/lincs_skills-main`
+
+To install git for future use: [git-scm.com/downloads](https://git-scm.com/downloads)
+:::
+
+This `lincs_skills` folder is where we will work during the workshop.
+
+### Troubleshooting
+
+- **"npm: command not found"** --- Node.js did not install. Restart your terminal or reinstall from [nodejs.org](https://nodejs.org/).
+- **"Permission denied"** --- Use `sudo` on Mac/Linux. Run PowerShell as Administrator on Windows.
+- **"command not found" after install** --- Close and reopen your terminal.
+
+### Checklist
+
+- [ ] `node --version` shows v18+
+- [ ] `claude --version` shows a version number
+- [ ] `claude` launches successfully (then `/exit`)
+- [ ] You have cloned `lincs_skills`
+
+---
+
+## Option B: Claude Code in VS Code
+
+If you prefer a graphical editor over a bare terminal, you can use Claude Code through the VS Code extension. It works identically --- same skills, same slash commands, same file access --- but you interact through a chat panel inside the editor while your project files are visible alongside.
+
+### Step 1: Complete Steps 1--2 from Option A
+
+You still need **Node.js** and an **Anthropic API key**. Follow Steps 1 and 2 from Option A above.
+
+### Step 2: Install VS Code
+
+If you do not already have it, download [Visual Studio Code](https://code.visualstudio.com/) and install it.
+
+### Step 3: Install the Claude Code Extension
+
+1. Open VS Code
+2. Go to the Extensions panel (click the square icon in the left sidebar, or press `Ctrl+Shift+X` / `Cmd+Shift+X`)
+3. Search for **"Claude Code"**
+4. Install the extension published by **Anthropic**
+
+### Step 4: Get the Workshop Files
+
+If you have git installed, open a terminal and run:
+
+```bash
+mkdir workshop
+cd workshop
+git clone https://github.com/jburnford/lincs_skills.git
+```
+
+If you do not have git, download the ZIP from [github.com/jburnford/lincs_skills](https://github.com/jburnford/lincs_skills) (green **Code** button > **Download ZIP**) and unzip it.
+
+### Step 5: Open the Workshop Folder in VS Code
+
+1. In VS Code, go to **File > Open Folder** and select the `lincs_skills` folder
+2. Open the Claude Code panel (look for the Claude icon in the left sidebar, or use the command palette: `Ctrl+Shift+P` / `Cmd+Shift+P` and search "Claude Code")
+
+### Step 6: Authenticate
+
+The first time you open the Claude Code panel, it will ask you to authenticate. Choose **API Key** and paste the key you created in Step 1.
+
+### How It Works During the Workshop
+
+- The Claude Code chat panel appears on the side of your editor
+- You type the same natural language instructions and slash commands as in the terminal
+- Files that Claude Code reads or writes appear in your VS Code file explorer
+- You can click on files to see exactly what changed
+
+### Checklist
+
+- [ ] Node.js v18+ installed (`node --version` in a terminal)
+- [ ] Anthropic API key created
+- [ ] VS Code installed with the Claude Code extension
+- [ ] `lincs_skills` folder opened in VS Code
+- [ ] Claude Code panel opens and authenticates successfully
+
+---
+
+## Option C: Codex (OpenAI Alternative)
+
+[Codex](https://chatgpt.com/codex) is OpenAI's coding agent. Like Claude Code, it can run in the terminal and read/write files on your machine. It also has a browser-based interface at [chatgpt.com/codex](https://chatgpt.com/codex) where tasks run in a cloud sandbox. It requires a ChatGPT Plus, Pro, or Team subscription.
+
+### Terminal Install
+
+```bash
+npm install -g codex
+```
+
+Then launch it in the workshop directory:
+
+```bash
+cd lincs_skills
+codex
+```
+
+It works similarly to Claude Code --- natural language instructions, file access, permission prompts. If you prefer the browser interface, go to [chatgpt.com/codex](https://chatgpt.com/codex) instead and upload files to each task.
+
+### Step 1: Ensure You Have ChatGPT Access
+
+Codex requires a ChatGPT Plus, Pro, or Team subscription. If you already have one, you are set. If not, you can sign up at [chatgpt.com](https://chatgpt.com/).
+
+### Step 2: Clone the Workshop Repository
+
+```bash
+git clone https://github.com/jburnford/lincs_skills.git
+cd lincs_skills
+```
+
+If using the browser interface instead, download the repository as a ZIP from [github.com/jburnford/lincs_skills](https://github.com/jburnford/lincs_skills) (green **Code** button > **Download ZIP**) and upload files to each task.
+
+### Differences to Be Aware Of
+
+- **Slash commands** (`/cidoc-crm`, `/lincs-profile`) are a Claude Code feature. In Codex, you can ask it to read the skill file directly: "Read skills/cidoc-crm.md and use it as reference material."
+- The core workflow --- giving natural language instructions to work with data --- is the same across both tools.
+
+### Checklist
+
+- [ ] `codex` launches in terminal, or you can access [chatgpt.com/codex](https://chatgpt.com/codex)
+- [ ] You have cloned or downloaded `lincs_skills`

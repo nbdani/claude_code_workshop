@@ -1,0 +1,70 @@
+event,description,code,boundary_type,year,event_date
+Treaty of Utrecht,"France recognized British rights to Rupert's Land, with some dispute as to the exact extents of the area. Great Britain had given sole trading rights in the Hudson Bay drainage basin the Hudson's Bay Company by Royal Charter in 1670",BIdis,International (disputed),1713,1713-01-01T00:00:00.000
+Treaty of Utrecht,"France ceded Acadia, excluding Île Royale (Cape Breton Island) to Great Britain. Due to difficulties in interpreting the actual size of Acadia, possession of present day New Brunswick was disputed.",,,1713,1713-01-01T00:00:00.000
+Treaty of Utrecht,"France relinquished interest in Newfoundland, except fishing rights, to Great Britain.",,,1713,1713-01-01T00:00:00.000
+Royal Proclamation,St John's Island (PEI) and Cape Breton Island were annexed to Nova Scotia.,BT,Territorial,1763,1763-01-01T00:00:00.000
+Treaty of Paris,"France ceeded New France, Ile Royale (Cape Breton) and Saint John's Island (PEI) to Great Britain.",BI,International,1763,1763-01-01T00:00:00.000
+Treaty of Paris,"France ceeded all of her territories in North America to Great Britain, except Saint-Pierre and Miquelon Islands.",BI,International,1763,1763-01-01T00:00:00.000
+Treaty of Paris,France ceded Louisiana to Spain.,BI,International,1763,1763-01-01T00:00:00.000
+Royal Proclamation,The Royal Proclamation described the boundaries of Quebec; assigned to Newfoundland the Labrador coast together with the Anticosti and Madeleine Islands.  Lands not contained within defined British colonies were reserved for the... Indians.,BI,International,1763,1763-01-01T00:00:00.000
+Royal Proclamation,The Royal Proclamation described the boundaries of Quebec.  Lands not contained within defined British colonies were reserved for the... Indians.,BI,International,1763,1763-01-01T00:00:00.000
+Quebec Act,"Enlarged Quebec to include Labrador, Anticosti and Madeleine Islands, the Indian country both north and west to Rupert's Land and to the southwest to the junction of the Ohio and Mississippi rivers.",,,1774,1774-01-01T00:00:00.000
+Treaty of Paris,Independence of the United States recognized and boundaries between it and British North America described (imperfectly) from the Atlantic Ocean to Lake of the Woods,BI,International,1783,1783-01-01T00:00:00.000
+Cape Breton becomes a colony,Colonial government established in Cape Breton,,,1784,1784-01-01T00:00:00.000
+Russia lays claim to Alaskan coast,Grigori Shelikhov established a village on Kodiak Island and claimed adjoining coast for Russia,BFdis,French (disputed),1784,1784-01-01T00:00:00.000
+New Brunswick becomes a colony,Colonial government established in New Brunswick,,,1784,1784-01-01T00:00:00.000
+Nootka Convention,Opened northwest coast to occupation by any country,BIdis,International (disputed),1790,1790-01-01T00:00:00.000
+Constitutional Act,"A Constitutional Act, followed by Order in Council, divided Quebec into Lower Canada and Upper Canada",BP,Provincial,1791,1791-01-01T00:00:00.000
+Conflicting claims to west coast,USA and Great Britain both laid claim to land that will eventually become the Oregon Territory,BI,International,1800,1800-01-01T00:00:00.000
+Louisiana Purchace,"In 1802 Spain ceeded Louisiana to France, and in the following year France sold Louisiana to the USA.",BI,International,1803,1803-01-01T00:00:00.000
+Labrador Act,Re-annexed the Labrador Coast and Anticosti Island to Newfoundland,,,1809,1809-01-01T00:00:00.000
+Convention established 49th parallel,Convention: International boundary extended along 49th parallel from Lake of the Woods to the Rocky Mountains.,BI,International,1818,1818-01-01T00:00:00.000
+Oregon Territory to be shared,Convention: Oregon Territory to west to be administered jointly by US and Britain for 10 years,BI,International,1818,1818-01-01T00:00:00.000
+Adams-OnisTreaty,Boundary between Oregon Territory and the Spanish Territory established at the 42nd parallel,BI,International,1819,1819-01-01T00:00:00.000
+Cape Breton joins Nova Scotia,Cape Breton Island re-annexed to Nova Scotia,,,1820,1820-01-01T00:00:00.000
+Anglo-Russian Treaty,Anglo-Russian Treaty defined lines of demarcation between Alaska and British North America,BI,International,1825,1825-01-01T00:00:00.000
+Labrador Act,Labrador Coast between Saint-Jean River and Anse Sablon and Anticosti Island re-annexed to Lower Canada.,,,1825,1825-01-01T00:00:00.000
+Act of Union,United Upper and Lower Canada into Province of Canada. Provinces renamed Canada East and Canada West,BD,District,1840,1840-01-01T00:00:00.000
+Ashburton-Webster Treaty,"Settled boundaries still undefined by Treaty of 1783: between Canada East and New Hampshire, New Brunswick and Maine",BI,International,1842,1842-01-01T00:00:00.000
+Ashburton-Webster Treaty,Settled boundaries still undefined by Treaty of 1783: between Canada West and Minnesota,BI,International,1842,1842-01-01T00:00:00.000
+Oregon Boundary Treaty,Extended 49th Parallel to Pacific excluding Vancouver's Island. Northern area called New Caledonia.,BT,Territorial,1846,1846-01-01T00:00:00.000
+Commission fails,A British-appointed commission failed to settle the dispute over the boundary between Canada and New Brunswick,BPdis,Provincial (disputed),1846,1846-01-01T00:00:00.000
+Vancouver's Island established,Vancouver's Island established as a Crown Colony,,,1849,1849-01-01T00:00:00.000
+Act of Parliament,Agreement between British-appointed arbitrators on adjustments to Canada-New Brunswick boundary promulgated by an Act of Parliament,BPdis,Provincial (disputed),1851,1851-01-01T00:00:00.000
+British Columbia established,A Bill to provide for the government of New Caledonia established new boundaries and the area was renamed British Columbia,BP,Provincial,1858,1858-01-01T00:00:00.000
+Indian Territories Act,Established British jurisdiction over land not in Rupert's Land or British Columbia which was called The North-Western Territory,BT,Territorial,1859,1859-01-01T00:00:00.000
+British Order in Council,British Order in Council created Stickeen Territory immediately north of British Columbia and south of the 62nd parallel,BT,Territorial,1862,1862-01-01T00:00:00.000
+British Columbia boundary changes,Western possessions amalgamated into British Columbia with present boundaries excluding Vancouver Island. Rest of Stickeen Territory above 60th parallel amalgamated back into The Northwestern Territory,BP,Provincial,1863,1863-01-01T00:00:00.000
+Vancouver Island joins BC,British Columbia and Vancouver Island unit,,,1866,1866-01-01T00:00:00.000
+British North America Act,"The British North America Act united provinces of New Brunswick, Nova Scotia, and Canada into a federal state, the Dominion of Canada",BI,International,1867,1867-01-01T00:00:00.000
+British North America Act,British North America Act renamed Canada East and West to Quebec and Ontario,BP,Provincial,1867,1867-01-01T00:00:00.000
+Saint-John`s Island separates from Nova Scotia,St John's Island established as a separate colony after absentee landlords petitioned for separation from mainland Nova Scotia.,,,1869,1869-01-01T00:00:00.000
+Act of Dominion,Act of Dominion established Manitoba as the fifth province.,BP,Provincial,1870,1870-01-01T00:00:00.000
+British Order in Council,"Following the Rupert's Land Act of 1868 - authorizing acquistion of Rupert's Land from the Hudsons Bay Company, the Britis Order in Council transferred Rupert's Land and the Northwestern Territory to Canada and renamed it the North-West Territories",BIdis,International (disputed),1870,1870-01-01T00:00:00.000
+Act of Dominion,Act of Dominion saw British Columbia enter the Dominion of Canada as the sixth province,BP,Provincial,1871,1871-01-01T00:00:00.000
+Act of Dominion,Act of Dominion saw Prince Edward Island become the seventh province,,,1873,1873-01-01T00:00:00.000
+New provisional boundary for Ontario,New provisional northern and western boundaries of Ontario described,BP,Provincial,1874,1874-01-01T00:00:00.000
+Keewatin created,District of Keewatin created from part of North-West Territories,BD,District,1876,1876-01-01T00:00:00.000
+Imperial Order in Council,"Imperial Order in Council: Transferred to Canada all British islands in North America not already in Canada, except for Newfoundland and its dependencies. The Arctic Islands were annexed to Canada as part of the North-West Territories",,,1880,1880-01-01T00:00:00.000
+Manitoba enlarged,"Manitoba enlarged by extending its boundaries westward, northward and eastward",BP,Provincial,1881,1881-01-01T00:00:00.000
+Northwest Territories further subdivided,"Provisional Districts of Assiniboia, Saskatchewan, Alberta, and Athabaska established from parts of the North-West Territories and District of Keewatin",BD,District,1882,1882-01-01T00:00:00.000
+Keewatin boundaries changed,The south-western boundary of Keewatin is adjusted in 1886 to conform to the boundaries of the districts created in 1882,BD,District,1886,1886-01-01T00:00:00.000
+Ontario Boundary Act,Ontario Boundary Act sees Ontario enlarged west to Lake of the Woods and north to Albany River,BP,Provincial,1889,1889-01-01T00:00:00.000
+New districts established,"Ungava, Mackenzie, Yukon, and Franklin established as districts in the North-West Territories",BD,District,1895,1895-01-01T00:00:00.000
+Athabaska and Keewatin enlarged,Districts of Athabaska and Keewatin enlarged,BD,District,1895,1895-01-01T00:00:00.000
+District boundaries changed,"Boundaries of Ungava, Keewatin, Mackenzie, Yukon, and Franklin slightly changed",BD,District,1897,1897-01-01T00:00:00.000
+Maine boundary dispute,Dispute began between the USA and Great Britain over the location of the boundaries between Maine and the bordering British colonies,,,1898,1898-01-01T00:00:00.000
+Saint John's Island renamed,St John's Island renamed Prince Edward Island,,,1898,1898-01-01T00:00:00.000
+Lower Canada/New Brunswick boundary dispute,Dispute began between Lower Canada and New Brunswick over the location of their colonial boundary.,BP,Provincial,1898,1898-01-01T00:00:00.000
+New Territory,Yukon established as a separate territory,BT,Territorial,1898,1898-01-01T00:00:00.000
+Quebec/Labrador boundary change,Quebec boundary extended north to Eastmain River,BIdis,International (disputed),1898,1898-01-01T00:00:00.000
+Yukon boundary change,The boundaries of Yukon Territory in 1901 are changed to those of today,BT,Territorial,1901,1901-01-01T00:00:00.000
+Alaskan boundary agreed upon,"Alaska Panhandle boundary settled according to Award of Alaskan Boundary Tribunal, and Notes of 1905.",BI,International,1903,1903-01-01T00:00:00.000
+Two new provinces,"In 1905, Alberta and Saskatchewan are created as the eighth and ninth provinces with the boundaries they have today",BP,Provincial,1905,1905-01-01T00:00:00.000
+Eastern provinces expand northward,"Manitoba, Ontario and Quebec are extended to their current northern extents",BP,Provincial,1912,1912-01-01T00:00:00.000
+District boundary changes,Boundaries of the districts within the Northwest Territories are redescribed,BT,Territorial,1920,1920-01-01T00:00:00.000
+Arctic claim,Canada officially claimed a larger sector of the Arctic.,BI,International,1925,1925-01-01T00:00:00.000
+Labrador boundary defined,"Boundary between Canada and Newfoundland is defined by the Imperial Privy Council. Canada accepts the definition, but Quebec does not accept the southern portion of the boundary.",BI,International,1927,1927-01-01T00:00:00.000
+Newfoundland joins confederation,"Newfoundland narrowly votes to join confederation in a 1948 referendum, and officially becomes the tenth province the following year",,,1949,1949-01-01T00:00:00.000
+Nunavut created,Nunavut becomes Canada's third territory,BT,Territorial,1999,1999-01-01T00:00:00.000
+Nunavut created,Nunavut becomes Canada's third territory,BT,Territorial,1999,1999-01-01T00:00:00.000

@@ -1,0 +1,102 @@
+---
+title: "Data Ethics and Privacy"
+subtitle: "OCAP, sensitive data, and cloud-based AI tools"
+---
+
+## The Core Issue
+
+Claude Code, Codex, and every other cloud-based AI tool sends your data to remote servers for processing. When you ask Claude Code to read a CSV file, the contents of that file leave your computer. This is fine for many datasets. It is not fine for all of them.
+
+Before using any AI tool with your data, ask: **who has rights over this data, and what am I allowed to do with it?**
+
+## OCAP Principles
+
+Historians working with Indigenous data in Canada need to understand [OCAP](https://fnigc.ca/ocap-training/) --- the First Nations principles of **Ownership, Control, Access, and Possession**:
+
+- **Ownership**: First Nations communities collectively own their cultural knowledge, data, and information
+- **Control**: First Nations communities have the right to control all aspects of data management and research processes
+- **Access**: First Nations communities must have access to data about themselves and their communities
+- **Possession**: First Nations communities must have physical control of data
+
+Sending Indigenous community data to Anthropic's or OpenAI's servers almost certainly violates the **Possession** and **Control** principles. The data leaves the community's physical control and is processed by a third-party corporation, regardless of what that corporation's privacy policy says.
+
+**This is not a technical limitation to work around. It is a matter of Indigenous data sovereignty.**
+
+If your research involves Indigenous data, consult with the relevant community and your institution's research ethics board before using any cloud-based AI tool with that data.
+
+## What Subscriber Privacy Actually Means
+
+Anthropic and OpenAI offer different privacy tiers:
+
+- **Free tier**: Your conversations may be used to train future models
+- **Paid API / subscriber tier**: Your data is generally not used for training, and is subject to data retention policies (typically 30 days for abuse monitoring, then deleted)
+
+This is meaningfully better, but it does not mean your data is private in the way that data on your own computer is private. Even with a paid subscription:
+
+- Your data is transmitted over the internet to the provider's servers
+- It is processed on infrastructure you do not control
+- It may be stored temporarily for safety monitoring
+- It is subject to the provider's terms of service, which can change
+- It is subject to the legal jurisdiction where the servers are located (typically the United States)
+
+**A paid subscription is not a data agreement.** If your institution requires specific data handling guarantees --- as is common for health data, personnel records, or data covered by research ethics protocols --- you need a formal agreement between your institution and the AI provider.
+
+## What Is Safe to Use
+
+As a rough guide, data that is already openly published on the web is likely already in AI training data, so sending it to Claude Code creates little additional exposure. Government census records, published GIS datasets, and your own writing are generally straightforward.
+
+But "publicly available" does not mean "free to use however you like." Indigenous communities that shared data online did not consent to that data being ingested by AI companies. The fact that something is technically accessible does not settle the ethical question. We are still learning where these boundaries are, and historians should err on the side of caution rather than assume that public availability equals permission.
+
+**Generally straightforward:**
+
+- Government records, published census data, newspaper archives
+- Open datasets from government portals (the Canada boundaries data we use in this workshop, for example)
+- Your own writing and notes
+
+**Use with care:**
+
+- Data produced by or about Indigenous communities --- even if publicly available online. OCAP principles apply to the relationship, not just the access method.
+- Archival materials with access restrictions or donor agreements
+- Oral history transcripts (informed consent may not have covered AI processing)
+- Data collected under research ethics protocols --- check whether your protocol permits cloud processing
+- Unpublished research data
+
+**Do not use without explicit authorization:**
+
+- Data held in trust under OCAP or community data governance agreements
+- Health or medical records
+- Personal information about living individuals
+- Data covered by FIPPA, PIPEDA, or institutional data governance policies
+- Data subject to NDA or contractual restrictions
+
+## Practical Strategies
+
+### Work with metadata instead of data
+
+You can often describe your data to Claude Code without giving it the actual records:
+
+```
+> I have a dataset with columns: name, community, date_of_birth,
+> traditional_territory. I need to model this in CIDOC-CRM.
+> What classes and properties should I use?
+```
+
+Claude Code can help you design a data model, write transformation scripts, and debug code without ever seeing the sensitive data itself.
+
+### Use synthetic or anonymized data
+
+Create a small sample dataset with fictional entries that mirrors the structure of your real data. Use that for developing your workflow with Claude Code, then run the final scripts on your real data locally, without AI assistance.
+
+### Run scripts locally
+
+Claude Code can write a Python script that transforms your data. You can then run that script yourself, on your own machine, without Claude Code. The script does not send data anywhere --- it is just a file on your computer.
+
+### Institutional agreements
+
+Some Canadian universities are negotiating enterprise agreements with AI providers that include data residency and processing guarantees. Check with your institution's IT or research services office. These agreements may allow cloud processing of data that would otherwise be off-limits.
+
+## The Bottom Line
+
+These tools are powerful, but they are cloud services operated by American corporations. Treat them the way you would treat any other cloud service: useful for work that is already public or that you own outright, but not a place to put data that belongs to someone else or that carries legal or ethical restrictions.
+
+When in doubt, describe your data to the tool instead of showing it. You get most of the benefit with none of the risk.

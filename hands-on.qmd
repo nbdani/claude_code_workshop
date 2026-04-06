@@ -1,0 +1,117 @@
+---
+title: "HGIS-to-LINCS Exercise"
+subtitle: "Converting Canada boundary data to Linked Open Data"
+---
+
+## The Goal
+
+We are going to take the Canada territorial boundaries data we explored in Part 1 and convert a subset of it into LINCS-compatible RDF/Turtle. This is the kind of task that LINCS contributors do regularly --- taking structured historical data and expressing it as Linked Open Data using the CIDOC-CRM ontology.
+
+## Step 1: Load the Skills
+
+Start a fresh Claude Code session in the `lincs_skills` directory:
+
+```bash
+cd lincs_skills
+claude
+```
+
+Load the two skills we need:
+
+```
+> /cidoc-crm
+> /lincs-profile
+```
+
+## Step 2: Describe the Data
+
+Copy `boundaries_poly.csv` and `boundary_changes.csv` into your working directory (or point Claude Code to where they are), then:
+
+```
+> Read boundaries_poly.csv and boundary_changes.csv.
+> I want to convert this data to LINCS-compatible CIDOC-CRM.
+> First, describe what entities and relationships you see in the data.
+```
+
+Claude Code should identify entities like:
+
+- **Places** (territories, provinces) --- `E53_Place`
+- **Temporal extents** (year_start, year_end) --- `E52_Time-Span`
+- **Events** (treaties, proclamations) --- `E5_Event` or `E12_Production`
+- **Actors** (sovereign powers) --- `E74_Group` or `E21_Person`
+- **Names** (territory names, French names) --- `E48_Place_Name` / `E41_Appellation`
+
+## Step 3: Model a Single Entity
+
+Start small. Pick one territory --- say, Rupert's Land --- and ask Claude Code to model it:
+
+```
+> Model "Rupert's Land" as LINCS-compatible CIDOC-CRM in Turtle syntax.
+> It was controlled by the Hudson's Bay Company from 1670 to 1870.
+> Include the place, its name, temporal extent, and the controlling entity.
+> Use proper LINCS patterns.
+```
+
+Review the output. Check:
+
+- Are the CIDOC-CRM classes correct?
+- Are the properties connecting them appropriate?
+- Does the temporal modeling follow LINCS patterns?
+- Are URIs properly formed?
+
+## Step 4: Validate
+
+```
+> /lincs-validate
+> Validate the Turtle you just produced against LINCS requirements.
+```
+
+The validation skill checks against nine categories and reports PASS, WARN, or FAIL for each. Fix any issues:
+
+```
+> Fix the warnings and regenerate the Turtle.
+```
+
+## Step 5: Scale Up
+
+Now ask Claude Code to handle more of the dataset:
+
+```
+> Convert all boundary changes from the Treaty of Paris (1763) into
+> LINCS-compatible Turtle. Include the treaty as an event, the
+> territories that changed sovereignty, and the sovereign entities.
+```
+
+Or try a broader conversion:
+
+```
+> Write a Python script that reads boundaries_poly.csv and generates
+> LINCS-compatible Turtle for all territories. Use the patterns we
+> established for Rupert's Land. Save the output as canada_boundaries.ttl.
+```
+
+## Step 6: Disambiguate Places (If Time Allows)
+
+If you want to ground your places to Wikidata:
+
+```
+> /place-disambig
+> Disambiguate "Rupert's Land" to a Wikidata QID.
+```
+
+This uses the Wikidata MCP server (if configured) or Claude Code's knowledge to find the correct Wikidata entity. The QID can then be added to your Turtle as an `owl:sameAs` or `skos:exactMatch` link.
+
+## What You Have Built
+
+By the end of this exercise, you should have:
+
+- A Turtle file with LINCS-compatible RDF for Canadian territorial boundaries
+- Experience using CIDOC-CRM classes and properties for geospatial historical data
+- A workflow you can repeat with your own HGIS datasets
+
+## Next Steps
+
+- **Your own data**: Try the same workflow with a dataset from your own research
+- **LINCS submission**: If you want to contribute to LINCS, the validation skill can help ensure your data meets their requirements
+- **SPARQL queries**: Use `/lincs-sparql` to query existing LINCS data and see how other projects have modeled similar entities
+- **Explore the skills repository**: The full set of skills is at [github.com/jburnford/lincs_skills](https://github.com/jburnford/lincs_skills) --- fork it and adapt the skills to your own domain
