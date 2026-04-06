@@ -1,0 +1,387 @@
+[
+  {
+    "objectID": "what-is-claude-code.html",
+    "href": "what-is-claude-code.html",
+    "title": "What Is Claude Code?",
+    "section": "",
+    "text": "Claude Code is a command-line tool made by Anthropic. You type natural language instructions in your terminal, and it reads your files, writes code, runs commands, and edits documents — all while explaining what it is doing and asking permission before making changes.\nThink of it as having a knowledgeable research assistant sitting beside you at the computer, one who can actually touch the keyboard."
+  },
+  {
+    "objectID": "what-is-claude-code.html#the-short-version",
+    "href": "what-is-claude-code.html#the-short-version",
+    "title": "What Is Claude Code?",
+    "section": "",
+    "text": "Claude Code is a command-line tool made by Anthropic. You type natural language instructions in your terminal, and it reads your files, writes code, runs commands, and edits documents — all while explaining what it is doing and asking permission before making changes.\nThink of it as having a knowledgeable research assistant sitting beside you at the computer, one who can actually touch the keyboard."
+  },
+  {
+    "objectID": "what-is-claude-code.html#how-it-differs-from-a-chatbot",
+    "href": "what-is-claude-code.html#how-it-differs-from-a-chatbot",
+    "title": "What Is Claude Code?",
+    "section": "How It Differs from a Chatbot",
+    "text": "How It Differs from a Chatbot\nYou have probably used an AI chatbot through a web browser — you paste text in, get text back, copy it somewhere else. Claude Code changes that workflow:\n\nIt sees your files. You do not need to paste your data into a chat window. Claude Code reads files directly from your project folder.\nIt writes files. Instead of copying output from a browser, Claude Code creates and edits files on your computer.\nIt runs commands. It can execute scripts, install packages, and run programs — with your permission.\nIt maintains context within a session. You can build on previous questions and it remembers files it has read. Very long sessions may lose earlier context as the conversation is automatically compressed, but for typical working sessions this is not an issue.\nYou control what it knows. Claude Code reads a project instruction file (CLAUDE.md) at the start of every session, and can be extended with skills — curated markdown files that give it deep knowledge of a specific domain. This is how we turn a general-purpose assistant into an expert on CIDOC-CRM, the LINCS application profile, and RDF. You decide what it needs to know, rather than hoping it remembers from a previous conversation."
+  },
+  {
+    "objectID": "what-is-claude-code.html#what-it-looks-like",
+    "href": "what-is-claude-code.html#what-it-looks-like",
+    "title": "What Is Claude Code?",
+    "section": "What It Looks Like",
+    "text": "What It Looks Like\nWhen you launch Claude Code, you see a terminal prompt. You type in plain English:\n&gt; Read the file settlements.csv and tell me what columns it has\nClaude Code reads the file, reports back, and waits for your next instruction. You might then say:\n&gt; Convert this data to CIDOC-CRM using the LINCS application profile.\n&gt; Model each settlement as an E53_Place with an E48_Place_Name.\nIt writes a Turtle file, shows you the output, and asks if you want to save it. The whole interaction is conversational, but the results are real files on your disk."
+  },
+  {
+    "objectID": "what-is-claude-code.html#key-concepts",
+    "href": "what-is-claude-code.html#key-concepts",
+    "title": "What Is Claude Code?",
+    "section": "Key Concepts",
+    "text": "Key Concepts\n\nPermissions\nClaude Code asks before taking actions — writing files, running commands, installing packages. You see what it plans to do and can approve or deny each action. This is a genuine safeguard, but it is not foolproof. If you approve a command without reading it carefully, or if you allow a broad category of actions for a session, Claude Code can do things you did not intend. In our own work, we once had Claude Code delete a database. We now have rules in place that prevent it from running destructive commands like rm.\nThe lesson: read what Claude Code is asking to do before you approve it, especially for commands you do not recognize. And keep your work in version control. If your project is in a git repository and you commit regularly, you can always recover from a mistake. Git and backups are your real safety net — the permission system is a first line of defence, not the last one.\n\n\nSessions\nA session is a single conversation with Claude Code. It starts when you type claude in your terminal and ends when you type /exit or close the window. Within a session, Claude Code maintains context — it remembers files it has read and instructions you have given. Very long sessions are automatically compressed to fit within the model’s context window, which means early details can be lost. For most working sessions this is not a problem.\n\n\nThe CLAUDE.md File\nEvery project can have a CLAUDE.md file in its root directory. This is a set of standing instructions that Claude Code reads at the start of every session. Unlike conversation context, which is temporary, a CLAUDE.md file is permanent and deterministic — you write it, you can read and edit it, and you know exactly what Claude Code starts with every time.\nThis is important for domain-specific work. If you need Claude Code to follow particular conventions (how to format URIs, which ontology version to use, what anti-patterns to avoid), put those instructions in CLAUDE.md rather than hoping it remembers them from a previous conversation. Claude Code also has an automatic memory feature that tries to retain important details between sessions, but a CLAUDE.md file gives you explicit control.\n\n\nSkills (Slash Commands)\nSkills are curated markdown files that give Claude Code deep knowledge of a specific domain. When you load a skill with a slash command like /cidoc-crm or /lincs-profile, Claude Code gains detailed reference material — ontology classes, properties, modeling patterns, validation rules — and uses it to inform its responses.\nSkills are essentially the same idea as CLAUDE.md, but modular and on-demand. You load the ones you need for a particular task. The lincs_skills repository we will use in this workshop is a collection of seven skills built from the CIDOC-CRM specification, LINCS application profile documentation, and analysis of existing LINCS datasets. Instead of needing to remember class hierarchies yourself, you let the skill handle that."
+  },
+  {
+    "objectID": "installation.html",
+    "href": "installation.html",
+    "title": "Installation",
+    "section": "",
+    "text": "There are three ways to follow this workshop:\n\n\n\n\n\n\n\n\n\n\nClaude Code in Terminal\nClaude Code in VS Code\nCodex (OpenAI)\n\n\n\n\nRuns in\nYour terminal\nVS Code editor\nTerminal or web browser\n\n\nFile access\nReads/writes files on your machine\nSame — plus you see files in the editor\nSame (terminal) or upload to cloud sandbox (browser)\n\n\nSetup time\n~15 minutes\n~15 minutes\n~10 minutes\n\n\nCost\nPay-per-use API (~$0.50–$2 for workshop)\nSame\nRequires ChatGPT Pro/Plus subscription\n\n\nBest for\nFull power, experienced terminal users\nSame power, more visual interface\nIf you already have a ChatGPT subscription\n\n\n\nOptions A and B use the same underlying tool — Claude Code. The only difference is whether you interact through a terminal window or through a panel inside VS Code. Option C (Codex) is OpenAI’s equivalent and will let you follow along with the same exercises, though slash commands work differently.\n\n\n\n\n\n\nWindows users\n\n\n\nIf you are on Windows and are not already comfortable working in a terminal, we recommend Option B (VS Code). Claude Code does run natively on Windows PowerShell, but the experience is smoother in VS Code, where you get a graphical chat panel alongside your files without needing to worry about terminal differences. Mac and Linux users can choose either Option A or B based on preference.\nFor longer-term use beyond this workshop, the best way to run Claude Code on Windows is through Windows Subsystem for Linux (WSL), which gives you a full Linux terminal inside Windows. Installing WSL is too large a step for a workshop, but it is worth doing on your own time if you plan to use Claude Code regularly."
+  },
+  {
+    "objectID": "installation.html#choose-your-path",
+    "href": "installation.html#choose-your-path",
+    "title": "Installation",
+    "section": "",
+    "text": "There are three ways to follow this workshop:\n\n\n\n\n\n\n\n\n\n\nClaude Code in Terminal\nClaude Code in VS Code\nCodex (OpenAI)\n\n\n\n\nRuns in\nYour terminal\nVS Code editor\nTerminal or web browser\n\n\nFile access\nReads/writes files on your machine\nSame — plus you see files in the editor\nSame (terminal) or upload to cloud sandbox (browser)\n\n\nSetup time\n~15 minutes\n~15 minutes\n~10 minutes\n\n\nCost\nPay-per-use API (~$0.50–$2 for workshop)\nSame\nRequires ChatGPT Pro/Plus subscription\n\n\nBest for\nFull power, experienced terminal users\nSame power, more visual interface\nIf you already have a ChatGPT subscription\n\n\n\nOptions A and B use the same underlying tool — Claude Code. The only difference is whether you interact through a terminal window or through a panel inside VS Code. Option C (Codex) is OpenAI’s equivalent and will let you follow along with the same exercises, though slash commands work differently.\n\n\n\n\n\n\nWindows users\n\n\n\nIf you are on Windows and are not already comfortable working in a terminal, we recommend Option B (VS Code). Claude Code does run natively on Windows PowerShell, but the experience is smoother in VS Code, where you get a graphical chat panel alongside your files without needing to worry about terminal differences. Mac and Linux users can choose either Option A or B based on preference.\nFor longer-term use beyond this workshop, the best way to run Claude Code on Windows is through Windows Subsystem for Linux (WSL), which gives you a full Linux terminal inside Windows. Installing WSL is too large a step for a workshop, but it is worth doing on your own time if you plan to use Claude Code regularly."
+  },
+  {
+    "objectID": "installation.html#option-a-claude-code-terminal",
+    "href": "installation.html#option-a-claude-code-terminal",
+    "title": "Installation",
+    "section": "Option A: Claude Code (Terminal)",
+    "text": "Option A: Claude Code (Terminal)\n\nStep 1: Install Node.js\nClaude Code requires Node.js version 18 or higher.\nOpen a terminal (Terminal on Mac, PowerShell on Windows) and check:\nnode --version\nIf you see v18.0.0 or higher, skip to Step 2. Otherwise, download the LTS version from nodejs.org, run the installer, restart your terminal, and verify.\n\n\nStep 2: Create an Anthropic Account and API Key\n\nGo to console.anthropic.com and create an account\nAdd a payment method (workshop use typically costs well under $2)\nGo to API Keys and click Create Key\nCopy the key — it starts with sk-ant- — and save it somewhere safe\n\n\n\n\n\n\n\nAbout costs\n\n\n\nClaude Code charges per use via the API. You can set a spending limit in your account settings. A full workshop session rarely exceeds $2.\n\n\n\n\nStep 3: Install Claude Code\nnpm install -g @anthropic-ai/claude-code\nIf you get a permissions error on Mac/Linux:\nsudo npm install -g @anthropic-ai/claude-code\nVerify with:\nclaude --version\n\n\nStep 4: First Launch\nclaude\nChoose API Key when asked to authenticate, and paste your key. You should see the Claude Code prompt (a &gt; waiting for input). Type /exit to close for now.\n\n\nStep 5: Set Up the Workshop Folder\nFirst, create a folder for the workshop and move into it:\nmkdir workshop\ncd workshop\nThen clone the LINCS skills repository into it:\ngit clone https://github.com/jburnford/lincs_skills.git\ncd lincs_skills\n\n\n\n\n\n\nIf you don’t have git\n\n\n\nIf git clone gives you “command not found,” you can download the repository manually:\n\nGo to github.com/jburnford/lincs_skills\nClick the green Code button\nClick Download ZIP\nUnzip the file into your workshop folder\nIn your terminal, navigate into it: cd workshop/lincs_skills-main\n\nTo install git for future use: git-scm.com/downloads\n\n\nThis lincs_skills folder is where we will work during the workshop.\n\n\nTroubleshooting\n\n“npm: command not found” — Node.js did not install. Restart your terminal or reinstall from nodejs.org.\n“Permission denied” — Use sudo on Mac/Linux. Run PowerShell as Administrator on Windows.\n“command not found” after install — Close and reopen your terminal.\n\n\n\nChecklist\n\nnode --version shows v18+\nclaude --version shows a version number\nclaude launches successfully (then /exit)\nYou have cloned lincs_skills"
+  },
+  {
+    "objectID": "installation.html#option-b-claude-code-in-vs-code",
+    "href": "installation.html#option-b-claude-code-in-vs-code",
+    "title": "Installation",
+    "section": "Option B: Claude Code in VS Code",
+    "text": "Option B: Claude Code in VS Code\nIf you prefer a graphical editor over a bare terminal, you can use Claude Code through the VS Code extension. It works identically — same skills, same slash commands, same file access — but you interact through a chat panel inside the editor while your project files are visible alongside.\n\nStep 1: Complete Steps 1–2 from Option A\nYou still need Node.js and an Anthropic API key. Follow Steps 1 and 2 from Option A above.\n\n\nStep 2: Install VS Code\nIf you do not already have it, download Visual Studio Code and install it.\n\n\nStep 3: Install the Claude Code Extension\n\nOpen VS Code\nGo to the Extensions panel (click the square icon in the left sidebar, or press Ctrl+Shift+X / Cmd+Shift+X)\nSearch for “Claude Code”\nInstall the extension published by Anthropic\n\n\n\nStep 4: Get the Workshop Files\nIf you have git installed, open a terminal and run:\nmkdir workshop\ncd workshop\ngit clone https://github.com/jburnford/lincs_skills.git\nIf you do not have git, download the ZIP from github.com/jburnford/lincs_skills (green Code button &gt; Download ZIP) and unzip it.\n\n\nStep 5: Open the Workshop Folder in VS Code\n\nIn VS Code, go to File &gt; Open Folder and select the lincs_skills folder\nOpen the Claude Code panel (look for the Claude icon in the left sidebar, or use the command palette: Ctrl+Shift+P / Cmd+Shift+P and search “Claude Code”)\n\n\n\nStep 6: Authenticate\nThe first time you open the Claude Code panel, it will ask you to authenticate. Choose API Key and paste the key you created in Step 1.\n\n\nHow It Works During the Workshop\n\nThe Claude Code chat panel appears on the side of your editor\nYou type the same natural language instructions and slash commands as in the terminal\nFiles that Claude Code reads or writes appear in your VS Code file explorer\nYou can click on files to see exactly what changed\n\n\n\nChecklist\n\nNode.js v18+ installed (node --version in a terminal)\nAnthropic API key created\nVS Code installed with the Claude Code extension\nlincs_skills folder opened in VS Code\nClaude Code panel opens and authenticates successfully"
+  },
+  {
+    "objectID": "installation.html#option-c-codex-openai-alternative",
+    "href": "installation.html#option-c-codex-openai-alternative",
+    "title": "Installation",
+    "section": "Option C: Codex (OpenAI Alternative)",
+    "text": "Option C: Codex (OpenAI Alternative)\nCodex is OpenAI’s coding agent. Like Claude Code, it can run in the terminal and read/write files on your machine. It also has a browser-based interface at chatgpt.com/codex where tasks run in a cloud sandbox. It requires a ChatGPT Plus, Pro, or Team subscription.\n\nTerminal Install\nnpm install -g codex\nThen launch it in the workshop directory:\ncd lincs_skills\ncodex\nIt works similarly to Claude Code — natural language instructions, file access, permission prompts. If you prefer the browser interface, go to chatgpt.com/codex instead and upload files to each task.\n\n\nStep 1: Ensure You Have ChatGPT Access\nCodex requires a ChatGPT Plus, Pro, or Team subscription. If you already have one, you are set. If not, you can sign up at chatgpt.com.\n\n\nStep 2: Clone the Workshop Repository\ngit clone https://github.com/jburnford/lincs_skills.git\ncd lincs_skills\nIf using the browser interface instead, download the repository as a ZIP from github.com/jburnford/lincs_skills (green Code button &gt; Download ZIP) and upload files to each task.\n\n\nDifferences to Be Aware Of\n\nSlash commands (/cidoc-crm, /lincs-profile) are a Claude Code feature. In Codex, you can ask it to read the skill file directly: “Read skills/cidoc-crm.md and use it as reference material.”\nThe core workflow — giving natural language instructions to work with data — is the same across both tools.\n\n\n\nChecklist\n\ncodex launches in terminal, or you can access chatgpt.com/codex\nYou have cloned or downloaded lincs_skills"
+  },
+  {
+    "objectID": "hands-on.html",
+    "href": "hands-on.html",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "",
+    "text": "We are going to take the Canada territorial boundaries data we explored in Part 1 and convert a subset of it into LINCS-compatible RDF/Turtle. This is the kind of task that LINCS contributors do regularly — taking structured historical data and expressing it as Linked Open Data using the CIDOC-CRM ontology."
+  },
+  {
+    "objectID": "hands-on.html#the-goal",
+    "href": "hands-on.html#the-goal",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "",
+    "text": "We are going to take the Canada territorial boundaries data we explored in Part 1 and convert a subset of it into LINCS-compatible RDF/Turtle. This is the kind of task that LINCS contributors do regularly — taking structured historical data and expressing it as Linked Open Data using the CIDOC-CRM ontology."
+  },
+  {
+    "objectID": "hands-on.html#step-1-load-the-skills",
+    "href": "hands-on.html#step-1-load-the-skills",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "Step 1: Load the Skills",
+    "text": "Step 1: Load the Skills\nStart a fresh Claude Code session in the lincs_skills directory:\ncd lincs_skills\nclaude\nLoad the two skills we need:\n&gt; /cidoc-crm\n&gt; /lincs-profile"
+  },
+  {
+    "objectID": "hands-on.html#step-2-describe-the-data",
+    "href": "hands-on.html#step-2-describe-the-data",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "Step 2: Describe the Data",
+    "text": "Step 2: Describe the Data\nCopy boundaries_poly.csv and boundary_changes.csv into your working directory (or point Claude Code to where they are), then:\n&gt; Read boundaries_poly.csv and boundary_changes.csv.\n&gt; I want to convert this data to LINCS-compatible CIDOC-CRM.\n&gt; First, describe what entities and relationships you see in the data.\nClaude Code should identify entities like:\n\nPlaces (territories, provinces) — E53_Place\nTemporal extents (year_start, year_end) — E52_Time-Span\nEvents (treaties, proclamations) — E5_Event or E12_Production\nActors (sovereign powers) — E74_Group or E21_Person\nNames (territory names, French names) — E48_Place_Name / E41_Appellation"
+  },
+  {
+    "objectID": "hands-on.html#step-3-model-a-single-entity",
+    "href": "hands-on.html#step-3-model-a-single-entity",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "Step 3: Model a Single Entity",
+    "text": "Step 3: Model a Single Entity\nStart small. Pick one territory — say, Rupert’s Land — and ask Claude Code to model it:\n&gt; Model \"Rupert's Land\" as LINCS-compatible CIDOC-CRM in Turtle syntax.\n&gt; It was controlled by the Hudson's Bay Company from 1670 to 1870.\n&gt; Include the place, its name, temporal extent, and the controlling entity.\n&gt; Use proper LINCS patterns.\nReview the output. Check:\n\nAre the CIDOC-CRM classes correct?\nAre the properties connecting them appropriate?\nDoes the temporal modeling follow LINCS patterns?\nAre URIs properly formed?"
+  },
+  {
+    "objectID": "hands-on.html#step-4-validate",
+    "href": "hands-on.html#step-4-validate",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "Step 4: Validate",
+    "text": "Step 4: Validate\n&gt; /lincs-validate\n&gt; Validate the Turtle you just produced against LINCS requirements.\nThe validation skill checks against nine categories and reports PASS, WARN, or FAIL for each. Fix any issues:\n&gt; Fix the warnings and regenerate the Turtle."
+  },
+  {
+    "objectID": "hands-on.html#step-5-scale-up",
+    "href": "hands-on.html#step-5-scale-up",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "Step 5: Scale Up",
+    "text": "Step 5: Scale Up\nNow ask Claude Code to handle more of the dataset:\n&gt; Convert all boundary changes from the Treaty of Paris (1763) into\n&gt; LINCS-compatible Turtle. Include the treaty as an event, the\n&gt; territories that changed sovereignty, and the sovereign entities.\nOr try a broader conversion:\n&gt; Write a Python script that reads boundaries_poly.csv and generates\n&gt; LINCS-compatible Turtle for all territories. Use the patterns we\n&gt; established for Rupert's Land. Save the output as canada_boundaries.ttl."
+  },
+  {
+    "objectID": "hands-on.html#step-6-disambiguate-places-if-time-allows",
+    "href": "hands-on.html#step-6-disambiguate-places-if-time-allows",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "Step 6: Disambiguate Places (If Time Allows)",
+    "text": "Step 6: Disambiguate Places (If Time Allows)\nIf you want to ground your places to Wikidata:\n&gt; /place-disambig\n&gt; Disambiguate \"Rupert's Land\" to a Wikidata QID.\nThis uses the Wikidata MCP server (if configured) or Claude Code’s knowledge to find the correct Wikidata entity. The QID can then be added to your Turtle as an owl:sameAs or skos:exactMatch link."
+  },
+  {
+    "objectID": "hands-on.html#what-you-have-built",
+    "href": "hands-on.html#what-you-have-built",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "What You Have Built",
+    "text": "What You Have Built\nBy the end of this exercise, you should have:\n\nA Turtle file with LINCS-compatible RDF for Canadian territorial boundaries\nExperience using CIDOC-CRM classes and properties for geospatial historical data\nA workflow you can repeat with your own HGIS datasets"
+  },
+  {
+    "objectID": "hands-on.html#next-steps",
+    "href": "hands-on.html#next-steps",
+    "title": "HGIS-to-LINCS Exercise",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nYour own data: Try the same workflow with a dataset from your own research\nLINCS submission: If you want to contribute to LINCS, the validation skill can help ensure your data meets their requirements\nSPARQL queries: Use /lincs-sparql to query existing LINCS data and see how other projects have modeled similar entities\nExplore the skills repository: The full set of skills is at github.com/jburnford/lincs_skills — fork it and adapt the skills to your own domain"
+  },
+  {
+    "objectID": "first-session.html",
+    "href": "first-session.html",
+    "title": "Your First Session",
+    "section": "",
+    "text": "If you have never used a terminal before, this section is for you. A terminal is a text-based interface to your computer. Instead of clicking on folders and files, you type commands. It looks intimidating at first, but for this workshop you only need a handful of commands.\n\n\n\nMac: Open the Terminal app (search for “Terminal” in Spotlight, or find it in Applications &gt; Utilities)\nWindows: Open PowerShell (search for “PowerShell” in the Start menu). If you installed Windows Subsystem for Linux (WSL), you can also search for “Ubuntu” or “WSL.”\nLinux: You already know how to do this.\n\nYou should see a blinking cursor waiting for you to type something. This is your prompt.\n\n\n\nThe terminal always has a “current directory” — the folder you are working in. When you first open it, you are usually in your home folder. To move into a different folder, use cd (change directory):\ncd lincs_skills\nThis moves you into the lincs_skills folder. If you cloned the repository somewhere specific, you may need to provide the full path. The syntax is slightly different on Mac/Linux and Windows:\n\nMac / LinuxWindows (PowerShell)\n\n\ncd ~/Desktop/lincs_skills\nThe ~ symbol means “my home folder.” So ~/Desktop/lincs_skills means “the lincs_skills folder on my Desktop.”\n\n\ncd ~\\Desktop\\lincs_skills\nWindows uses backslashes (\\) instead of forward slashes (/). The ~ shortcut for your home folder works in PowerShell but not in the older Command Prompt.\n\n\n\n\n\n\nMost basic commands work the same on Mac, Linux, and Windows PowerShell. The main exception is listing files:\n\n\n\nTask\nMac / Linux\nWindows (PowerShell)\n\n\n\n\nList files\nls\nls or dir\n\n\nGo up one level\ncd ..\ncd ..\n\n\nShow current directory\npwd\npwd\n\n\nCreate a new folder\nmkdir foldername\nmkdir foldername\n\n\n\n\n\n\n\n\n\nWindows note\n\n\n\nPowerShell supports ls and pwd as aliases, so most commands in this workshop will work as written. If something does not work, try dir instead of ls. If you installed Git for Windows, you also have Git Bash, which behaves like a Mac/Linux terminal and may be easier to follow along with.\n\n\nTry typing ls after you cd into the lincs_skills folder. You should see the skills/ directory and other files from the repository.\n\n\n\nType pwd to see where you are. Type cd ~ to go back to your home folder and start over."
+  },
+  {
+    "objectID": "first-session.html#opening-a-terminal",
+    "href": "first-session.html#opening-a-terminal",
+    "title": "Your First Session",
+    "section": "",
+    "text": "If you have never used a terminal before, this section is for you. A terminal is a text-based interface to your computer. Instead of clicking on folders and files, you type commands. It looks intimidating at first, but for this workshop you only need a handful of commands.\n\n\n\nMac: Open the Terminal app (search for “Terminal” in Spotlight, or find it in Applications &gt; Utilities)\nWindows: Open PowerShell (search for “PowerShell” in the Start menu). If you installed Windows Subsystem for Linux (WSL), you can also search for “Ubuntu” or “WSL.”\nLinux: You already know how to do this.\n\nYou should see a blinking cursor waiting for you to type something. This is your prompt.\n\n\n\nThe terminal always has a “current directory” — the folder you are working in. When you first open it, you are usually in your home folder. To move into a different folder, use cd (change directory):\ncd lincs_skills\nThis moves you into the lincs_skills folder. If you cloned the repository somewhere specific, you may need to provide the full path. The syntax is slightly different on Mac/Linux and Windows:\n\nMac / LinuxWindows (PowerShell)\n\n\ncd ~/Desktop/lincs_skills\nThe ~ symbol means “my home folder.” So ~/Desktop/lincs_skills means “the lincs_skills folder on my Desktop.”\n\n\ncd ~\\Desktop\\lincs_skills\nWindows uses backslashes (\\) instead of forward slashes (/). The ~ shortcut for your home folder works in PowerShell but not in the older Command Prompt.\n\n\n\n\n\n\nMost basic commands work the same on Mac, Linux, and Windows PowerShell. The main exception is listing files:\n\n\n\nTask\nMac / Linux\nWindows (PowerShell)\n\n\n\n\nList files\nls\nls or dir\n\n\nGo up one level\ncd ..\ncd ..\n\n\nShow current directory\npwd\npwd\n\n\nCreate a new folder\nmkdir foldername\nmkdir foldername\n\n\n\n\n\n\n\n\n\nWindows note\n\n\n\nPowerShell supports ls and pwd as aliases, so most commands in this workshop will work as written. If something does not work, try dir instead of ls. If you installed Git for Windows, you also have Git Bash, which behaves like a Mac/Linux terminal and may be easier to follow along with.\n\n\nTry typing ls after you cd into the lincs_skills folder. You should see the skills/ directory and other files from the repository.\n\n\n\nType pwd to see where you are. Type cd ~ to go back to your home folder and start over."
+  },
+  {
+    "objectID": "first-session.html#launch-claude-code",
+    "href": "first-session.html#launch-claude-code",
+    "title": "Your First Session",
+    "section": "Launch Claude Code",
+    "text": "Launch Claude Code\nNow that you are in the lincs_skills folder, launch Claude Code:\nclaude\nClaude Code reads any CLAUDE.md file in the current directory at startup, so it already has context about the LINCS project. You should see the &gt; prompt — this is Claude Code’s prompt, not your terminal’s. From here, you type natural language, not terminal commands."
+  },
+  {
+    "objectID": "first-session.html#try-some-basic-commands",
+    "href": "first-session.html#try-some-basic-commands",
+    "title": "Your First Session",
+    "section": "Try Some Basic Commands",
+    "text": "Try Some Basic Commands\n\nAsk it to read a file\n&gt; Read the skills/README.md and summarize what's in this repository\nClaude Code reads the file directly from disk — no copying, no pasting. It reports back and waits for your next instruction.\n\n\nAsk it a question\n&gt; What is CIDOC-CRM and why is it used for cultural heritage data?\nIt draws on its general knowledge. Later, when we load the CIDOC-CRM skill, its answers become much more precise.\n\n\nAsk it to explore data\n&gt; What files are in the data/ directory? Describe what each one contains.\nIf you have copied the workshop data files into your working directory, Claude Code will read them and report on their structure."
+  },
+  {
+    "objectID": "first-session.html#essential-commands",
+    "href": "first-session.html#essential-commands",
+    "title": "Your First Session",
+    "section": "Essential Commands",
+    "text": "Essential Commands\n\n\n\nCommand\nWhat it does\n\n\n\n\n/help\nShow available commands\n\n\n/exit\nEnd the session\n\n\n/clear\nClear conversation history\n\n\n/compact\nCompress conversation to save context space"
+  },
+  {
+    "objectID": "first-session.html#how-permissions-work",
+    "href": "first-session.html#how-permissions-work",
+    "title": "Your First Session",
+    "section": "How Permissions Work",
+    "text": "How Permissions Work\nClaude Code asks before taking any action on your system. You will see prompts like:\nClaude wants to run: python3 analyze.py\nAllow? (y/n/a)\n\ny — allow this one time\nn — deny\na — allow this type of action for the rest of the session\n\n\n\n\n\n\n\nTip: “Accept All” during the workshop\n\n\n\nPressing a when prompted saves time during the workshop. But get in the habit of reading what Claude Code wants to do before approving, especially for commands. The permission system is a safeguard, not a guarantee — if you approve a destructive command without reading it, there is no undo."
+  },
+  {
+    "objectID": "first-session.html#building-on-context",
+    "href": "first-session.html#building-on-context",
+    "title": "Your First Session",
+    "section": "Building on Context",
+    "text": "Building on Context\nWithin a session, Claude Code remembers everything. You can build iteratively:\n&gt; Read data/boundaries_poly.csv and describe its structure\n\n[Claude Code responds]\n\n&gt; How many distinct sovereign entities appear in this dataset?\n\n[answers based on what it already read]\n\n&gt; Which territories changed sovereignty most frequently?\nThis conversational flow is where Claude Code becomes much more powerful than a web chatbot. It accumulates understanding across the session."
+  },
+  {
+    "objectID": "first-session.html#when-it-gets-something-wrong",
+    "href": "first-session.html#when-it-gets-something-wrong",
+    "title": "Your First Session",
+    "section": "When It Gets Something Wrong",
+    "text": "When It Gets Something Wrong\nClaude Code will sometimes make mistakes. Correct it directly:\n&gt; That's not right — Rupert's Land was controlled by the Hudson's Bay\n&gt; Company, not directly by Britain. Check the sovereign column again.\nIt adjusts and remembers the correction. This is a normal part of working with any LLM."
+  },
+  {
+    "objectID": "first-session.html#exercise-explore-on-your-own-5-minutes",
+    "href": "first-session.html#exercise-explore-on-your-own-5-minutes",
+    "title": "Your First Session",
+    "section": "Exercise: Explore on Your Own (5 minutes)",
+    "text": "Exercise: Explore on Your Own (5 minutes)\nTry any of these, or make up your own:\n\nAsk Claude Code to count the number of boundary changes per century\nAsk it to list all the treaties mentioned in the boundary_changes table\nAsk it to explain the significance of the Royal Proclamation of 1763\nAsk it “What would a historian find most interesting about this dataset?”\n\nWhen you are comfortable with the basics, move on to GIS Data Exercises."
+  },
+  {
+    "objectID": "data-ethics.html",
+    "href": "data-ethics.html",
+    "title": "Data Ethics and Privacy",
+    "section": "",
+    "text": "Claude Code, Codex, and every other cloud-based AI tool sends your data to remote servers for processing. When you ask Claude Code to read a CSV file, the contents of that file leave your computer. This is fine for many datasets. It is not fine for all of them.\nBefore using any AI tool with your data, ask: who has rights over this data, and what am I allowed to do with it?"
+  },
+  {
+    "objectID": "data-ethics.html#the-core-issue",
+    "href": "data-ethics.html#the-core-issue",
+    "title": "Data Ethics and Privacy",
+    "section": "",
+    "text": "Claude Code, Codex, and every other cloud-based AI tool sends your data to remote servers for processing. When you ask Claude Code to read a CSV file, the contents of that file leave your computer. This is fine for many datasets. It is not fine for all of them.\nBefore using any AI tool with your data, ask: who has rights over this data, and what am I allowed to do with it?"
+  },
+  {
+    "objectID": "data-ethics.html#ocap-principles",
+    "href": "data-ethics.html#ocap-principles",
+    "title": "Data Ethics and Privacy",
+    "section": "OCAP Principles",
+    "text": "OCAP Principles\nHistorians working with Indigenous data in Canada need to understand OCAP — the First Nations principles of Ownership, Control, Access, and Possession:\n\nOwnership: First Nations communities collectively own their cultural knowledge, data, and information\nControl: First Nations communities have the right to control all aspects of data management and research processes\nAccess: First Nations communities must have access to data about themselves and their communities\nPossession: First Nations communities must have physical control of data\n\nSending Indigenous community data to Anthropic’s or OpenAI’s servers almost certainly violates the Possession and Control principles. The data leaves the community’s physical control and is processed by a third-party corporation, regardless of what that corporation’s privacy policy says.\nThis is not a technical limitation to work around. It is a matter of Indigenous data sovereignty.\nIf your research involves Indigenous data, consult with the relevant community and your institution’s research ethics board before using any cloud-based AI tool with that data."
+  },
+  {
+    "objectID": "data-ethics.html#what-subscriber-privacy-actually-means",
+    "href": "data-ethics.html#what-subscriber-privacy-actually-means",
+    "title": "Data Ethics and Privacy",
+    "section": "What Subscriber Privacy Actually Means",
+    "text": "What Subscriber Privacy Actually Means\nAnthropic and OpenAI offer different privacy tiers:\n\nFree tier: Your conversations may be used to train future models\nPaid API / subscriber tier: Your data is generally not used for training, and is subject to data retention policies (typically 30 days for abuse monitoring, then deleted)\n\nThis is meaningfully better, but it does not mean your data is private in the way that data on your own computer is private. Even with a paid subscription:\n\nYour data is transmitted over the internet to the provider’s servers\nIt is processed on infrastructure you do not control\nIt may be stored temporarily for safety monitoring\nIt is subject to the provider’s terms of service, which can change\nIt is subject to the legal jurisdiction where the servers are located (typically the United States)\n\nA paid subscription is not a data agreement. If your institution requires specific data handling guarantees — as is common for health data, personnel records, or data covered by research ethics protocols — you need a formal agreement between your institution and the AI provider."
+  },
+  {
+    "objectID": "data-ethics.html#what-is-safe-to-use",
+    "href": "data-ethics.html#what-is-safe-to-use",
+    "title": "Data Ethics and Privacy",
+    "section": "What Is Safe to Use",
+    "text": "What Is Safe to Use\nAs a rough guide, data that is already openly published on the web is likely already in AI training data, so sending it to Claude Code creates little additional exposure. Government census records, published GIS datasets, and your own writing are generally straightforward.\nBut “publicly available” does not mean “free to use however you like.” Indigenous communities that shared data online did not consent to that data being ingested by AI companies. The fact that something is technically accessible does not settle the ethical question. We are still learning where these boundaries are, and historians should err on the side of caution rather than assume that public availability equals permission.\nGenerally straightforward:\n\nGovernment records, published census data, newspaper archives\nOpen datasets from government portals (the Canada boundaries data we use in this workshop, for example)\nYour own writing and notes\n\nUse with care:\n\nData produced by or about Indigenous communities — even if publicly available online. OCAP principles apply to the relationship, not just the access method.\nArchival materials with access restrictions or donor agreements\nOral history transcripts (informed consent may not have covered AI processing)\nData collected under research ethics protocols — check whether your protocol permits cloud processing\nUnpublished research data\n\nDo not use without explicit authorization:\n\nData held in trust under OCAP or community data governance agreements\nHealth or medical records\nPersonal information about living individuals\nData covered by FIPPA, PIPEDA, or institutional data governance policies\nData subject to NDA or contractual restrictions"
+  },
+  {
+    "objectID": "data-ethics.html#practical-strategies",
+    "href": "data-ethics.html#practical-strategies",
+    "title": "Data Ethics and Privacy",
+    "section": "Practical Strategies",
+    "text": "Practical Strategies\n\nWork with metadata instead of data\nYou can often describe your data to Claude Code without giving it the actual records:\n&gt; I have a dataset with columns: name, community, date_of_birth,\n&gt; traditional_territory. I need to model this in CIDOC-CRM.\n&gt; What classes and properties should I use?\nClaude Code can help you design a data model, write transformation scripts, and debug code without ever seeing the sensitive data itself.\n\n\nUse synthetic or anonymized data\nCreate a small sample dataset with fictional entries that mirrors the structure of your real data. Use that for developing your workflow with Claude Code, then run the final scripts on your real data locally, without AI assistance.\n\n\nRun scripts locally\nClaude Code can write a Python script that transforms your data. You can then run that script yourself, on your own machine, without Claude Code. The script does not send data anywhere — it is just a file on your computer.\n\n\nInstitutional agreements\nSome Canadian universities are negotiating enterprise agreements with AI providers that include data residency and processing guarantees. Check with your institution’s IT or research services office. These agreements may allow cloud processing of data that would otherwise be off-limits."
+  },
+  {
+    "objectID": "data-ethics.html#the-bottom-line",
+    "href": "data-ethics.html#the-bottom-line",
+    "title": "Data Ethics and Privacy",
+    "section": "The Bottom Line",
+    "text": "The Bottom Line\nThese tools are powerful, but they are cloud services operated by American corporations. Treat them the way you would treat any other cloud service: useful for work that is already public or that you own outright, but not a place to put data that belongs to someone else or that carries legal or ethical restrictions.\nWhen in doubt, describe your data to the tool instead of showing it. You get most of the benefit with none of the risk."
+  },
+  {
+    "objectID": "gis-exercises.html",
+    "href": "gis-exercises.html",
+    "title": "GIS Data Exercises",
+    "section": "",
+    "text": "We are working with canada_boundaries_temporal.gpkg, a GeoPackage containing the evolving political boundaries of Canada from 1667 to 2001. It includes:\n\n\n\n\n\n\n\n\nTable\nRows\nDescription\n\n\n\n\nboundaries_poly\n815\nTerritorial polygons with sovereignty, temporal range\n\n\nboundary_changes\n69\nHistorical events (treaties, acts) that changed boundaries\n\n\nboundaries_arc\n1,387\nBoundary line segments\n\n\nlakes\n125\nMajor lakes\n\n\nrivers\n527\nMajor rivers\n\n\nshoreline\n1,275\nCoastal segments\n\n\n\nCSV extracts of the two key attribute tables (boundaries_poly.csv and boundary_changes.csv) are also available in the data/ folder for those who prefer working without spatial libraries."
+  },
+  {
+    "objectID": "gis-exercises.html#the-dataset",
+    "href": "gis-exercises.html#the-dataset",
+    "title": "GIS Data Exercises",
+    "section": "",
+    "text": "We are working with canada_boundaries_temporal.gpkg, a GeoPackage containing the evolving political boundaries of Canada from 1667 to 2001. It includes:\n\n\n\n\n\n\n\n\nTable\nRows\nDescription\n\n\n\n\nboundaries_poly\n815\nTerritorial polygons with sovereignty, temporal range\n\n\nboundary_changes\n69\nHistorical events (treaties, acts) that changed boundaries\n\n\nboundaries_arc\n1,387\nBoundary line segments\n\n\nlakes\n125\nMajor lakes\n\n\nrivers\n527\nMajor rivers\n\n\nshoreline\n1,275\nCoastal segments\n\n\n\nCSV extracts of the two key attribute tables (boundaries_poly.csv and boundary_changes.csv) are also available in the data/ folder for those who prefer working without spatial libraries."
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-1-data-exploration",
+    "href": "gis-exercises.html#exercise-1-data-exploration",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 1: Data Exploration",
+    "text": "Exercise 1: Data Exploration\nStart a Claude Code session in the workshop directory and try:\n&gt; Read data/boundaries_poly.csv and give me an overview.\n&gt; How many distinct territorial entities exist? How many time periods?\nThen dig deeper:\n&gt; Create a timeline showing how many territorial entities existed in each year.\n&gt; Which sovereign power controlled the most territory names over time?\n\n\n\n\n\n\nGeoPackage vs CSV\n\n\n\nIf you want Claude Code to work directly with the GeoPackage (which includes geometry), ask it to use Python with geopandas or sqlite3. The CSV files have the same attribute data but no spatial geometry."
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-2-historical-analysis",
+    "href": "gis-exercises.html#exercise-2-historical-analysis",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 2: Historical Analysis",
+    "text": "Exercise 2: Historical Analysis\nThe boundary_changes table contains rich historical descriptions. Try:\n&gt; Read data/boundary_changes.csv. Group the events by century and\n&gt; summarize the major themes of each period.\n&gt; Which treaties had the largest impact on Canadian territorial boundaries?\n&gt; Rank them by how many boundary changes they caused.\n&gt; Find all boundary changes related to Indigenous territories.\n&gt; What patterns do you see?"
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-3-write-a-script",
+    "href": "gis-exercises.html#exercise-3-write-a-script",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 3: Write a Script",
+    "text": "Exercise 3: Write a Script\nThis is where Claude Code shines — ask it to write code for you:\n&gt; Write a Python script that reads boundaries_poly.csv and produces\n&gt; a summary table showing, for each sovereign entity, the years they\n&gt; first and last appear, and how many territorial polygons they controlled.\nClaude Code will write the script, ask permission to save it, and then offer to run it. Review the output and iterate:\n&gt; Good, but add a column showing the total number of years each\n&gt; sovereign was present. Sort by that column descending."
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-4-visualization",
+    "href": "gis-exercises.html#exercise-4-visualization",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 4: Visualization",
+    "text": "Exercise 4: Visualization\n&gt; Using matplotlib, create a stacked area chart showing the number of\n&gt; territorial entities controlled by each sovereign power over time.\n&gt; Save it as sovereignty_timeline.png.\nOr, if you prefer a simpler output:\n&gt; Create a text-based timeline showing major boundary events from\n&gt; 1667 to 1999. Format it as a markdown table I could put in a paper."
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-5-spatial-queries-advanced",
+    "href": "gis-exercises.html#exercise-5-spatial-queries-advanced",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 5: Spatial Queries (Advanced)",
+    "text": "Exercise 5: Spatial Queries (Advanced)\nThis exercise requires the full GeoPackage file (74 MB), which is too large to include in the workshop repository. Ask the workshop facilitator for a copy, or download it from the link provided during the session. Place it in your data/ folder. You will also need geopandas installed (pip install geopandas).\n&gt; Using geopandas, read the boundaries_poly layer from\n&gt; data/canada_boundaries_temporal.gpkg. Calculate the approximate\n&gt; area of each territory in 1867 (Confederation year).\n&gt; Which was largest?\n&gt; Create a simple map showing Canadian territorial boundaries in 1867.\n&gt; Use different colors for each sovereign. Save as confederation_1867.png.\n\n\n\n\n\n\nSkip this if you like\n\n\n\nThe spatial exercises are optional. Exercises 1–4 and all of Part 2 work with the CSV files included in the workshop repository."
+  },
+  {
+    "objectID": "gis-exercises.html#reflection",
+    "href": "gis-exercises.html#reflection",
+    "title": "GIS Data Exercises",
+    "section": "Reflection",
+    "text": "Reflection\nBefore we break, take a moment to consider:\n\nHow did working with an AI assistant compare to exploring this data manually?\nWhat did Claude Code get right? What did it get wrong?\nWhat questions about the data would you not have thought to ask?\n\nAfter the break, we will use what we have learned about this dataset to convert it to Linked Open Data using the LINCS application profile."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Claude Code for HGIS-to-LINCS",
+    "section": "",
+    "text": "This workshop teaches you to use Claude Code — Anthropic’s command-line AI assistant — to work with Historical GIS data and convert it into LINCS-compatible Linked Open Data. No programming experience is required.\nBy the end of this session, you will have:\n\nUsed Claude Code to explore, clean, and analyze GIS data through conversation\nLearned to give effective instructions to an AI coding assistant\nLoaded LINCS-specific skills that give Claude deep knowledge of CIDOC-CRM and the LINCS application profile\nConverted sample HGIS data to LINCS-compatible RDF/Turtle"
+  },
+  {
+    "objectID": "index.html#what-this-workshop-is",
+    "href": "index.html#what-this-workshop-is",
+    "title": "Claude Code for HGIS-to-LINCS",
+    "section": "",
+    "text": "This workshop teaches you to use Claude Code — Anthropic’s command-line AI assistant — to work with Historical GIS data and convert it into LINCS-compatible Linked Open Data. No programming experience is required.\nBy the end of this session, you will have:\n\nUsed Claude Code to explore, clean, and analyze GIS data through conversation\nLearned to give effective instructions to an AI coding assistant\nLoaded LINCS-specific skills that give Claude deep knowledge of CIDOC-CRM and the LINCS application profile\nConverted sample HGIS data to LINCS-compatible RDF/Turtle"
+  },
+  {
+    "objectID": "index.html#why-claude-code",
+    "href": "index.html#why-claude-code",
+    "title": "Claude Code for HGIS-to-LINCS",
+    "section": "Why Claude Code?",
+    "text": "Why Claude Code?\nMost GenAI tools (ChatGPT, Gemini) work through a web browser. Claude Code is different. It runs in your terminal and can directly read, write, and edit files on your computer. This makes it far more useful for data work:\n\nIt reads your CSV, GeoJSON, and Shapefile attribute tables directly\nIt writes output files to your project folder\nIt runs Python, R, or shell commands on your behalf\nIt remembers project context across a session\nIt can be extended with skills — specialized knowledge packages that make it an expert in specific domains"
+  },
+  {
+    "objectID": "index.html#before-the-workshop",
+    "href": "index.html#before-the-workshop",
+    "title": "Claude Code for HGIS-to-LINCS",
+    "section": "Before the Workshop",
+    "text": "Before the Workshop\nPlease complete the Installation steps before arriving. This includes creating an Anthropic account and installing Claude Code (or signing up for Codex as a browser-based alternative). If you get stuck, bring your laptop and we will help you at the start of the session."
+  },
+  {
+    "objectID": "index.html#workshop-schedule",
+    "href": "index.html#workshop-schedule",
+    "title": "Claude Code for HGIS-to-LINCS",
+    "section": "Workshop Schedule",
+    "text": "Workshop Schedule\n\nPart 1: Working with GIS Data (0:00–1:00)\n\n\n\nTime\nSection\n\n\n\n\n0:00\nTroubleshoot remaining installations\n\n\n0:10\nWhat Is Claude Code? — orientation and key concepts\n\n\n0:20\nData Ethics and Privacy — OCAP, sensitive data, and what not to share\n\n\n0:30\nYour First Session — guided walkthrough\n\n\n0:40\nGIS Data Exercises — exploring and analyzing HGIS data with Claude Code\n\n\n\n\n\nBreak (1:00–1:10)\n\n\nPart 2: Linked Open Data (1:10–2:00)\n\n\n\nTime\nSection\n\n\n\n\n1:10\nLINCS Skills — loading domain expertise for LOD work\n\n\n1:30\nHGIS-to-LINCS Exercise — converting GIS data to CIDOC-CRM / RDF\n\n\n1:50\nDiscussion, questions, and next steps"
+  },
+  {
+    "objectID": "lincs-skills.html",
+    "href": "lincs-skills.html",
+    "title": "LINCS Skills",
+    "section": "",
+    "text": "Skills are markdown files that give Claude Code deep, structured knowledge about a specific domain. When you invoke a skill with a slash command, Claude Code loads that reference material and uses it to inform every response for the rest of the exchange.\nWithout skills, Claude Code knows about CIDOC-CRM and LINCS in general terms — the way any well-read person might. With skills loaded, it has access to specific class hierarchies, property definitions, LINCS modeling patterns, and validation rules."
+  },
+  {
+    "objectID": "lincs-skills.html#what-are-skills",
+    "href": "lincs-skills.html#what-are-skills",
+    "title": "LINCS Skills",
+    "section": "",
+    "text": "Skills are markdown files that give Claude Code deep, structured knowledge about a specific domain. When you invoke a skill with a slash command, Claude Code loads that reference material and uses it to inform every response for the rest of the exchange.\nWithout skills, Claude Code knows about CIDOC-CRM and LINCS in general terms — the way any well-read person might. With skills loaded, it has access to specific class hierarchies, property definitions, LINCS modeling patterns, and validation rules."
+  },
+  {
+    "objectID": "lincs-skills.html#the-lincs-skills-repository",
+    "href": "lincs-skills.html#the-lincs-skills-repository",
+    "title": "LINCS Skills",
+    "section": "The LINCS Skills Repository",
+    "text": "The LINCS Skills Repository\nThe lincs_skills repository contains seven skills:\n\n\n\n\n\n\n\nSlash Command\nWhat It Does\n\n\n\n\n/cidoc-crm\nCIDOC-CRM v7.3.1 ontology reference — classes, properties, extensions\n\n\n/lincs-profile\nLINCS application profile — reusable modeling patterns for persons, organizations, places, events\n\n\n/lincs-validate\nValidates your model against LINCS requirements (PASS/WARN/FAIL report)\n\n\n/cidoc-to-rdf\nConverts data models to RDF/Turtle with proper namespace mapping\n\n\n/lincs-sparql\nSPARQL query templates for the LINCS triplestore\n\n\n/person-disambig\nWikidata person entity disambiguation\n\n\n/place-disambig\nWikidata place entity disambiguation"
+  },
+  {
+    "objectID": "lincs-skills.html#loading-skills",
+    "href": "lincs-skills.html#loading-skills",
+    "title": "LINCS Skills",
+    "section": "Loading Skills",
+    "text": "Loading Skills\nIf you launched Claude Code from inside the lincs_skills directory (as we did in Part 1), the skills are already available. Try:\n&gt; /cidoc-crm\nClaude Code loads the full CIDOC-CRM reference. Now ask it something:\n&gt; What is the correct way to model a place that changed names over time?\nCompare the answer to what you got earlier without the skill loaded — it should be noticeably more precise, with specific class and property references.\n\nLoading the LINCS Profile\n&gt; /lincs-profile\nThis loads the LINCS application profile, which defines how LINCS projects model entities. Now Claude Code knows not just CIDOC-CRM in the abstract, but the specific patterns LINCS uses.\n&gt; How does LINCS model a geographic place with a temporal extent?"
+  },
+  {
+    "objectID": "lincs-skills.html#using-skills-with-codex",
+    "href": "lincs-skills.html#using-skills-with-codex",
+    "title": "LINCS Skills",
+    "section": "Using Skills with Codex",
+    "text": "Using Skills with Codex\nIf you are using Codex instead of Claude Code, slash commands are not available. Instead:\n\nOpen the skill file (e.g., skills/cidoc-crm.md) from the downloaded ZIP\nUpload it to your Codex task\nTell Codex: “Use the uploaded cidoc-crm.md as reference material for all CIDOC-CRM questions”\n\nThe effect is similar — Codex will use the file as context for its responses."
+  },
+  {
+    "objectID": "lincs-skills.html#exercise-explore-a-skill",
+    "href": "lincs-skills.html#exercise-explore-a-skill",
+    "title": "LINCS Skills",
+    "section": "Exercise: Explore a Skill",
+    "text": "Exercise: Explore a Skill\nPick one of these and spend a few minutes exploring:\n\nOption A: CIDOC-CRM deep dive\n&gt; /cidoc-crm\n&gt; Explain the difference between E53_Place and E4_Period.\n&gt; When would I use one versus the other for modeling a territory\n&gt; that existed for a specific time period?\n\n\nOption B: LINCS modeling patterns\n&gt; /lincs-profile\n&gt; Show me a complete example of how LINCS models a historical\n&gt; person with a name, birth date, and occupation.\n&gt; Use proper Turtle syntax.\n\n\nOption C: Validation\n&gt; /lincs-validate\n&gt; What are the most common mistakes people make when creating\n&gt; LINCS-compatible data? Give me the checklist.\nOnce you are comfortable with how skills work, we will apply them to our Canada boundaries data in the HGIS-to-LINCS Exercise."
+  }
+]
