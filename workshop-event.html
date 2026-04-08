@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HGIS-to-LINCS Exercise – HGIS to LOD Workshop</title>
+<title>HGIS to LOD Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -122,7 +88,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./workshop-event.html"> 
+    <a class="nav-link active" href="./workshop-event.html" aria-current="page"> 
 <span class="menu-text">Workshop (April 15–17)</span></a>
   </li>  
   <li class="nav-item">
@@ -187,15 +153,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-goal" id="toc-the-goal" class="nav-link active" data-scroll-target="#the-goal">The Goal</a></li>
-  <li><a href="#step-1-load-the-skills" id="toc-step-1-load-the-skills" class="nav-link" data-scroll-target="#step-1-load-the-skills">Step 1: Load the Skills</a></li>
-  <li><a href="#step-2-describe-the-data" id="toc-step-2-describe-the-data" class="nav-link" data-scroll-target="#step-2-describe-the-data">Step 2: Describe the Data</a></li>
-  <li><a href="#step-3-model-a-single-entity" id="toc-step-3-model-a-single-entity" class="nav-link" data-scroll-target="#step-3-model-a-single-entity">Step 3: Model a Single Entity</a></li>
-  <li><a href="#step-4-validate" id="toc-step-4-validate" class="nav-link" data-scroll-target="#step-4-validate">Step 4: Validate</a></li>
-  <li><a href="#step-5-scale-up" id="toc-step-5-scale-up" class="nav-link" data-scroll-target="#step-5-scale-up">Step 5: Scale Up</a></li>
-  <li><a href="#step-6-disambiguate-places-if-time-allows" id="toc-step-6-disambiguate-places-if-time-allows" class="nav-link" data-scroll-target="#step-6-disambiguate-places-if-time-allows">Step 6: Disambiguate Places (If Time Allows)</a></li>
-  <li><a href="#what-you-have-built" id="toc-what-you-have-built" class="nav-link" data-scroll-target="#what-you-have-built">What You Have Built</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  <li><a href="#event-details" id="toc-event-details" class="nav-link active" data-scroll-target="#event-details">Event Details</a>
+  <ul class="collapse">
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
+  <li><a href="#meals-social" id="toc-meals-social" class="nav-link" data-scroll-target="#meals-social">Meals &amp; Social</a></li>
+  </ul></li>
+  <li><a href="#about-the-workshop" id="toc-about-the-workshop" class="nav-link" data-scroll-target="#about-the-workshop">About the Workshop</a></li>
+  <li><a href="#before-you-arrive" id="toc-before-you-arrive" class="nav-link" data-scroll-target="#before-you-arrive">Before You Arrive</a>
+  <ul class="collapse">
+  <li><a href="#online-pre-workshop-claude-code-friday-april-11" id="toc-online-pre-workshop-claude-code-friday-april-11" class="nav-link" data-scroll-target="#online-pre-workshop-claude-code-friday-april-11">Online Pre-Workshop: Claude Code (Friday, April 11)</a></li>
+  </ul></li>
+  <li><a href="#detailed-schedule" id="toc-detailed-schedule" class="nav-link" data-scroll-target="#detailed-schedule">Detailed Schedule</a>
+  <ul class="collapse">
+  <li><a href="#wednesday-april-15-100430-pm" id="toc-wednesday-april-15-100430-pm" class="nav-link" data-scroll-target="#wednesday-april-15-100430-pm">Wednesday, April 15 (1:00–4:30 PM)</a></li>
+  <li><a href="#thursday-april-16-900-am530-pm" id="toc-thursday-april-16-900-am530-pm" class="nav-link" data-scroll-target="#thursday-april-16-900-am530-pm">Thursday, April 16 (9:00 AM–5:30 PM)</a></li>
+  <li><a href="#friday-april-17-900-am1200-pm" id="toc-friday-april-17-900-am1200-pm" class="nav-link" data-scroll-target="#friday-april-17-900-am1200-pm">Friday, April 17 (9:00 AM–12:00 PM)</a></li>
+  </ul></li>
+  <li><a href="#workshop-materials" id="toc-workshop-materials" class="nav-link" data-scroll-target="#workshop-materials">Workshop Materials</a></li>
+  <li><a href="#organizers" id="toc-organizers" class="nav-link" data-scroll-target="#organizers">Organizers</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions?</a></li>
   </ul>
 </nav>
     </div>
@@ -204,8 +180,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">HGIS-to-LINCS Exercise</h1>
-<p class="subtitle lead">Converting Canada boundary data to Linked Open Data</p>
+<h1 class="title">HGIS to LOD Workshop</h1>
+<p class="subtitle lead">A hands-on workshop for converting Historical GIS data to Linked Open Data</p>
 </div>
 
 
@@ -222,92 +198,225 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="the-goal" class="level2">
-<h2 class="anchored" data-anchor-id="the-goal">The Goal</h2>
-<p>We are going to take the Canada territorial boundaries data we explored in Part 1 and convert a subset of it into LINCS-compatible RDF/Turtle. This is the kind of task that LINCS contributors do regularly — taking structured historical data and expressing it as Linked Open Data using the CIDOC-CRM ontology.</p>
+<section id="event-details" class="level2">
+<h2 class="anchored" data-anchor-id="event-details">Event Details</h2>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Dates</strong></td>
+<td>Wednesday, April 15 – Friday, April 17, 2026</td>
+</tr>
+<tr class="even">
+<td><strong>Location</strong></td>
+<td>Room 302, <a href="https://www.uottawa.ca/about-us/administration-services/facilities/campus-maps/building/perez-hall">Pérez Hall (PRZ)</a>, 610 Cumberland Street, University of Ottawa</td>
+</tr>
+</tbody>
+</table>
+<section id="schedule" class="level3">
+<h3 class="anchored" data-anchor-id="schedule">Schedule</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Wednesday, April 15</strong></td>
+<td>1:00 PM – 4:30 PM</td>
+</tr>
+<tr class="even">
+<td><strong>Thursday, April 16</strong></td>
+<td>9:00 AM – 5:30 PM</td>
+</tr>
+<tr class="odd">
+<td><strong>Friday, April 17</strong></td>
+<td>9:00 AM – 12:00 PM</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="step-1-load-the-skills" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-load-the-skills">Step 1: Load the Skills</h2>
-<p>Start a fresh Claude Code session in the <code>lincs_skills</code> directory:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> lincs_skills</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Load the two skills we need:</p>
-<pre><code>&gt; /cidoc-crm
-&gt; /lincs-profile</code></pre>
-</section>
-<section id="step-2-describe-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-describe-the-data">Step 2: Describe the Data</h2>
-<p>Copy <code>boundaries_poly.csv</code> and <code>boundary_changes.csv</code> into your working directory (or point Claude Code to where they are), then:</p>
-<pre><code>&gt; Read boundaries_poly.csv and boundary_changes.csv.
-&gt; I want to convert this data to LINCS-compatible CIDOC-CRM.
-&gt; First, describe what entities and relationships you see in the data.</code></pre>
-<p>Claude Code should identify entities like:</p>
+<section id="meals-social" class="level3">
+<h3 class="anchored" data-anchor-id="meals-social">Meals &amp; Social</h3>
 <ul>
-<li><strong>Places</strong> (territories, provinces) — <code>E53_Place</code></li>
-<li><strong>Temporal extents</strong> (year_start, year_end) — <code>E52_Time-Span</code></li>
-<li><strong>Events</strong> (treaties, proclamations) — <code>E5_Event</code> or <code>E12_Production</code></li>
-<li><strong>Actors</strong> (sovereign powers) — <code>E74_Group</code> or <code>E21_Person</code></li>
-<li><strong>Names</strong> (territory names, French names) — <code>E48_Place_Name</code> / <code>E41_Appellation</code></li>
+<li><strong>Wednesday</strong>: PRZ 302 is open from 12:00 PM if you’d like to bring a lunch and join us before the workshop starts. After the session, drinks at <a href="https://www.nostalgica.ca/">Nostalgica</a> (student union pub) — all welcome.</li>
+<li><strong>Thursday lunch</strong>: 12:00–1:30 PM break (not included — on your own).</li>
+<li><strong>Thursday dinner</strong>: 7:00 PM at <a href="https://tuckersmarketplace.com/">Tucker’s Marketplace</a>. Dinner is covered for students, staff, and new scholars (alcohol not included). Groups will leave from Nostalgica.</li>
 </ul>
 </section>
-<section id="step-3-model-a-single-entity" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-model-a-single-entity">Step 3: Model a Single Entity</h2>
-<p>Start small. Pick one territory — say, Rupert’s Land — and ask Claude Code to model it:</p>
-<pre><code>&gt; Model "Rupert's Land" as LINCS-compatible CIDOC-CRM in Turtle syntax.
-&gt; It was controlled by the Hudson's Bay Company from 1670 to 1870.
-&gt; Include the place, its name, temporal extent, and the controlling entity.
-&gt; Use proper LINCS patterns.</code></pre>
-<p>Review the output. Check:</p>
+</section>
+<section id="about-the-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-workshop">About the Workshop</h2>
+<p>This hands-on workshop brings together historians and digital humanists to work through the process of converting Historical GIS data into <a href="https://lincsproject.ca/">LINCS</a>-compatible Linked Open Data. Over three days, participants will:</p>
 <ul>
-<li>Are the CIDOC-CRM classes correct?</li>
-<li>Are the properties connecting them appropriate?</li>
-<li>Does the temporal modeling follow LINCS patterns?</li>
-<li>Are URIs properly formed?</li>
+<li><strong>Review CIDOC-CRM modeling</strong> for geospatial, people, and institutional data</li>
+<li><strong>Work with their own data</strong> — transforming datasets using temporary URIs, vocabularies, and entity linking</li>
+<li><strong>Use AI-assisted tools</strong> including <a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a> and the Wikidata MCP for entity disambiguation</li>
+<li><strong>Discuss the broader ecosystem</strong> — CRKN perspectives, researcher workflows, and paths to contribution</li>
 </ul>
 </section>
-<section id="step-4-validate" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-validate">Step 4: Validate</h2>
-<pre><code>&gt; /lincs-validate
-&gt; Validate the Turtle you just produced against LINCS requirements.</code></pre>
-<p>The validation skill checks against nine categories and reports PASS, WARN, or FAIL for each. Fix any issues:</p>
-<pre><code>&gt; Fix the warnings and regenerate the Turtle.</code></pre>
+<section id="before-you-arrive" class="level2">
+<h2 class="anchored" data-anchor-id="before-you-arrive">Before You Arrive</h2>
+<section id="online-pre-workshop-claude-code-friday-april-11" class="level3">
+<h3 class="anchored" data-anchor-id="online-pre-workshop-claude-code-friday-april-11">Online Pre-Workshop: Claude Code (Friday, April 11)</h3>
+<p>Before the in-person workshop, join the <strong><a href="./index.html">Claude Code for HGIS-to-LINCS</a></strong> online session on Friday, April 11. This session introduces Claude Code and walks through the tools we will use during the data-focused sessions in Ottawa.</p>
+<p>Please complete the <strong><a href="./installation.html">Installation</a></strong> steps before Friday’s session. This includes creating an Anthropic account and installing Claude Code. If you run into trouble, bring your laptop to Ottawa and we will help you get set up.</p>
 </section>
-<section id="step-5-scale-up" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-scale-up">Step 5: Scale Up</h2>
-<p>Now ask Claude Code to handle more of the dataset:</p>
-<pre><code>&gt; Convert all boundary changes from the Treaty of Paris (1763) into
-&gt; LINCS-compatible Turtle. Include the treaty as an event, the
-&gt; territories that changed sovereignty, and the sovereign entities.</code></pre>
-<p>Or try a broader conversion:</p>
-<pre><code>&gt; Write a Python script that reads boundaries_poly.csv and generates
-&gt; LINCS-compatible Turtle for all territories. Use the patterns we
-&gt; established for Rupert's Land. Save the output as canada_boundaries.ttl.</code></pre>
 </section>
-<section id="step-6-disambiguate-places-if-time-allows" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-disambiguate-places-if-time-allows">Step 6: Disambiguate Places (If Time Allows)</h2>
-<p>If you want to ground your places to Wikidata:</p>
-<pre><code>&gt; /place-disambig
-&gt; Disambiguate "Rupert's Land" to a Wikidata QID.</code></pre>
-<p>This uses the Wikidata MCP server (if configured) or Claude Code’s knowledge to find the correct Wikidata entity. The QID can then be added to your Turtle as an <code>owl:sameAs</code> or <code>skos:exactMatch</code> link.</p>
+<section id="detailed-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="detailed-schedule">Detailed Schedule</h2>
+<p><em>This schedule is a draft and subject to change.</em></p>
+<section id="wednesday-april-15-100430-pm" class="level3">
+<h3 class="anchored" data-anchor-id="wednesday-april-15-100430-pm">Wednesday, April 15 (1:00–4:30 PM)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Session</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>12:00–1:00</td>
+<td>Meet and greet brown bag lunch (bring your own)</td>
+</tr>
+<tr class="even">
+<td>1:00</td>
+<td>Overview and grounding in larger goals (Jim)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Modeling (Susan) — CIDOC recap and Q&amp;A</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Geospatial and place: places vs.&nbsp;presences, identifying gaps</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>People and groups — examples</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Indigenous knowledge and vocabularies</td>
+</tr>
+<tr class="odd">
+<td>4:15</td>
+<td>Wrap-up</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="what-you-have-built" class="level2">
-<h2 class="anchored" data-anchor-id="what-you-have-built">What You Have Built</h2>
-<p>By the end of this exercise, you should have:</p>
+<section id="thursday-april-16-900-am530-pm" class="level3">
+<h3 class="anchored" data-anchor-id="thursday-april-16-900-am530-pm">Thursday, April 16 (9:00 AM–5:30 PM)</h3>
+<p><em>Data-focused workshop day</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Session</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9:00</td>
+<td>Resource overview, setup, best practices and strategies</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Transform data with temporary URIs</td>
+</tr>
+<tr class="odd">
+<td>12:00–1:30</td>
+<td>Lunch (not included)</td>
+</tr>
+<tr class="even">
+<td>1:30</td>
+<td>Vocabularies, entity linking, and methods (Claude / Wikidata MCP, NERVE)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Verification of results</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Group reporting: progress to date, pain points, feasibility for researchers</td>
+</tr>
+<tr class="odd">
+<td>5:30</td>
+<td>End of day</td>
+</tr>
+<tr class="even">
+<td>7:00 PM</td>
+<td>Dinner at Tucker’s Marketplace</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="friday-april-17-900-am1200-pm" class="level3">
+<h3 class="anchored" data-anchor-id="friday-april-17-900-am1200-pm">Friday, April 17 (9:00 AM–12:00 PM)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Session</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9:00</td>
+<td>Reflections — lessons learned, gaps and challenges discovered</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>Ecosystem / CRKN Panel</strong> (Jim, chair): James (CRKN perspective), Connie (researcher perspective), Ken (library perspective)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Tools sharing: LINCS, NERVE, SPARQL, geo-oriented tools</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Brainstorming: how do researchers contribute? Training, workflows, linking across models</td>
+</tr>
+<tr class="odd">
+<td>11:30–12:00</td>
+<td>Next steps and wrap-up</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="workshop-materials" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-materials">Workshop Materials</h2>
+<p>The full workshop curriculum is available on this site:</p>
 <ul>
-<li>A Turtle file with LINCS-compatible RDF for Canadian territorial boundaries</li>
-<li>Experience using CIDOC-CRM classes and properties for geospatial historical data</li>
-<li>A workflow you can repeat with your own HGIS datasets</li>
+<li><a href="./what-is-claude-code.html">What Is Claude Code?</a> — orientation and key concepts</li>
+<li><a href="./data-ethics.html">Data Ethics and Privacy</a> — OCAP, sensitive data, and what not to share</li>
+<li><a href="./first-session.html">Your First Session</a> — guided walkthrough</li>
+<li><a href="./gis-exercises.html">GIS Data Exercises</a> — exploring and analyzing HGIS data</li>
+<li><a href="./lincs-skills.html">LINCS Skills</a> — loading domain expertise for LOD work</li>
+<li><a href="./hands-on.html">HGIS-to-LINCS Exercise</a> — converting GIS data to CIDOC-CRM / RDF</li>
 </ul>
 </section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
-<ul>
-<li><strong>Keep asking questions.</strong> The best way to learn CIDOC-CRM, RDF, or any data science tool is to keep working with Claude Code on your own data. Ask it to explain concepts you do not understand. Ask it why it chose one class over another. Ask it to compare approaches. Every question teaches you something and costs almost nothing.</li>
-<li><strong>Your own data</strong>: Try the same workflow with a dataset from your own research</li>
-<li><strong>LINCS submission</strong>: If you want to contribute to LINCS, the validation skill can help ensure your data meets their requirements</li>
-<li><strong>SPARQL queries</strong>: Use <code>/lincs-sparql</code> to query existing LINCS data and see how other projects have modeled similar entities</li>
-<li><strong>Explore the skills repository</strong>: The full set of skills is at <a href="https://github.com/jburnford/lincs_skills">github.com/jburnford/lincs_skills</a> — fork it and adapt the skills to your own domain</li>
-</ul>
+<section id="organizers" class="level2">
+<h2 class="anchored" data-anchor-id="organizers">Organizers</h2>
+<p>Jim Clifford and Susan Brown</p>
+<p><strong>Local coordinator:</strong> Alice Defours (<a href="mailto:adefo038@uottawa.ca">adefo038@uottawa.ca</a>)</p>
+<p><strong>LINCS staff:</strong> Alliyya Mo, Natalie Hervieux, Dani Metilli</p>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions?</h2>
+<p>Contact Jim Clifford at <a href="mailto:jim.clifford@usask.ca">jim.clifford@usask.ca</a>.</p>
 
 
 </section>
