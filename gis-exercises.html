@@ -158,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#download-the-data" id="toc-download-the-data" class="nav-link" data-scroll-target="#download-the-data">Download the Data</a></li>
   </ul></li>
   <li><a href="#exercise-1-data-exploration" id="toc-exercise-1-data-exploration" class="nav-link" data-scroll-target="#exercise-1-data-exploration">Exercise 1: Data Exploration</a></li>
-  <li><a href="#exercise-2-historical-analysis" id="toc-exercise-2-historical-analysis" class="nav-link" data-scroll-target="#exercise-2-historical-analysis">Exercise 2: Historical Analysis</a></li>
+  <li><a href="#exercise-2-querying-the-boundary-changes" id="toc-exercise-2-querying-the-boundary-changes" class="nav-link" data-scroll-target="#exercise-2-querying-the-boundary-changes">Exercise 2: Querying the Boundary Changes</a></li>
   <li><a href="#exercise-3-write-a-script" id="toc-exercise-3-write-a-script" class="nav-link" data-scroll-target="#exercise-3-write-a-script">Exercise 3: Write a Script</a></li>
   <li><a href="#exercise-4-visualization" id="toc-exercise-4-visualization" class="nav-link" data-scroll-target="#exercise-4-visualization">Exercise 4: Visualization</a></li>
   <li><a href="#exercise-5-spatial-queries-advanced" id="toc-exercise-5-spatial-queries-advanced" class="nav-link" data-scroll-target="#exercise-5-spatial-queries-advanced">Exercise 5: Spatial Queries (Advanced)</a></li>
@@ -267,11 +267,11 @@ Before you start
 <section id="exercise-1-data-exploration" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1-data-exploration">Exercise 1: Data Exploration</h2>
 <p>Start a Claude Code session in the workshop directory and try:</p>
-<pre><code>&gt; Read data/boundaries_poly.csv and give me an overview.
-&gt; How many distinct territorial entities exist? How many time periods?</code></pre>
+<pre><code>Read data/boundaries_poly.csv and give me an overview.
+How many distinct territorial entities exist? How many time periods?</code></pre>
 <p>Then dig deeper:</p>
-<pre><code>&gt; Create a timeline showing how many territorial entities existed in each year.
-&gt; Which sovereign power controlled the most territory names over time?</code></pre>
+<pre><code>Create a timeline showing how many territorial entities existed in each year.
+Which sovereign power controlled the most territory names over time?</code></pre>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -286,44 +286,42 @@ GeoPackage vs CSV
 </div>
 </div>
 </section>
-<section id="exercise-2-historical-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-historical-analysis">Exercise 2: Historical Analysis</h2>
-<p>The <code>boundary_changes</code> table contains rich historical descriptions. Try:</p>
-<pre><code>&gt; Read data/boundary_changes.csv. Group the events by century and
-&gt; summarize the major themes of each period.</code></pre>
-<pre><code>&gt; Which treaties had the largest impact on Canadian territorial boundaries?
-&gt; Rank them by how many boundary changes they caused.</code></pre>
-<pre><code>&gt; Find all boundary changes related to Indigenous territories.
-&gt; What patterns do you see?</code></pre>
+<section id="exercise-2-querying-the-boundary-changes" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-querying-the-boundary-changes">Exercise 2: Querying the Boundary Changes</h2>
+<p>The <code>boundary_changes</code> table contains short descriptions of each historical event. Try asking Claude Code for specific summaries and counts:</p>
+<pre><code>Read data/boundary_changes.csv. Count the events per century and list them in a table.</code></pre>
+<pre><code>List the treaties named in the description column, ranked by how many boundary changes each one is associated with.</code></pre>
+<pre><code>Filter the rows where the description mentions Indigenous territories, treaties with First Nations, or named Indigenous groups, and list them as a table with year, description, and territories affected.</code></pre>
+<p>The historical interpretation of these results — <em>why</em> one treaty mattered more than another, what the patterns mean — is your job. Claude Code is good at retrieving and counting; it is not a substitute for the contextual knowledge you bring as a historian.</p>
 </section>
 <section id="exercise-3-write-a-script" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3-write-a-script">Exercise 3: Write a Script</h2>
 <p>This is where Claude Code shines — ask it to write code for you:</p>
-<pre><code>&gt; Write a Python script that reads boundaries_poly.csv and produces
-&gt; a summary table showing, for each sovereign entity, the years they
-&gt; first and last appear, and how many territorial polygons they controlled.</code></pre>
+<pre><code>Write a Python script that reads boundaries_poly.csv and produces
+a summary table showing, for each sovereign entity, the years they
+first and last appear, and how many territorial polygons they controlled.</code></pre>
 <p>Claude Code will write the script, ask permission to save it, and then offer to run it. Review the output and iterate:</p>
-<pre><code>&gt; Good, but add a column showing the total number of years each
-&gt; sovereign was present. Sort by that column descending.</code></pre>
+<pre><code>Good, but add a column showing the total number of years each
+sovereign was present. Sort by that column descending.</code></pre>
 </section>
 <section id="exercise-4-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4-visualization">Exercise 4: Visualization</h2>
-<pre><code>&gt; Using matplotlib, create a stacked area chart showing the number of
-&gt; territorial entities controlled by each sovereign power over time.
-&gt; Save it as sovereignty_timeline.png.</code></pre>
+<pre><code>Using matplotlib, create a stacked area chart showing the number of
+territorial entities controlled by each sovereign power over time.
+Save it as sovereignty_timeline.png.</code></pre>
 <p>Or, if you prefer a simpler output:</p>
-<pre><code>&gt; Create a text-based timeline showing major boundary events from
-&gt; 1667 to 1999. Format it as a markdown table I could put in a paper.</code></pre>
+<pre><code>Create a text-based timeline showing major boundary events from
+1667 to 1999. Format it as a markdown table I could put in a paper.</code></pre>
 </section>
 <section id="exercise-5-spatial-queries-advanced" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5-spatial-queries-advanced">Exercise 5: Spatial Queries (Advanced)</h2>
 <p>This exercise uses the full <code>canada_boundaries_temporal.gpkg</code> file (74 MB), included in the <code>workshop-data.zip</code> download above. You will also need <code>geopandas</code> installed (<code>pip install geopandas</code>).</p>
-<pre><code>&gt; Using geopandas, read the boundaries_poly layer from
-&gt; data/canada_boundaries_temporal.gpkg. Calculate the approximate
-&gt; area of each territory in 1867 (Confederation year).
-&gt; Which was largest?</code></pre>
-<pre><code>&gt; Create a simple map showing Canadian territorial boundaries in 1867.
-&gt; Use different colors for each sovereign. Save as confederation_1867.png.</code></pre>
+<pre><code>Using geopandas, read the boundaries_poly layer from
+data/canada_boundaries_temporal.gpkg. Calculate the approximate
+area of each territory in 1867 (Confederation year).
+Which was largest?</code></pre>
+<pre><code>Create a simple map showing Canadian territorial boundaries in 1867.
+Use different colors for each sovereign. Save as confederation_1867.png.</code></pre>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

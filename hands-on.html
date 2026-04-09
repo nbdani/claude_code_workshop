@@ -232,15 +232,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> claude_workshop</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Load the two skills we need:</p>
-<pre><code>&gt; /cidoc-crm
-&gt; /lincs-profile</code></pre>
+<pre><code>/cidoc-crm
+/lincs-profile</code></pre>
 </section>
 <section id="step-2-describe-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-describe-the-data">Step 2: Describe the Data</h2>
 <p>Copy <code>boundaries_poly.csv</code> and <code>boundary_changes.csv</code> into your working directory (or point Claude Code to where they are), then:</p>
-<pre><code>&gt; Read boundaries_poly.csv and boundary_changes.csv.
-&gt; I want to convert this data to LINCS-compatible CIDOC-CRM.
-&gt; First, describe what entities and relationships you see in the data.</code></pre>
+<pre><code>Read boundaries_poly.csv and boundary_changes.csv.
+I want to convert this data to LINCS-compatible CIDOC-CRM.
+First, describe what entities and relationships you see in the data.</code></pre>
 <p>Claude Code should identify entities like:</p>
 <ul>
 <li><strong>Places</strong> (territories, provinces) — <code>E53_Place</code></li>
@@ -253,10 +253,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-3-model-a-single-entity" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-model-a-single-entity">Step 3: Model a Single Entity</h2>
 <p>Start small. Pick one territory — say, Rupert’s Land — and ask Claude Code to model it:</p>
-<pre><code>&gt; Model "Rupert's Land" as LINCS-compatible CIDOC-CRM in Turtle syntax.
-&gt; It was controlled by the Hudson's Bay Company from 1670 to 1870.
-&gt; Include the place, its name, temporal extent, and the controlling entity.
-&gt; Use proper LINCS patterns.</code></pre>
+<pre><code>Model "Rupert's Land" as LINCS-compatible CIDOC-CRM in Turtle syntax.
+It was controlled by the Hudson's Bay Company from 1670 to 1870.
+Include the place, its name, temporal extent, and the controlling entity.
+Use proper LINCS patterns.</code></pre>
 <p>Review the output. Check:</p>
 <ul>
 <li>Are the CIDOC-CRM classes correct?</li>
@@ -267,27 +267,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-4-validate" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-validate">Step 4: Validate</h2>
-<pre><code>&gt; /lincs-validate
-&gt; Validate the Turtle you just produced against LINCS requirements.</code></pre>
+<pre><code>/lincs-validate
+Validate the Turtle you just produced against LINCS requirements.</code></pre>
 <p>The validation skill checks against nine categories and reports PASS, WARN, or FAIL for each. Fix any issues:</p>
-<pre><code>&gt; Fix the warnings and regenerate the Turtle.</code></pre>
+<pre><code>Fix the warnings and regenerate the Turtle.</code></pre>
 </section>
 <section id="step-5-scale-up" class="level2">
 <h2 class="anchored" data-anchor-id="step-5-scale-up">Step 5: Scale Up</h2>
 <p>Now ask Claude Code to handle more of the dataset:</p>
-<pre><code>&gt; Convert all boundary changes from the Treaty of Paris (1763) into
-&gt; LINCS-compatible Turtle. Include the treaty as an event, the
-&gt; territories that changed sovereignty, and the sovereign entities.</code></pre>
+<pre><code>Convert all boundary changes from the Treaty of Paris (1763) into
+LINCS-compatible Turtle. Include the treaty as an event, the
+territories that changed sovereignty, and the sovereign entities.</code></pre>
 <p>Or try a broader conversion:</p>
-<pre><code>&gt; Write a Python script that reads boundaries_poly.csv and generates
-&gt; LINCS-compatible Turtle for all territories. Use the patterns we
-&gt; established for Rupert's Land. Save the output as canada_boundaries.ttl.</code></pre>
+<pre><code>Write a Python script that reads boundaries_poly.csv and generates
+LINCS-compatible Turtle for all territories. Use the patterns we
+established for Rupert's Land. Save the output as canada_boundaries.ttl.</code></pre>
 </section>
 <section id="step-6-disambiguate-places-if-time-allows" class="level2">
 <h2 class="anchored" data-anchor-id="step-6-disambiguate-places-if-time-allows">Step 6: Disambiguate Places (If Time Allows)</h2>
 <p>If you want to ground your places to Wikidata:</p>
-<pre><code>&gt; /place-disambig
-&gt; Disambiguate "Rupert's Land" to a Wikidata QID.</code></pre>
+<pre><code>/place-disambig
+Disambiguate "Rupert's Land" to a Wikidata QID.</code></pre>
 <p>This uses the Wikidata MCP server (if configured) or Claude Code’s knowledge to find the correct Wikidata entity. The QID can then be added to your Turtle as an <code>owl:sameAs</code> or <code>skos:exactMatch</code> link.</p>
 </section>
 <section id="what-you-have-built" class="level2">

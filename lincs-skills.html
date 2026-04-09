@@ -246,15 +246,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="loading-skills" class="level2">
 <h2 class="anchored" data-anchor-id="loading-skills">Loading Skills</h2>
 <p>If you launched Claude Code from inside <code>claude_workshop</code> (as we did in Part 1), it can see the skills in the <code>lincs_skills/</code> subfolder. Try:</p>
-<pre><code>&gt; /cidoc-crm</code></pre>
+<pre><code>/cidoc-crm</code></pre>
 <p>Claude Code loads the full CIDOC-CRM reference. Now ask it something:</p>
-<pre><code>&gt; What is the correct way to model a place that changed names over time?</code></pre>
+<pre><code>What is the correct way to model a place that changed names over time?</code></pre>
 <p>Compare the answer to what you got earlier without the skill loaded — it should be noticeably more precise, with specific class and property references.</p>
 <section id="loading-the-lincs-profile" class="level3">
 <h3 class="anchored" data-anchor-id="loading-the-lincs-profile">Loading the LINCS Profile</h3>
-<pre><code>&gt; /lincs-profile</code></pre>
+<pre><code>/lincs-profile</code></pre>
 <p>This loads the LINCS application profile, which defines how LINCS projects model entities. Now Claude Code knows not just CIDOC-CRM in the abstract, but the specific patterns LINCS uses.</p>
-<pre><code>&gt; How does LINCS model a geographic place with a temporal extent?</code></pre>
+<pre><code>How does LINCS model a geographic place with a temporal extent?</code></pre>
 </section>
 </section>
 <section id="using-skills-with-codex" class="level2">
@@ -272,23 +272,23 @@ ul.task-list li input[type="checkbox"] {
 <p>Pick one of these and spend a few minutes exploring:</p>
 <section id="option-a-cidoc-crm-deep-dive" class="level3">
 <h3 class="anchored" data-anchor-id="option-a-cidoc-crm-deep-dive">Option A: CIDOC-CRM deep dive</h3>
-<pre><code>&gt; /cidoc-crm
-&gt; Explain the difference between E53_Place and E4_Period.
-&gt; When would I use one versus the other for modeling a territory
-&gt; that existed for a specific time period?</code></pre>
+<pre><code>/cidoc-crm
+Explain the difference between E53_Place and E4_Period.
+When would I use one versus the other for modeling a territory
+that existed for a specific time period?</code></pre>
 </section>
 <section id="option-b-lincs-modeling-patterns" class="level3">
 <h3 class="anchored" data-anchor-id="option-b-lincs-modeling-patterns">Option B: LINCS modeling patterns</h3>
-<pre><code>&gt; /lincs-profile
-&gt; Show me a complete example of how LINCS models a historical
-&gt; person with a name, birth date, and occupation.
-&gt; Use proper Turtle syntax.</code></pre>
+<pre><code>/lincs-profile
+Show me a complete example of how LINCS models a historical
+person with a name, birth date, and occupation.
+Use proper Turtle syntax.</code></pre>
 </section>
 <section id="option-c-validation" class="level3">
 <h3 class="anchored" data-anchor-id="option-c-validation">Option C: Validation</h3>
-<pre><code>&gt; /lincs-validate
-&gt; What are the most common mistakes people make when creating
-&gt; LINCS-compatible data? Give me the checklist.</code></pre>
+<pre><code>/lincs-validate
+What are the most common mistakes people make when creating
+LINCS-compatible data? Give me the checklist.</code></pre>
 <p>Once you are comfortable with how skills work, we will apply them to our Canada boundaries data in the <strong><a href="./hands-on.html">HGIS-to-LINCS Exercise</a></strong>.</p>
 
 

@@ -343,22 +343,24 @@ Windows note
 <p>Your <code>claude_workshop</code> folder is empty right now. Let’s have Claude check what’s on your machine and set up everything we need for the workshop.</p>
 <section id="check-python" class="level3">
 <h3 class="anchored" data-anchor-id="check-python">1. Check Python</h3>
-<pre><code>&gt; What version of Python is installed on this machine, and is the venv
-&gt; module available? If anything is missing, tell me how to fix it.</code></pre>
+<pre><code>What version of Python is installed on this machine, and is the venv
+module available? If anything is missing, tell me how to fix it.</code></pre>
 <p>Claude Code will run <code>python3 --version</code> and <code>python3 -m venv --help</code>, report what it found, and tell you what to do if Python isn’t there or is too old. (On most machines you will already have what you need.)</p>
 </section>
 <section id="clone-the-lincs-skills-repository" class="level3">
 <h3 class="anchored" data-anchor-id="clone-the-lincs-skills-repository">2. Clone the LINCS skills repository</h3>
-<pre><code>&gt; Clone https://github.com/jburnford/lincs_skills.git into this folder
-&gt; as a subfolder called lincs_skills/.</code></pre>
+<pre><code>Clone https://github.com/jburnford/lincs_skills.git into this folder
+as a subfolder called lincs_skills/.</code></pre>
 <p>This pulls in the seven LINCS-specific skills (CIDOC-CRM, the LINCS application profile, place/person disambiguation, etc.) that we will use later in the workshop.</p>
 </section>
 <section id="create-a-python-virtual-environment-and-install-workshop-packages" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-python-virtual-environment-and-install-workshop-packages">3. Create a Python virtual environment and install workshop packages</h3>
-<pre><code>&gt; Create a Python virtual environment at .venv/ in this folder, then
-&gt; install pandas, openpyxl, matplotlib, geopandas, rdflib, and requests
-&gt; into it. Use that venv for any Python you run for the rest of the session.</code></pre>
+<pre><code>Create a Python virtual environment at .venv/ in this folder, then
+install pandas, openpyxl, matplotlib, geopandas, rdflib, requests,
+and internetarchive into it. Use that venv for any Python you run for
+the rest of the session.</code></pre>
 <p>Claude Code will run <code>python3 -m venv .venv</code>, ask permission, install the packages with pip into the new venv, and then keep using that venv for everything that follows. The install takes a couple of minutes (about 100–200 MB of downloads). If Claude Code seems to forget about the venv later, just remind it the same way.</p>
+<p>The <code>internetarchive</code> package is what Claude will use for the second exercise below to download items from archive.org.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -375,11 +377,11 @@ If pip install fails
 </section>
 <section id="download-the-workshop-data" class="level3">
 <h3 class="anchored" data-anchor-id="download-the-workshop-data">4. Download the workshop data</h3>
-<pre><code>&gt; Download workshop-data.zip from
-&gt; https://github.com/jburnford/claude_code_workshop/releases/download/workshop-data-2026-04/workshop-data.zip
-&gt; and unzip it into a data/ subfolder so the files end up at
-&gt; data/canada_boundaries_temporal.gpkg, data/boundaries_poly.csv,
-&gt; and data/boundary_changes.csv.</code></pre>
+<pre><code>Download workshop-data.zip from
+https://github.com/jburnford/claude_code_workshop/releases/download/workshop-data-2026-04/workshop-data.zip
+and unzip it into a data/ subfolder so the files end up at
+data/canada_boundaries_temporal.gpkg, data/boundaries_poly.csv,
+and data/boundary_changes.csv.</code></pre>
 <p>When it’s done, your folder should look like this:</p>
 <pre><code>claude_workshop/
 ├── .venv/
@@ -396,12 +398,12 @@ If pip install fails
 <p>Now that the workshop folder is set up, try a few simple things to get a feel for how Claude Code works.</p>
 <section id="ask-it-to-read-a-file" class="level3">
 <h3 class="anchored" data-anchor-id="ask-it-to-read-a-file">Ask it to read a file</h3>
-<pre><code>&gt; Read lincs_skills/README.md and summarize what's in this repository.</code></pre>
+<pre><code>Read lincs_skills/README.md and summarize what's in this repository.</code></pre>
 <p>Claude Code reads the file directly from disk — no copying, no pasting. It reports back and waits for your next instruction.</p>
 </section>
 <section id="ask-it-a-question" class="level3">
 <h3 class="anchored" data-anchor-id="ask-it-a-question">Ask it a question</h3>
-<pre><code>&gt; What is CIDOC-CRM and why is it used for cultural heritage data?</code></pre>
+<pre><code>What is CIDOC-CRM and why is it used for cultural heritage data?</code></pre>
 <p>It draws on its general knowledge. Later, when we load the CIDOC-CRM skill, its answers become much more precise.</p>
 </section>
 </section>
@@ -461,30 +463,29 @@ Tip: “Accept All” during the workshop
 <section id="a-real-task-quebec-arrivals-18171839" class="level2">
 <h2 class="anchored" data-anchor-id="a-real-task-quebec-arrivals-18171839">A Real Task: Quebec Arrivals, 1817–1839</h2>
 <p>Toy examples get boring fast. Let’s give Claude Code a real historical dataset and watch it figure out the rest. The <strong>Quebec Arrivals Database</strong> is an open dataset of 17,783 ship arrivals at Quebec City between 1817 and 1839, transcribed from <em>The Quebec Gazette / La Gazette de Québec</em>. It lives on Zenodo at <a href="https://doi.org/10.5281/zenodo.15068764" class="uri">https://doi.org/10.5281/zenodo.15068764</a>.</p>
-<p>Type this at the <code>&gt;</code> prompt:</p>
-<pre><code>&gt; Download the Quebec Arrivals dataset from
-&gt; https://doi.org/10.5281/zenodo.15068764 into a data/ folder.
-&gt; Then tell me the top 5 merchants and the top 5 ports of departure,
-&gt; and how each of them changed over the period covered by the dataset.</code></pre>
+<p>Copy this into Claude Code:</p>
+<pre><code>Download the Quebec Arrivals dataset from
+https://doi.org/10.5281/zenodo.15068764 into a data/ folder.
+Then tell me the top 5 merchants and the top 5 ports of departure,
+and how each of them changed over the period covered by the dataset.</code></pre>
 <p>Hit Enter and watch what happens.</p>
 <p>Claude Code will figure out how to resolve the DOI, download the Excel file, read it, group and count the columns, and report back. It may need to install a small Python package to parse <code>.xlsx</code> — approve the permission when prompted. If it asks how you’d like the changes-over-time presented, suggest a table or a chart.</p>
 <section id="now-refine-it" class="level3">
 <h3 class="anchored" data-anchor-id="now-refine-it">Now Refine It</h3>
 <p>Once it has answered, push it further. Each follow-up builds on what it already knows:</p>
-<pre><code>&gt; Which merchant grew the most between 1820 and 1835?</code></pre>
-<pre><code>&gt; Were there any years where the dominant port of departure shifted
-&gt; suddenly? What might have caused that historically?</code></pre>
-<pre><code>&gt; Save a chart of the top 5 ports by year as data/ports_over_time.png</code></pre>
-<p>This is the analysis pattern you will use throughout the workshop: hand Claude Code a dataset, ask a high-level question, then refine.</p>
+<pre><code>Show me each merchant's arrival count year by year between 1820 and 1835 as a table.</code></pre>
+<pre><code>Show me the dominant port of departure for each year as a list, sorted chronologically.</code></pre>
+<pre><code>Save a chart of the top 5 ports by year as data/ports_over_time.png.</code></pre>
+<p>This is the analysis pattern you will use throughout the workshop: hand Claude Code a dataset, ask for specific summaries or visualisations, then refine. The historical interpretation — what the patterns <em>mean</em> — is your job, not Claude’s.</p>
 </section>
 </section>
 <section id="a-second-task-grab-10-things-from-the-internet-archive" class="level2">
 <h2 class="anchored" data-anchor-id="a-second-task-grab-10-things-from-the-internet-archive">A Second Task: Grab 10 Things from the Internet Archive</h2>
 <p>The first task was about analysis. This one is about file wrangling — using Claude Code to talk to a public API and pull files down to your machine. No setup, no API keys, no installed packages — just describe what you want in plain English.</p>
-<p>Type this at the <code>&gt;</code> prompt:</p>
-<pre><code>&gt; Download 10 items about Saskatoon from the Internet Archive into a new
-&gt; data/archive/ folder. For each item, save the title, date, and a short
-&gt; description so I can see what you got.</code></pre>
+<p>Copy this into Claude Code:</p>
+<pre><code>Download 10 items about Saskatoon from the Internet Archive into a new
+data/archive/ folder. For each item, save the title, date, and a short
+description so I can see what you got.</code></pre>
 <p>That’s it. No URL, no field names, no script. Hit Enter and watch what happens.</p>
 <p>Claude Code will:</p>
 <ul>
@@ -498,11 +499,11 @@ Tip: “Accept All” during the workshop
 <section id="now-refine-it-1" class="level3">
 <h3 class="anchored" data-anchor-id="now-refine-it-1">Now Refine It</h3>
 <p>Once it’s done, try adding follow-up instructions. Each one builds on what Claude Code already knows about the folder you just created:</p>
-<pre><code>&gt; Show me the titles and dates as a table</code></pre>
-<pre><code>&gt; Skip any item over 50 MB and re-download</code></pre>
-<pre><code>&gt; Now do the same thing for "Regina" instead of "Saskatoon"</code></pre>
+<pre><code>Show me the titles and dates as a table</code></pre>
+<pre><code>Skip any item over 50 MB and re-download</code></pre>
+<pre><code>Now do the same thing for "Regina" instead of "Saskatoon"</code></pre>
 <p>You don’t have to finish your thought before pressing Enter. If Claude Code does something you didn’t intend, just tell it:</p>
-<pre><code>&gt; Actually, only keep items from before 1950</code></pre>
+<pre><code>Actually, only keep items from before 1950</code></pre>
 <p>It remembers what you’ve done so far and adjusts.</p>
 </section>
 <section id="what-just-happened" class="level3">
@@ -524,8 +525,8 @@ Tip: “Accept All” during the workshop
 <section id="when-it-gets-something-wrong" class="level2">
 <h2 class="anchored" data-anchor-id="when-it-gets-something-wrong">When It Gets Something Wrong</h2>
 <p>Claude Code will sometimes make mistakes. Correct it directly:</p>
-<pre><code>&gt; That's not right --- the JSON response wraps the list under
-&gt; response.docs, not at the top level. Re-read the file and try again.</code></pre>
+<pre><code>That's not right --- the JSON response wraps the list under
+response.docs, not at the top level. Re-read the file and try again.</code></pre>
 <p>It adjusts and remembers the correction. This is a normal part of working with any LLM.</p>
 </section>
 <section id="exercise-explore-on-your-own-5-minutes" class="level2">
@@ -533,15 +534,15 @@ Tip: “Accept All” during the workshop
 <p>Pick whichever dataset you found more interesting and push it further. A few ideas:</p>
 <p><strong>Quebec Arrivals</strong></p>
 <ol type="1">
-<li>Ask Claude Code which months of the year saw the most arrivals — and how that pattern shifted across the period.</li>
+<li>Ask Claude Code to count the arrivals by month across the whole period and produce a table.</li>
 <li>Ask it to map the top 10 ports of departure to modern country names.</li>
-<li>Ask: <em>“What do these arrival patterns tell us about the timber trade?”</em></li>
+<li>Ask it to filter to ships carrying timber and list the top 10 ports for the timber trade.</li>
 </ol>
 <p><strong>Internet Archive</strong></p>
 <ol type="1">
 <li>Re-run the search with a different term — your hometown, a historical figure, a publication.</li>
 <li>Ask Claude Code to pull the OCR text from any “texts” items and report the most common nouns.</li>
-<li>Ask: <em>“What would a historian find most interesting about this set of items?”</em></li>
+<li>Ask it to produce a citation table with author, title, year, and format for all 10 items.</li>
 </ol>
 <p>When you are comfortable with the basics, move on to <strong><a href="./gis-exercises.html">GIS Data Exercises</a></strong>.</p>
 
