@@ -77,7 +77,7 @@ Please complete the **[Installation](installation.qmd)** steps before Friday's s
 | Time | Session |
 |------|---------|
 | 9:00 | Reflections --- lessons learned, gaps and challenges discovered |
-| | **Ecosystem / CRKN Panel** (Jim, chair): James (CRKN perspective), Connie (researcher perspective), Ken (library perspective) |
+| | **Ecosystem / CRKN Panel** (Jim, chair; member, CRKN Preservation and Access Committee): Susan Brown (LINCS lead; CRKN Board of Directors), James MacGregor (Manager, Research Infrastructure and Development, CRKN), Connie Crompton (researcher perspective; leading a CFI grant in partnership with CRKN), Ken Hernden (University Archivist & Associate University Librarian; Chair, CRKN Preservation and Access Committee) |
 | | Tools sharing: LINCS, NERVE, SPARQL, geo-oriented tools |
 | | Brainstorming: how do researchers contribute? Training, workflows, linking across models |
 | 11:30--12:00 | Next steps and wrap-up |
