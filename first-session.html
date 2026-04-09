@@ -194,7 +194,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#other-useful-commands" id="toc-other-useful-commands" class="nav-link" data-scroll-target="#other-useful-commands">Other useful commands</a></li>
   <li><a href="#if-you-get-lost" id="toc-if-you-get-lost" class="nav-link" data-scroll-target="#if-you-get-lost">If you get lost</a></li>
   </ul></li>
-  <li><a href="#launch-claude-code" id="toc-launch-claude-code" class="nav-link" data-scroll-target="#launch-claude-code">Launch Claude Code</a></li>
+  <li><a href="#launch-claude-code" id="toc-launch-claude-code" class="nav-link" data-scroll-target="#launch-claude-code">Launch Claude Code</a>
+  <ul class="collapse">
+  <li><a href="#have-claude-code-set-up-the-python-environment" id="toc-have-claude-code-set-up-the-python-environment" class="nav-link" data-scroll-target="#have-claude-code-set-up-the-python-environment">Have Claude Code set up the Python environment</a></li>
+  </ul></li>
   <li><a href="#try-some-basic-commands" id="toc-try-some-basic-commands" class="nav-link" data-scroll-target="#try-some-basic-commands">Try Some Basic Commands</a>
   <ul class="collapse">
   <li><a href="#ask-it-to-read-a-file" id="toc-ask-it-to-read-a-file" class="nav-link" data-scroll-target="#ask-it-to-read-a-file">Ask it to read a file</a></li>
@@ -254,18 +257,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="navigating-with-cd" class="level3">
 <h3 class="anchored" data-anchor-id="navigating-with-cd">Navigating with <code>cd</code></h3>
-<p>The terminal always has a “current directory” — the folder you are working in. When you first open it, you are usually in your home folder. To move into a different folder, use <code>cd</code> (change directory):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> lincs_skills</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This moves you into the <code>lincs_skills</code> folder. If you cloned the repository somewhere specific, you may need to provide the full path. The syntax is slightly different on Mac/Linux and Windows:</p>
+<p>The terminal always has a “current directory” — the folder you are working in. When you first open it, you are usually in your home folder. To move into the workshop folder you created during installation, use <code>cd</code> (change directory):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> claude_workshop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you created <code>claude_workshop</code> somewhere specific, you may need to provide the full path. The syntax is slightly different on Mac/Linux and Windows:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Mac / Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows (PowerShell)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/lincs_skills</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>~</code> symbol means “my home folder.” So <code>~/Desktop/lincs_skills</code> means “the lincs_skills folder on my Desktop.”</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/claude_workshop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>~</code> symbol means “my home folder.” So <code>~/Desktop/claude_workshop</code> means “the claude_workshop folder on my Desktop.”</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cd</span> <span class="op">~</span>\Desktop\lincs_skills</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cd</span> <span class="op">~</span>\Desktop\claude_workshop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Windows uses backslashes (<code>\</code>) instead of forward slashes (<code>/</code>). The <code>~</code> shortcut for your home folder works in PowerShell but not in the older Command Prompt.</p>
 </div>
 </div>
@@ -318,7 +321,7 @@ Windows note
 <p>PowerShell supports <code>ls</code> and <code>pwd</code> as aliases, so most commands in this workshop will work as written. If something does not work, try <code>dir</code> instead of <code>ls</code>. If you installed Git for Windows, you also have <strong>Git Bash</strong>, which behaves like a Mac/Linux terminal and may be easier to follow along with.</p>
 </div>
 </div>
-<p>Try typing <code>ls</code> after you <code>cd</code> into the <code>lincs_skills</code> folder. You should see the <code>skills/</code> directory and other files from the repository.</p>
+<p>Try typing <code>ls</code> after you <code>cd</code> into the <code>claude_workshop</code> folder. You should see the <code>lincs_skills/</code> subfolder you cloned during installation. (The <code>.venv/</code> folder will appear after Claude Code creates it later in this session.)</p>
 </section>
 <section id="if-you-get-lost" class="level3">
 <h3 class="anchored" data-anchor-id="if-you-get-lost">If you get lost</h3>
@@ -327,9 +330,31 @@ Windows note
 </section>
 <section id="launch-claude-code" class="level2">
 <h2 class="anchored" data-anchor-id="launch-claude-code">Launch Claude Code</h2>
-<p>Now that you are in the <code>lincs_skills</code> folder, launch Claude Code:</p>
+<p>From inside <code>claude_workshop</code>, launch Claude Code:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Claude Code reads any <code>CLAUDE.md</code> file in the current directory at startup, so it already has context about the LINCS project. You should see the <code>&gt;</code> prompt — this is Claude Code’s prompt, not your terminal’s. From here, you type natural language, not terminal commands.</p>
+<p>You should see the <code>&gt;</code> prompt — this is Claude Code’s prompt, not your terminal’s. From here, you type natural language, not terminal commands.</p>
+<p>Claude Code reads any <code>CLAUDE.md</code> file in the current directory at startup, so as soon as you launch it from <code>claude_workshop</code> it has context about the LINCS project (via the <code>lincs_skills/</code> subfolder).</p>
+<section id="have-claude-code-set-up-the-python-environment" class="level3">
+<h3 class="anchored" data-anchor-id="have-claude-code-set-up-the-python-environment">Have Claude Code set up the Python environment</h3>
+<p>Before any of the exercises, ask Claude Code to create a Python virtual environment in this folder and install the packages we will need:</p>
+<pre><code>&gt; Create a Python virtual environment at .venv/ in this folder, then
+&gt; install pandas, openpyxl, matplotlib, geopandas, rdflib, and requests
+&gt; into it. Use that venv for any Python you run for the rest of the session.</code></pre>
+<p>Claude Code will run <code>python3 -m venv .venv</code>, ask permission, install the packages with pip, and then keep using that venv for everything that follows. The install takes a couple of minutes (about 100–200 MB of downloads). If Claude Code seems to forget about the venv later, just remind it the same way.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If pip install fails
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On a locked-down machine the <code>pip install</code> step may fail with a permissions error. If that happens, tell Claude Code: <em>“Make sure you are installing into the .venv, not system Python.”</em> Once it activates the venv first, the install should succeed.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="try-some-basic-commands" class="level2">
 <h2 class="anchored" data-anchor-id="try-some-basic-commands">Try Some Basic Commands</h2>
