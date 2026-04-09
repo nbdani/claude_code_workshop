@@ -378,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td></td>
-<td><strong>Ecosystem / CRKN Panel</strong> (Jim, chair): James (CRKN perspective), Connie (researcher perspective), Ken (library perspective)</td>
+<td><strong>Ecosystem / CRKN Panel</strong> (Jim, chair; member, CRKN Preservation and Access Committee): Susan Brown (LINCS lead; CRKN Board of Directors), James MacGregor (Manager, Research Infrastructure and Development, CRKN), Connie Crompton (researcher perspective; leading a CFI grant in partnership with CRKN), Ken Hernden (University Archivist &amp; Associate University Librarian; Chair, CRKN Preservation and Access Committee)</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -512,7 +512,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/jburnford\.github\.io\/claude_code_workshop\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
