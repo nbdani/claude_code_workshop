@@ -198,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#let-claude-code-set-up-the-workshop" id="toc-let-claude-code-set-up-the-workshop" class="nav-link" data-scroll-target="#let-claude-code-set-up-the-workshop">Let Claude Code Set Up the Workshop</a>
   <ul class="collapse">
   <li><a href="#check-python" id="toc-check-python" class="nav-link" data-scroll-target="#check-python">1. Check Python</a></li>
-  <li><a href="#clone-the-lincs-skills-repository" id="toc-clone-the-lincs-skills-repository" class="nav-link" data-scroll-target="#clone-the-lincs-skills-repository">2. Clone the LINCS skills repository</a></li>
+  <li><a href="#clone-the-lincs-skills-repository-and-install-the-skills" id="toc-clone-the-lincs-skills-repository-and-install-the-skills" class="nav-link" data-scroll-target="#clone-the-lincs-skills-repository-and-install-the-skills">2. Clone the LINCS skills repository and install the skills</a></li>
   <li><a href="#create-a-python-virtual-environment-and-install-workshop-packages" id="toc-create-a-python-virtual-environment-and-install-workshop-packages" class="nav-link" data-scroll-target="#create-a-python-virtual-environment-and-install-workshop-packages">3. Create a Python virtual environment and install workshop packages</a></li>
   <li><a href="#download-the-workshop-data" id="toc-download-the-workshop-data" class="nav-link" data-scroll-target="#download-the-workshop-data">4. Download the workshop data</a></li>
   </ul></li>
@@ -347,11 +347,26 @@ Windows note
 module available? If anything is missing, tell me how to fix it.</code></pre>
 <p>Claude Code will run <code>python3 --version</code> and <code>python3 -m venv --help</code>, report what it found, and tell you what to do if Python isn’t there or is too old. (On most machines you will already have what you need.)</p>
 </section>
-<section id="clone-the-lincs-skills-repository" class="level3">
-<h3 class="anchored" data-anchor-id="clone-the-lincs-skills-repository">2. Clone the LINCS skills repository</h3>
-<pre><code>Clone https://github.com/jburnford/lincs_skills.git into this folder
-as a subfolder called lincs_skills/.</code></pre>
-<p>This pulls in the seven LINCS-specific skills (CIDOC-CRM, the LINCS application profile, place/person disambiguation, etc.) that we will use later in the workshop.</p>
+<section id="clone-the-lincs-skills-repository-and-install-the-skills" class="level3">
+<h3 class="anchored" data-anchor-id="clone-the-lincs-skills-repository-and-install-the-skills">2. Clone the LINCS skills repository and install the skills</h3>
+<pre><code>Clone https://github.com/jburnford/lincs_skills.git into this folder as a
+subfolder called lincs_skills/, then copy the contents of
+lincs_skills/.claude/skills/ into .claude/skills/ in this workshop folder
+so the slash commands like /cidoc-crm will work here.</code></pre>
+<p>This pulls in the seven LINCS-specific skills (CIDOC-CRM, the LINCS application profile, place/person disambiguation, validation, neo4j-to-RDF, and SPARQL templates) and installs them as project-local skills for <code>claude_workshop</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why the copy step?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Claude Code looks for skills under <code>.claude/skills/</code> in the directory you launched it from, <strong>not</strong> inside arbitrary subfolders. The <code>lincs_skills</code> repo ships its skills under its own <code>.claude/skills/</code>, but when it sits as a subfolder of <code>claude_workshop</code> Claude Code does not see them. Copying them up to <code>claude_workshop/.claude/skills/</code> makes the slash commands resolve.</p>
+</div>
+</div>
 </section>
 <section id="create-a-python-virtual-environment-and-install-workshop-packages" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-python-virtual-environment-and-install-workshop-packages">3. Create a Python virtual environment and install workshop packages</h3>
@@ -384,8 +399,10 @@ data/canada_boundaries_temporal.gpkg, data/boundaries_poly.csv,
 and data/boundary_changes.csv.</code></pre>
 <p>When it’s done, your folder should look like this:</p>
 <pre><code>claude_workshop/
+├── .claude/
+│   └── skills/             ← /cidoc-crm, /lincs-profile, etc. live here
 ├── .venv/
-├── lincs_skills/
+├── lincs_skills/           ← cloned repo, source of the skills
 └── data/
     ├── canada_boundaries_temporal.gpkg
     ├── boundaries_poly.csv
