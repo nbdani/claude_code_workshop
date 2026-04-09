@@ -65,20 +65,44 @@ claude
 
 The first time you launch Claude Code it will open a browser window so you can log in with your Claude account (the same email and password you used at [claude.ai](https://claude.ai/)). Once you are logged in, you should see the Claude Code prompt (a `>` waiting for input). Type `/exit` to close for now.
 
-### Step 4: Set Up the Workshop Folder
+### Troubleshooting
 
-First, create a folder for the workshop and move into it:
+- **"command not found" after install** --- Close and reopen your terminal so it picks up the new `claude` binary on your PATH.
+- **Permission errors on Mac/Linux** --- The native installer writes to `~/.local/bin/claude` and does not need `sudo`. If you hit a permission error, see the [Claude Code troubleshooting guide](https://code.claude.com/docs/en/troubleshooting).
+- **Windows: `&&` is not a valid statement separator** --- You are in PowerShell, not CMD. Use the PowerShell command above (`irm ... | iex`).
+
+### Checklist
+
+- [ ] Claude Pro (or Max/Team/Enterprise) account ready
+- [ ] `claude --version` shows a version number
+- [ ] `claude` launches and signs you in through the browser (then `/exit`)
+
+---
+
+## Set Up the Workshop Folder
+
+These next two sections apply to **everyone** --- Claude Code and Codex users alike. Complete them before the workshop.
+
+Create a folder called `claude_workshop` and move into it. This is where you will run your coding agent from for the rest of the workshop:
 
 ```bash
-mkdir workshop
-cd workshop
+mkdir claude_workshop
+cd claude_workshop
 ```
 
-Then clone the LINCS skills repository into it:
+Then clone the LINCS skills repository **as a subfolder** of `claude_workshop`:
 
 ```bash
 git clone https://github.com/jburnford/lincs_skills.git
-cd lincs_skills
+```
+
+Notice that we **do not** `cd` into `lincs_skills` --- it lives alongside the data and venv we will set up next. The structure should look like this:
+
+```
+claude_workshop/
+├── lincs_skills/    ← cloned skills repository
+├── data/            ← workshop data (added later)
+└── .venv/           ← Python virtual environment (added next)
 ```
 
 ::: {.callout-note}
@@ -88,21 +112,21 @@ If `git clone` gives you "command not found," you can download the repository ma
 1. Go to [github.com/jburnford/lincs_skills](https://github.com/jburnford/lincs_skills)
 2. Click the green **Code** button
 3. Click **Download ZIP**
-4. Unzip the file into your `workshop` folder
-5. In your terminal, navigate into it: `cd workshop/lincs_skills-main`
+4. Unzip the file into your `claude_workshop` folder
+5. Rename the unzipped folder from `lincs_skills-main` to `lincs_skills` so it matches the rest of the instructions
 
 To install git for future use: [git-scm.com/downloads](https://git-scm.com/downloads)
 :::
 
-This `lincs_skills` folder is where we will work during the workshop.
+---
 
-### Step 5: Set Up Python with a Virtual Environment
+## Make Sure Python and `venv` Are Available
 
-Several of the workshop exercises ask Claude Code to write and run Python scripts (for analysis, visualization, and converting GIS data to RDF). To keep these dependencies tidy and avoid conflicts with other Python projects on your machine, we will use a **virtual environment** (venv) inside the workshop folder.
+Several of the workshop exercises ask the coding agent to write and run Python scripts. The agent will set up its own **virtual environment** during the first session, but it needs two things to already be on your machine: Python itself, and Python's built-in `venv` module.
 
-#### 5a. Make sure you have Python 3.10 or newer
+You only need to confirm these are present. Claude Code will create the venv and install everything else once you start your first session.
 
-Check the version:
+### 1. Check that Python 3.10 or newer is installed
 
 ```bash
 python3 --version
@@ -115,70 +139,30 @@ If you see `Python 3.10.x` or higher, you are set. Otherwise install Python from
 On Windows the command is usually `python` (without the `3`). If `python --version` does not work, install Python from [python.org](https://www.python.org/downloads/) and **check the box "Add Python to PATH"** during installation.
 :::
 
-#### 5b. Create the virtual environment
-
-From inside the `lincs_skills` folder, run:
+### 2. Check that the `venv` module is available
 
 ```bash
-python3 -m venv .venv
+python3 -m venv --help
 ```
 
-(Use `python` instead of `python3` on Windows.)
-
-This creates a hidden `.venv/` folder containing an isolated Python install.
-
-#### 5c. Activate the virtual environment
-
-**macOS / Linux / WSL:**
+If you see a help message, you are good. If you see something like `No module named venv`, you are probably on a Debian or Ubuntu Linux system that ships `venv` separately. Install it with:
 
 ```bash
-source .venv/bin/activate
+sudo apt install python3-venv
 ```
 
-**Windows PowerShell:**
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-**Windows CMD:**
-
-```batch
-.venv\Scripts\activate.bat
-```
-
-After activation, your prompt should show `(.venv)` at the beginning. You will need to re-run this activation command **every time you open a new terminal** for the workshop.
-
-#### 5d. Install the workshop packages
-
-With the venv active, install everything we need in one go:
-
-```bash
-pip install pandas matplotlib geopandas rdflib
-```
-
-This pulls in `pandas`, `matplotlib`, `geopandas` (plus its spatial dependencies `shapely`, `fiona`, `pyproj`), and `rdflib` for the RDF conversion exercises. The download is about 100--200 MB and takes a couple of minutes.
+On macOS and Windows, `venv` is included with the Python install from python.org --- there is nothing extra to do.
 
 ::: {.callout-tip}
-## Tell Claude Code about the venv
-When you start Claude Code in the `lincs_skills` folder, mention the venv at the start of your first session: *"I have a Python virtual environment in `.venv/`. Please use it when running Python scripts."* Claude will then activate it automatically before running anything.
+## Why we don't create the venv ourselves
+Claude Code can run `python3 -m venv .venv` for you, and it can `pip install` packages inside that venv afterwards. What it generally **cannot** do is install Python itself or use `sudo` to install system packages. So your one job is to make sure the building blocks above are in place, and the agent will take care of the rest in the first session.
 :::
 
-### Troubleshooting
+### Workshop Folder Checklist
 
-- **"command not found" after install** --- Close and reopen your terminal so it picks up the new `claude` binary on your PATH.
-- **Permission errors on Mac/Linux** --- The native installer writes to `~/.local/bin/claude` and does not need `sudo`. If you hit a permission error, see the [Claude Code troubleshooting guide](https://code.claude.com/docs/en/troubleshooting).
-- **Windows: `&&` is not a valid statement separator** --- You are in PowerShell, not CMD. Use the PowerShell command above (`irm ... | iex`).
-
-### Checklist
-
-- [ ] Claude Pro (or Max/Team/Enterprise) account ready
-- [ ] `claude --version` shows a version number
-- [ ] `claude` launches and signs you in through the browser (then `/exit`)
-- [ ] You have cloned `lincs_skills`
+- [ ] You have a `claude_workshop` folder containing a `lincs_skills/` subfolder
 - [ ] `python3 --version` shows 3.10 or newer
-- [ ] You have created and activated a `.venv` inside `lincs_skills`
-- [ ] `pip install pandas matplotlib geopandas rdflib` completed without errors
+- [ ] `python3 -m venv --help` runs without an error
 
 ---
 
@@ -203,30 +187,23 @@ The easiest install paths are:
 Unlike Claude Code, the npm install of Codex requires [Node.js 18+](https://nodejs.org/). If you do not already have Node.js installed and you are not on macOS, the binary download is the simplest option.
 :::
 
-Then launch Codex in the workshop folder:
+Once installed, set up the workshop folder and venv following the two shared sections above ([Set Up the Workshop Folder](#set-up-the-workshop-folder) and [Set Up Python with a Virtual Environment](#set-up-python-with-a-virtual-environment)). Then launch Codex from the `claude_workshop` folder:
 
 ```bash
-cd lincs_skills
+cd claude_workshop
 codex
 ```
 
-The first time you run it, choose **Sign in with ChatGPT** and complete the browser login.
+Codex will detect and use the `.venv/` automatically. The first time you run it, choose **Sign in with ChatGPT** and complete the browser login.
 
-### Step 3: Clone the Workshop Repository
-
-```bash
-git clone https://github.com/jburnford/lincs_skills.git
-cd lincs_skills
-```
-
-If using the browser interface instead, download the repository as a ZIP from [github.com/jburnford/lincs_skills](https://github.com/jburnford/lincs_skills) (green **Code** button > **Download ZIP**) and upload files to each task.
+If you prefer the browser interface instead, download the LINCS skills repository as a ZIP from [github.com/jburnford/lincs_skills](https://github.com/jburnford/lincs_skills) (green **Code** button > **Download ZIP**) and upload files to each task at [chatgpt.com/codex](https://chatgpt.com/codex).
 
 ### Differences to Be Aware Of
 
-- **Slash commands** (`/cidoc-crm`, `/lincs-profile`) are a Claude Code feature. In Codex, you can ask it to read the skill file directly: "Read skills/cidoc-crm.md and use it as reference material."
+- **Slash commands** (`/cidoc-crm`, `/lincs-profile`) are a Claude Code feature. In Codex, you can ask it to read the skill file directly: "Read lincs_skills/skills/cidoc-crm.md and use it as reference material."
 - The core workflow --- giving natural language instructions to work with data --- is the same across both tools.
 
 ### Checklist
 
 - [ ] `codex` launches in terminal, or you can access [chatgpt.com/codex](https://chatgpt.com/codex)
-- [ ] You have cloned or downloaded `lincs_skills`
+- [ ] You have completed both shared sections (workshop folder + venv)

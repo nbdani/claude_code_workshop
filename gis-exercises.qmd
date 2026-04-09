@@ -27,7 +27,7 @@ CSV extracts of the two key attribute tables (`boundaries_poly.csv` and `boundar
 
 [**Download `workshop-data.zip`**](https://github.com/jburnford/claude_code_workshop/releases/download/workshop-data-2026-04/workshop-data.zip) (~64 MB) from the workshop release page.
 
-In your workshop folder, create a `data/` subfolder and unzip the archive into it so the files sit at:
+In your `claude_workshop` folder, create a `data/` subfolder and unzip the archive into it so the files sit at:
 
 - `data/canada_boundaries_temporal.gpkg`
 - `data/boundaries_poly.csv`

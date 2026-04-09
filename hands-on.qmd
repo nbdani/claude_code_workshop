@@ -9,10 +9,10 @@ We are going to take the Canada territorial boundaries data we explored in Part 
 
 ## Step 1: Load the Skills
 
-Start a fresh Claude Code session in the `lincs_skills` directory:
+Start a fresh Claude Code session in your `claude_workshop` folder:
 
 ```bash
-cd lincs_skills
+cd claude_workshop
 claude
 ```
 

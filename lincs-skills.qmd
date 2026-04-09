@@ -25,7 +25,7 @@ The [lincs_skills](https://github.com/jburnford/lincs_skills) repository contain
 
 ## Loading Skills
 
-If you launched Claude Code from inside the `lincs_skills` directory (as we did in Part 1), the skills are already available. Try:
+If you launched Claude Code from inside `claude_workshop` (as we did in Part 1), it can see the skills in the `lincs_skills/` subfolder. Try:
 
 ```
 > /cidoc-crm
