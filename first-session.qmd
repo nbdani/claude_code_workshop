@@ -90,14 +90,21 @@ module available? If anything is missing, tell me how to fix it.
 
 Claude Code will run `python3 --version` and `python3 -m venv --help`, report what it found, and tell you what to do if Python isn't there or is too old. (On most machines you will already have what you need.)
 
-### 2. Clone the LINCS skills repository
+### 2. Clone the LINCS skills repository and install the skills
 
 ```
-Clone https://github.com/jburnford/lincs_skills.git into this folder
-as a subfolder called lincs_skills/.
+Clone https://github.com/jburnford/lincs_skills.git into this folder as a
+subfolder called lincs_skills/, then copy the contents of
+lincs_skills/.claude/skills/ into .claude/skills/ in this workshop folder
+so the slash commands like /cidoc-crm will work here.
 ```
 
-This pulls in the seven LINCS-specific skills (CIDOC-CRM, the LINCS application profile, place/person disambiguation, etc.) that we will use later in the workshop.
+This pulls in the seven LINCS-specific skills (CIDOC-CRM, the LINCS application profile, place/person disambiguation, validation, neo4j-to-RDF, and SPARQL templates) and installs them as project-local skills for `claude_workshop`.
+
+::: {.callout-note}
+## Why the copy step?
+Claude Code looks for skills under `.claude/skills/` in the directory you launched it from, **not** inside arbitrary subfolders. The `lincs_skills` repo ships its skills under its own `.claude/skills/`, but when it sits as a subfolder of `claude_workshop` Claude Code does not see them. Copying them up to `claude_workshop/.claude/skills/` makes the slash commands resolve.
+:::
 
 ### 3. Create a Python virtual environment and install workshop packages
 
@@ -131,8 +138,10 @@ When it's done, your folder should look like this:
 
 ```
 claude_workshop/
+├── .claude/
+│   └── skills/             ← /cidoc-crm, /lincs-profile, etc. live here
 ├── .venv/
-├── lincs_skills/
+├── lincs_skills/           ← cloned repo, source of the skills
 └── data/
     ├── canada_boundaries_temporal.gpkg
     ├── boundaries_poly.csv

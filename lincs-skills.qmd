@@ -25,7 +25,7 @@ The [lincs_skills](https://github.com/jburnford/lincs_skills) repository contain
 
 ## Loading Skills
 
-If you launched Claude Code from inside `claude_workshop` (as we did in Part 1), it can see the skills in the `lincs_skills/` subfolder. Try:
+If you completed the setup in [Your First Session](first-session.qmd), the LINCS skills are already installed in `claude_workshop/.claude/skills/` and Claude Code will pick them up automatically when you launch it from `claude_workshop`. Try:
 
 ```
 /cidoc-crm
