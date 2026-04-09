@@ -211,12 +211,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="what-subscriber-privacy-actually-means" class="level2">
 <h2 class="anchored" data-anchor-id="what-subscriber-privacy-actually-means">What Subscriber Privacy Actually Means</h2>
-<p>Anthropic and OpenAI offer different privacy tiers:</p>
+<p>AI providers vary widely in how they handle your data, and the details matter:</p>
 <ul>
-<li><strong>Free tier</strong>: Your conversations may be used to train future models</li>
-<li><strong>Paid API / subscriber tier</strong>: Your data is generally not used for training, and is subject to data retention policies (typically 30 days for abuse monitoring, then deleted)</li>
+<li><strong>Anthropic</strong> uses an opt-in model: your data is <strong>not</strong> used for training unless you choose to allow it. This applies to both free and paid tiers.</li>
+<li><strong>OpenAI, xAI, Perplexity, and others</strong> use an opt-out model: your data <strong>is</strong> used for training by default, even on paid plans, unless you find the setting and turn it off. Many users do not know this.</li>
 </ul>
-<p>This is meaningfully better, but it does not mean your data is private in the way that data on your own computer is private. Even with a paid subscription:</p>
+<p>Do not assume that paying for a subscription protects your data. Check the specific provider’s settings and policies.</p>
+<p>Even with training opt-out enabled, your data is not private in the way that data on your own computer is private:</p>
 <ul>
 <li>Your data is transmitted over the internet to the provider’s servers</li>
 <li>It is processed on infrastructure you do not control</li>
@@ -228,24 +229,20 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="what-is-safe-to-use" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-safe-to-use">What Is Safe to Use</h2>
-<p>As a rough guide, data that is already openly published on the web is likely already in AI training data, so sending it to Claude Code creates little additional exposure. Government census records, published GIS datasets, and your own writing are generally straightforward.</p>
-<p>But “publicly available” does not mean “free to use however you like.” Indigenous communities that shared data online did not consent to that data being ingested by AI companies. The fact that something is technically accessible does not settle the ethical question. We are still learning where these boundaries are, and historians should err on the side of caution rather than assume that public availability equals permission.</p>
-<p><strong>Generally straightforward:</strong></p>
-<ul>
-<li>Government records, published census data, newspaper archives</li>
-<li>Open datasets from government portals (the Canada boundaries data we use in this workshop, for example)</li>
-<li>Your own writing and notes</li>
-</ul>
+<p>There is no simple checklist. Every dataset requires you to consider who has rights over it, what restrictions apply, and whether sending it to a cloud service is appropriate.</p>
+<p>As a rough guide, data that you created yourself — your own notes, your own writing, your own code — is straightforward. Open government datasets explicitly published for reuse (like the Canada boundaries data we use in this workshop) are generally fine, but check the licence. Beyond that, the answer depends on the specific data and context.</p>
+<p>“Publicly available” does not mean “free to use however you like.” Newspaper archives may be under copyright. Government records are sometimes restricted or not open by default in all jurisdictions. Indigenous communities that shared data online did not consent to that data being ingested by AI companies. The fact that something is technically accessible does not settle the ethical question.</p>
 <p><strong>Use with care:</strong></p>
 <ul>
-<li>Data produced by or about Indigenous communities — even if publicly available online. OCAP principles apply to the relationship, not just the access method.</li>
 <li>Archival materials with access restrictions or donor agreements</li>
 <li>Oral history transcripts (informed consent may not have covered AI processing)</li>
 <li>Data collected under research ethics protocols — check whether your protocol permits cloud processing</li>
 <li>Unpublished research data</li>
+<li>Published materials that may be under copyright (newspaper archives, published books, etc.)</li>
 </ul>
 <p><strong>Do not use without explicit authorization:</strong></p>
 <ul>
+<li>Data produced by or about Indigenous communities — even if publicly available online. OCAP principles apply to the relationship, not just the access method.</li>
 <li>Data held in trust under OCAP or community data governance agreements</li>
 <li>Health or medical records</li>
 <li>Personal information about living individuals</li>
