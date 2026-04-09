@@ -5,7 +5,7 @@ subtitle: "Exploring and analyzing HGIS data with Claude Code"
 
 ## The Dataset
 
-We are working with `canada_boundaries_temporal.gpkg`, a GeoPackage containing the evolving political boundaries of Canada from 1667 to 2001. It includes:
+We are working with `canada_boundaries_temporal.gpkg`, a GeoPackage containing the evolving political boundaries of Canada from 1667 to 2001. It is derived from Nicholson, Whebell, Galois, and Stavely, *[Territorial Evolution, 1670--2001](https://doi.org/10.5683/SP2/IQ7E0X)* (Borealis, [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)), originally published as part of the Historical Atlas of Canada Online Learning Project. It includes:
 
 | Table | Rows | Description |
 |-------|------|-------------|
@@ -16,7 +16,17 @@ We are working with `canada_boundaries_temporal.gpkg`, a GeoPackage containing t
 | `rivers` | 527 | Major rivers |
 | `shoreline` | 1,275 | Coastal segments |
 
-CSV extracts of the two key attribute tables (`boundaries_poly.csv` and `boundary_changes.csv`) are also available in the `data/` folder for those who prefer working without spatial libraries.
+CSV extracts of the two key attribute tables (`boundaries_poly.csv` and `boundary_changes.csv`) are also included for those who prefer working without spatial libraries.
+
+### Download the Data
+
+[**Download `workshop-data.zip`**](https://github.com/jburnford/claude_code_workshop/releases/download/workshop-data-2026-04/workshop-data.zip) (~64 MB) from the workshop release page.
+
+In your workshop folder, create a `data/` subfolder and unzip the archive into it so the files sit at:
+
+- `data/canada_boundaries_temporal.gpkg`
+- `data/boundaries_poly.csv`
+- `data/boundary_changes.csv`
 
 ## Exercise 1: Data Exploration
 
@@ -92,7 +102,7 @@ Or, if you prefer a simpler output:
 
 ## Exercise 5: Spatial Queries (Advanced)
 
-This exercise requires the full GeoPackage file (74 MB), which is too large to include in the workshop repository. Ask the workshop facilitator for a copy, or download it from the link provided during the session. Place it in your `data/` folder. You will also need `geopandas` installed (`pip install geopandas`).
+This exercise uses the full `canada_boundaries_temporal.gpkg` file (74 MB), included in the `workshop-data.zip` download above. You will also need `geopandas` installed (`pip install geopandas`).
 
 ```
 > Using geopandas, read the boundaries_poly layer from
