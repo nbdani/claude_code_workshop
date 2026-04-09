@@ -199,11 +199,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#ask-it-to-read-a-file" id="toc-ask-it-to-read-a-file" class="nav-link" data-scroll-target="#ask-it-to-read-a-file">Ask it to read a file</a></li>
   <li><a href="#ask-it-a-question" id="toc-ask-it-a-question" class="nav-link" data-scroll-target="#ask-it-a-question">Ask it a question</a></li>
-  <li><a href="#ask-it-to-explore-data" id="toc-ask-it-to-explore-data" class="nav-link" data-scroll-target="#ask-it-to-explore-data">Ask it to explore data</a></li>
   </ul></li>
   <li><a href="#essential-commands" id="toc-essential-commands" class="nav-link" data-scroll-target="#essential-commands">Essential Commands</a></li>
   <li><a href="#how-permissions-work" id="toc-how-permissions-work" class="nav-link" data-scroll-target="#how-permissions-work">How Permissions Work</a></li>
-  <li><a href="#building-on-context" id="toc-building-on-context" class="nav-link" data-scroll-target="#building-on-context">Building on Context</a></li>
+  <li><a href="#a-real-task-quebec-arrivals-18171839" id="toc-a-real-task-quebec-arrivals-18171839" class="nav-link" data-scroll-target="#a-real-task-quebec-arrivals-18171839">A Real Task: Quebec Arrivals, 1817–1839</a>
+  <ul class="collapse">
+  <li><a href="#now-refine-it" id="toc-now-refine-it" class="nav-link" data-scroll-target="#now-refine-it">Now Refine It</a></li>
+  </ul></li>
+  <li><a href="#a-second-task-grab-10-things-from-the-internet-archive" id="toc-a-second-task-grab-10-things-from-the-internet-archive" class="nav-link" data-scroll-target="#a-second-task-grab-10-things-from-the-internet-archive">A Second Task: Grab 10 Things from the Internet Archive</a>
+  <ul class="collapse">
+  <li><a href="#now-refine-it-1" id="toc-now-refine-it-1" class="nav-link" data-scroll-target="#now-refine-it-1">Now Refine It</a></li>
+  <li><a href="#what-just-happened" id="toc-what-just-happened" class="nav-link" data-scroll-target="#what-just-happened">What just happened</a></li>
+  </ul></li>
   <li><a href="#ask-questions-lots-of-them" id="toc-ask-questions-lots-of-them" class="nav-link" data-scroll-target="#ask-questions-lots-of-them">Ask Questions — Lots of Them</a></li>
   <li><a href="#when-it-gets-something-wrong" id="toc-when-it-gets-something-wrong" class="nav-link" data-scroll-target="#when-it-gets-something-wrong">When It Gets Something Wrong</a></li>
   <li><a href="#exercise-explore-on-your-own-5-minutes" id="toc-exercise-explore-on-your-own-5-minutes" class="nav-link" data-scroll-target="#exercise-explore-on-your-own-5-minutes">Exercise: Explore on Your Own (5 minutes)</a></li>
@@ -336,11 +343,6 @@ Windows note
 <pre><code>&gt; What is CIDOC-CRM and why is it used for cultural heritage data?</code></pre>
 <p>It draws on its general knowledge. Later, when we load the CIDOC-CRM skill, its answers become much more precise.</p>
 </section>
-<section id="ask-it-to-explore-data" class="level3">
-<h3 class="anchored" data-anchor-id="ask-it-to-explore-data">Ask it to explore data</h3>
-<pre><code>&gt; What files are in the data/ directory? Describe what each one contains.</code></pre>
-<p>If you have copied the workshop data files into your working directory, Claude Code will read them and report on their structure.</p>
-</section>
 </section>
 <section id="essential-commands" class="level2">
 <h2 class="anchored" data-anchor-id="essential-commands">Essential Commands</h2>
@@ -395,19 +397,64 @@ Tip: “Accept All” during the workshop
 </div>
 </div>
 </section>
-<section id="building-on-context" class="level2">
-<h2 class="anchored" data-anchor-id="building-on-context">Building on Context</h2>
-<p>Within a session, Claude Code remembers everything. You can build iteratively:</p>
-<pre><code>&gt; Read data/boundaries_poly.csv and describe its structure
-
-[Claude Code responds]
-
-&gt; How many distinct sovereign entities appear in this dataset?
-
-[answers based on what it already read]
-
-&gt; Which territories changed sovereignty most frequently?</code></pre>
-<p>This conversational flow is where Claude Code becomes much more powerful than a web chatbot. It accumulates understanding across the session.</p>
+<section id="a-real-task-quebec-arrivals-18171839" class="level2">
+<h2 class="anchored" data-anchor-id="a-real-task-quebec-arrivals-18171839">A Real Task: Quebec Arrivals, 1817–1839</h2>
+<p>Toy examples get boring fast. Let’s give Claude Code a real historical dataset and watch it figure out the rest. The <strong>Quebec Arrivals Database</strong> is an open dataset of 17,783 ship arrivals at Quebec City between 1817 and 1839, transcribed from <em>The Quebec Gazette / La Gazette de Québec</em>. It lives on Zenodo at <a href="https://doi.org/10.5281/zenodo.15068764" class="uri">https://doi.org/10.5281/zenodo.15068764</a>.</p>
+<p>Type this at the <code>&gt;</code> prompt:</p>
+<pre><code>&gt; Download the Quebec Arrivals dataset from
+&gt; https://doi.org/10.5281/zenodo.15068764 into a data/ folder.
+&gt; Then tell me the top 5 merchants and the top 5 ports of departure,
+&gt; and how each of them changed over the period covered by the dataset.</code></pre>
+<p>Hit Enter and watch what happens.</p>
+<p>Claude Code will figure out how to resolve the DOI, download the Excel file, read it, group and count the columns, and report back. It may need to install a small Python package to parse <code>.xlsx</code> — approve the permission when prompted. If it asks how you’d like the changes-over-time presented, suggest a table or a chart.</p>
+<section id="now-refine-it" class="level3">
+<h3 class="anchored" data-anchor-id="now-refine-it">Now Refine It</h3>
+<p>Once it has answered, push it further. Each follow-up builds on what it already knows:</p>
+<pre><code>&gt; Which merchant grew the most between 1820 and 1835?</code></pre>
+<pre><code>&gt; Were there any years where the dominant port of departure shifted
+&gt; suddenly? What might have caused that historically?</code></pre>
+<pre><code>&gt; Save a chart of the top 5 ports by year as data/ports_over_time.png</code></pre>
+<p>This is the analysis pattern you will use throughout the workshop: hand Claude Code a dataset, ask a high-level question, then refine.</p>
+</section>
+</section>
+<section id="a-second-task-grab-10-things-from-the-internet-archive" class="level2">
+<h2 class="anchored" data-anchor-id="a-second-task-grab-10-things-from-the-internet-archive">A Second Task: Grab 10 Things from the Internet Archive</h2>
+<p>The first task was about analysis. This one is about file wrangling — using Claude Code to talk to a public API and pull files down to your machine. No setup, no API keys, no installed packages — just describe what you want in plain English.</p>
+<p>Type this at the <code>&gt;</code> prompt:</p>
+<pre><code>&gt; Download 10 items about Saskatoon from the Internet Archive into a new
+&gt; data/archive/ folder. For each item, save the title, date, and a short
+&gt; description so I can see what you got.</code></pre>
+<p>That’s it. No URL, no field names, no script. Hit Enter and watch what happens.</p>
+<p>Claude Code will:</p>
+<ul>
+<li>Figure out that the Internet Archive has a search API (and which endpoint to use)</li>
+<li>Write a small script or shell loop to query it</li>
+<li>Ask permission to run the script</li>
+<li>Create the <code>data/archive/</code> folder</li>
+<li>Pull the items and report back with a summary</li>
+</ul>
+<p>You will see permission prompts along the way. Read each one — if it looks reasonable, press <strong>y</strong> (or <strong>a</strong> to allow that command for the rest of the session).</p>
+<section id="now-refine-it-1" class="level3">
+<h3 class="anchored" data-anchor-id="now-refine-it-1">Now Refine It</h3>
+<p>Once it’s done, try adding follow-up instructions. Each one builds on what Claude Code already knows about the folder you just created:</p>
+<pre><code>&gt; Show me the titles and dates as a table</code></pre>
+<pre><code>&gt; Skip any item over 50 MB and re-download</code></pre>
+<pre><code>&gt; Now do the same thing for "Regina" instead of "Saskatoon"</code></pre>
+<p>You don’t have to finish your thought before pressing Enter. If Claude Code does something you didn’t intend, just tell it:</p>
+<pre><code>&gt; Actually, only keep items from before 1950</code></pre>
+<p>It remembers what you’ve done so far and adjusts.</p>
+</section>
+<section id="what-just-happened" class="level3">
+<h3 class="anchored" data-anchor-id="what-just-happened">What just happened</h3>
+<p>In a handful of plain-English prompts, you:</p>
+<ol type="1">
+<li>Hit a real third-party API</li>
+<li>Got a working script written and executed for you</li>
+<li>Saved real files to your machine</li>
+<li>Iteratively shaped the result without ever opening a code editor</li>
+</ol>
+<p>This is the workshop in miniature. You describe a goal, Claude Code picks an approach, you inspect the result, and you refine. The same pattern works for everything that follows.</p>
+</section>
 </section>
 <section id="ask-questions-lots-of-them" class="level2">
 <h2 class="anchored" data-anchor-id="ask-questions-lots-of-them">Ask Questions — Lots of Them</h2>
@@ -416,18 +463,24 @@ Tip: “Accept All” during the workshop
 <section id="when-it-gets-something-wrong" class="level2">
 <h2 class="anchored" data-anchor-id="when-it-gets-something-wrong">When It Gets Something Wrong</h2>
 <p>Claude Code will sometimes make mistakes. Correct it directly:</p>
-<pre><code>&gt; That's not right — Rupert's Land was controlled by the Hudson's Bay
-&gt; Company, not directly by Britain. Check the sovereign column again.</code></pre>
+<pre><code>&gt; That's not right --- the JSON response wraps the list under
+&gt; response.docs, not at the top level. Re-read the file and try again.</code></pre>
 <p>It adjusts and remembers the correction. This is a normal part of working with any LLM.</p>
 </section>
 <section id="exercise-explore-on-your-own-5-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-explore-on-your-own-5-minutes">Exercise: Explore on Your Own (5 minutes)</h2>
-<p>Try any of these, or make up your own:</p>
+<p>Pick whichever dataset you found more interesting and push it further. A few ideas:</p>
+<p><strong>Quebec Arrivals</strong></p>
 <ol type="1">
-<li>Ask Claude Code to count the number of boundary changes per century</li>
-<li>Ask it to list all the treaties mentioned in the <code>boundary_changes</code> table</li>
-<li>Ask it to explain the significance of the Royal Proclamation of 1763</li>
-<li>Ask it “What would a historian find most interesting about this dataset?”</li>
+<li>Ask Claude Code which months of the year saw the most arrivals — and how that pattern shifted across the period.</li>
+<li>Ask it to map the top 10 ports of departure to modern country names.</li>
+<li>Ask: <em>“What do these arrival patterns tell us about the timber trade?”</em></li>
+</ol>
+<p><strong>Internet Archive</strong></p>
+<ol type="1">
+<li>Re-run the search with a different term — your hometown, a historical figure, a publication.</li>
+<li>Ask Claude Code to pull the OCR text from any “texts” items and report the most common nouns.</li>
+<li>Ask: <em>“What would a historian find most interesting about this set of items?”</em></li>
 </ol>
 <p>When you are comfortable with the basics, move on to <strong><a href="./gis-exercises.html">GIS Data Exercises</a></strong>.</p>
 

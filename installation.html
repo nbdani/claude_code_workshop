@@ -194,14 +194,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-2-install-claude-code" id="toc-step-2-install-claude-code" class="nav-link" data-scroll-target="#step-2-install-claude-code">Step 2: Install Claude Code</a></li>
   <li><a href="#step-3-first-launch" id="toc-step-3-first-launch" class="nav-link" data-scroll-target="#step-3-first-launch">Step 3: First Launch</a></li>
   <li><a href="#step-4-set-up-the-workshop-folder" id="toc-step-4-set-up-the-workshop-folder" class="nav-link" data-scroll-target="#step-4-set-up-the-workshop-folder">Step 4: Set Up the Workshop Folder</a></li>
+  <li><a href="#step-5-set-up-python-with-a-virtual-environment" id="toc-step-5-set-up-python-with-a-virtual-environment" class="nav-link" data-scroll-target="#step-5-set-up-python-with-a-virtual-environment">Step 5: Set Up Python with a Virtual Environment</a></li>
   <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
   </ul></li>
-  <li><a href="#option-c-codex-openai-alternative" id="toc-option-c-codex-openai-alternative" class="nav-link" data-scroll-target="#option-c-codex-openai-alternative">Option C: Codex (OpenAI Alternative)</a>
+  <li><a href="#option-b-codex-openai-alternative" id="toc-option-b-codex-openai-alternative" class="nav-link" data-scroll-target="#option-b-codex-openai-alternative">Option B: Codex (OpenAI Alternative)</a>
   <ul class="collapse">
-  <li><a href="#terminal-install" id="toc-terminal-install" class="nav-link" data-scroll-target="#terminal-install">Terminal Install</a></li>
   <li><a href="#step-1-ensure-you-have-chatgpt-access" id="toc-step-1-ensure-you-have-chatgpt-access" class="nav-link" data-scroll-target="#step-1-ensure-you-have-chatgpt-access">Step 1: Ensure You Have ChatGPT Access</a></li>
-  <li><a href="#step-2-clone-the-workshop-repository" id="toc-step-2-clone-the-workshop-repository" class="nav-link" data-scroll-target="#step-2-clone-the-workshop-repository">Step 2: Clone the Workshop Repository</a></li>
+  <li><a href="#step-2-install-codex-cli" id="toc-step-2-install-codex-cli" class="nav-link" data-scroll-target="#step-2-install-codex-cli">Step 2: Install Codex CLI</a></li>
+  <li><a href="#step-3-clone-the-workshop-repository" id="toc-step-3-clone-the-workshop-repository" class="nav-link" data-scroll-target="#step-3-clone-the-workshop-repository">Step 3: Clone the Workshop Repository</a></li>
   <li><a href="#differences-to-be-aware-of" id="toc-differences-to-be-aware-of" class="nav-link" data-scroll-target="#differences-to-be-aware-of">Differences to Be Aware Of</a></li>
   <li><a href="#checklist-1" id="toc-checklist-1" class="nav-link" data-scroll-target="#checklist-1">Checklist</a></li>
   </ul></li>
@@ -241,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>JetBrains plugin</strong> — the same idea for IntelliJ, PyCharm, RubyMine, and other JetBrains IDEs.</li>
 </ul>
 <p>All four share the same skills, slash commands, and file-access behaviour. The workshop instructions assume the terminal, but if you prefer one of the other interfaces you can follow along — the prompts and skills work identically. We are happy to help you get any of them running at the start of the session.</p>
-<p>If you would rather use OpenAI’s coding agent instead, see <a href="#option-c-codex-openai-alternative">Option C: Codex</a> below.</p>
+<p>If you would rather use OpenAI’s coding agent instead, see <a href="#option-b-codex-openai-alternative">Option B: Codex</a> below.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -331,6 +332,65 @@ If you don’t have git
 </div>
 <p>This <code>lincs_skills</code> folder is where we will work during the workshop.</p>
 </section>
+<section id="step-5-set-up-python-with-a-virtual-environment" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-set-up-python-with-a-virtual-environment">Step 5: Set Up Python with a Virtual Environment</h3>
+<p>Several of the workshop exercises ask Claude Code to write and run Python scripts (for analysis, visualization, and converting GIS data to RDF). To keep these dependencies tidy and avoid conflicts with other Python projects on your machine, we will use a <strong>virtual environment</strong> (venv) inside the workshop folder.</p>
+<section id="a.-make-sure-you-have-python-3.10-or-newer" class="level4">
+<h4 class="anchored" data-anchor-id="a.-make-sure-you-have-python-3.10-or-newer">5a. Make sure you have Python 3.10 or newer</h4>
+<p>Check the version:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you see <code>Python 3.10.x</code> or higher, you are set. Otherwise install Python from <a href="https://www.python.org/downloads/">python.org/downloads</a> (Mac/Windows) or your system package manager (Linux), then restart your terminal.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Windows note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On Windows the command is usually <code>python</code> (without the <code>3</code>). If <code>python --version</code> does not work, install Python from <a href="https://www.python.org/downloads/">python.org</a> and <strong>check the box “Add Python to PATH”</strong> during installation.</p>
+</div>
+</div>
+</section>
+<section id="b.-create-the-virtual-environment" class="level4">
+<h4 class="anchored" data-anchor-id="b.-create-the-virtual-environment">5b. Create the virtual environment</h4>
+<p>From inside the <code>lincs_skills</code> folder, run:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> venv .venv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(Use <code>python</code> instead of <code>python3</code> on Windows.)</p>
+<p>This creates a hidden <code>.venv/</code> folder containing an isolated Python install.</p>
+</section>
+<section id="c.-activate-the-virtual-environment" class="level4">
+<h4 class="anchored" data-anchor-id="c.-activate-the-virtual-environment">5c. Activate the virtual environment</h4>
+<p><strong>macOS / Linux / WSL:</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Windows PowerShell:</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">venv</span>\Scripts\Activate<span class="op">.</span><span class="fu">ps1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Windows CMD:</strong></p>
+<pre class="batch"><code>.venv\Scripts\activate.bat</code></pre>
+<p>After activation, your prompt should show <code>(.venv)</code> at the beginning. You will need to re-run this activation command <strong>every time you open a new terminal</strong> for the workshop.</p>
+</section>
+<section id="d.-install-the-workshop-packages" class="level4">
+<h4 class="anchored" data-anchor-id="d.-install-the-workshop-packages">5d. Install the workshop packages</h4>
+<p>With the venv active, install everything we need in one go:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pandas matplotlib geopandas rdflib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This pulls in <code>pandas</code>, <code>matplotlib</code>, <code>geopandas</code> (plus its spatial dependencies <code>shapely</code>, <code>fiona</code>, <code>pyproj</code>), and <code>rdflib</code> for the RDF conversion exercises. The download is about 100–200 MB and takes a couple of minutes.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tell Claude Code about the venv
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When you start Claude Code in the <code>lincs_skills</code> folder, mention the venv at the start of your first session: <em>“I have a Python virtual environment in <code>.venv/</code>. Please use it when running Python scripts.”</em> Claude will then activate it automatically before running anything.</p>
+</div>
+</div>
+</section>
+</section>
 <section id="troubleshooting" class="level3">
 <h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
 <ul>
@@ -342,33 +402,54 @@ If you don’t have git
 <section id="checklist" class="level3">
 <h3 class="anchored" data-anchor-id="checklist">Checklist</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Anthropic API key created</label></li>
+<li><label><input type="checkbox">Claude Pro (or Max/Team/Enterprise) account ready</label></li>
 <li><label><input type="checkbox"><code>claude --version</code> shows a version number</label></li>
-<li><label><input type="checkbox"><code>claude</code> launches successfully (then <code>/exit</code>)</label></li>
+<li><label><input type="checkbox"><code>claude</code> launches and signs you in through the browser (then <code>/exit</code>)</label></li>
 <li><label><input type="checkbox">You have cloned <code>lincs_skills</code></label></li>
+<li><label><input type="checkbox"><code>python3 --version</code> shows 3.10 or newer</label></li>
+<li><label><input type="checkbox">You have created and activated a <code>.venv</code> inside <code>lincs_skills</code></label></li>
+<li><label><input type="checkbox"><code>pip install pandas matplotlib geopandas rdflib</code> completed without errors</label></li>
 </ul>
 <hr>
 </section>
 </section>
-<section id="option-c-codex-openai-alternative" class="level2">
-<h2 class="anchored" data-anchor-id="option-c-codex-openai-alternative">Option C: Codex (OpenAI Alternative)</h2>
-<p><a href="https://chatgpt.com/codex">Codex</a> is OpenAI’s coding agent. Like Claude Code, it can run in the terminal and read/write files on your machine. It also has a browser-based interface at <a href="https://chatgpt.com/codex">chatgpt.com/codex</a> where tasks run in a cloud sandbox. It requires a ChatGPT Plus, Pro, or Team subscription.</p>
-<section id="terminal-install" class="level3">
-<h3 class="anchored" data-anchor-id="terminal-install">Terminal Install</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-g</span> codex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then launch it in the workshop directory:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> lincs_skills</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">codex</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It works similarly to Claude Code — natural language instructions, file access, permission prompts. If you prefer the browser interface, go to <a href="https://chatgpt.com/codex">chatgpt.com/codex</a> instead and upload files to each task.</p>
-</section>
+<section id="option-b-codex-openai-alternative" class="level2">
+<h2 class="anchored" data-anchor-id="option-b-codex-openai-alternative">Option B: Codex (OpenAI Alternative)</h2>
+<p><a href="https://github.com/openai/codex">Codex CLI</a> is OpenAI’s coding agent. Like Claude Code, it runs in the terminal and reads/writes files on your machine. There is also a browser-based interface at <a href="https://chatgpt.com/codex">chatgpt.com/codex</a> where tasks run in a cloud sandbox. Codex requires a ChatGPT <strong>Plus, Pro, Business, Edu, or Enterprise</strong> subscription (or, with extra setup, an OpenAI API key).</p>
 <section id="step-1-ensure-you-have-chatgpt-access" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-ensure-you-have-chatgpt-access">Step 1: Ensure You Have ChatGPT Access</h3>
-<p>Codex requires a ChatGPT Plus, Pro, or Team subscription. If you already have one, you are set. If not, you can sign up at <a href="https://chatgpt.com/">chatgpt.com</a>.</p>
+<p>If you already have a paid ChatGPT plan you are set. If not, sign up at <a href="https://chatgpt.com/">chatgpt.com</a>.</p>
 </section>
-<section id="step-2-clone-the-workshop-repository" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-clone-the-workshop-repository">Step 2: Clone the Workshop Repository</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/jburnford/lincs_skills.git</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> lincs_skills</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="step-2-install-codex-cli" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-install-codex-cli">Step 2: Install Codex CLI</h3>
+<p>The easiest install paths are:</p>
+<ul>
+<li><strong>macOS (Homebrew)</strong>: <code>brew install --cask codex</code></li>
+<li><strong>Any platform with Node.js 18+</strong>: <code>npm install -g @openai/codex</code></li>
+<li><strong>Direct binary</strong>: download from the <a href="https://github.com/openai/codex/releases/latest">latest GitHub release</a></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Codex still needs Node.js (if you go the npm route)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Unlike Claude Code, the npm install of Codex requires <a href="https://nodejs.org/">Node.js 18+</a>. If you do not already have Node.js installed and you are not on macOS, the binary download is the simplest option.</p>
+</div>
+</div>
+<p>Then launch Codex in the workshop folder:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> lincs_skills</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">codex</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first time you run it, choose <strong>Sign in with ChatGPT</strong> and complete the browser login.</p>
+</section>
+<section id="step-3-clone-the-workshop-repository" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-clone-the-workshop-repository">Step 3: Clone the Workshop Repository</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/jburnford/lincs_skills.git</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> lincs_skills</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If using the browser interface instead, download the repository as a ZIP from <a href="https://github.com/jburnford/lincs_skills">github.com/jburnford/lincs_skills</a> (green <strong>Code</strong> button &gt; <strong>Download ZIP</strong>) and upload files to each task.</p>
 </section>
 <section id="differences-to-be-aware-of" class="level3">
