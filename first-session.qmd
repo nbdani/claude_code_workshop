@@ -61,7 +61,7 @@ Most basic commands work the same on Mac, Linux, and Windows PowerShell. The mai
 PowerShell supports `ls` and `pwd` as aliases, so most commands in this workshop will work as written. If something does not work, try `dir` instead of `ls`. If you installed Git for Windows, you also have **Git Bash**, which behaves like a Mac/Linux terminal and may be easier to follow along with.
 :::
 
-Try typing `ls` after you `cd` into the `claude_workshop` folder. You should see the `lincs_skills/` subfolder you cloned during installation. (The `.venv/` folder will appear after Claude Code creates it later in this session.)
+Try typing `ls` after you `cd` into the `claude_workshop` folder. It should be empty for now --- Claude Code will fill it in once you launch it in the next section.
 
 ### If you get lost
 
@@ -69,19 +69,37 @@ Type `pwd` to see where you are. Type `cd ~` to go back to your home folder and 
 
 ## Launch Claude Code
 
-From inside `claude_workshop`, launch Claude Code:
+From inside `claude_workshop`, launch Claude Code in your terminal:
 
 ```bash
 claude
 ```
 
-You should see the `>` prompt --- this is Claude Code's prompt, not your terminal's. From here, you type natural language, not terminal commands.
+You should see the `>` prompt --- this is Claude Code's prompt, not your terminal's. **From here on, almost everything you type goes into Claude Code, not your terminal.** Whenever a code block on this page starts with `>`, that's a prompt for Claude.
 
-Claude Code reads any `CLAUDE.md` file in the current directory at startup, so as soon as you launch it from `claude_workshop` it has context about the LINCS project (via the `lincs_skills/` subfolder).
+## Let Claude Code Set Up the Workshop
 
-### Have Claude Code set up the Python environment
+Your `claude_workshop` folder is empty right now. Let's have Claude check what's on your machine and set up everything we need for the workshop.
 
-Before any of the exercises, ask Claude Code to create a Python virtual environment in this folder and install the packages we will need:
+### 1. Check Python
+
+```
+> What version of Python is installed on this machine, and is the venv
+> module available? If anything is missing, tell me how to fix it.
+```
+
+Claude Code will run `python3 --version` and `python3 -m venv --help`, report what it found, and tell you what to do if Python isn't there or is too old. (On most machines you will already have what you need.)
+
+### 2. Clone the LINCS skills repository
+
+```
+> Clone https://github.com/jburnford/lincs_skills.git into this folder
+> as a subfolder called lincs_skills/.
+```
+
+This pulls in the seven LINCS-specific skills (CIDOC-CRM, the LINCS application profile, place/person disambiguation, etc.) that we will use later in the workshop.
+
+### 3. Create a Python virtual environment and install workshop packages
 
 ```
 > Create a Python virtual environment at .venv/ in this folder, then
@@ -89,19 +107,45 @@ Before any of the exercises, ask Claude Code to create a Python virtual environm
 > into it. Use that venv for any Python you run for the rest of the session.
 ```
 
-Claude Code will run `python3 -m venv .venv`, ask permission, install the packages with pip, and then keep using that venv for everything that follows. The install takes a couple of minutes (about 100--200 MB of downloads). If Claude Code seems to forget about the venv later, just remind it the same way.
+Claude Code will run `python3 -m venv .venv`, ask permission, install the packages with pip into the new venv, and then keep using that venv for everything that follows. The install takes a couple of minutes (about 100--200 MB of downloads). If Claude Code seems to forget about the venv later, just remind it the same way.
 
 ::: {.callout-note}
 ## If pip install fails
-On a locked-down machine the `pip install` step may fail with a permissions error. If that happens, tell Claude Code: *"Make sure you are installing into the .venv, not system Python."* Once it activates the venv first, the install should succeed.
+On a locked-down machine, `pip install` may fail with a permissions error if Claude tries to install into system Python. If that happens, tell it: *"Make sure you are installing into the .venv, not system Python."* Once it activates the venv first, the install should succeed.
 :::
 
+### 4. Download the workshop data
+
+```
+> Download workshop-data.zip from
+> https://github.com/jburnford/claude_code_workshop/releases/download/workshop-data-2026-04/workshop-data.zip
+> and unzip it into a data/ subfolder so the files end up at
+> data/canada_boundaries_temporal.gpkg, data/boundaries_poly.csv,
+> and data/boundary_changes.csv.
+```
+
+When it's done, your folder should look like this:
+
+```
+claude_workshop/
+├── .venv/
+├── lincs_skills/
+└── data/
+    ├── canada_boundaries_temporal.gpkg
+    ├── boundaries_poly.csv
+    └── boundary_changes.csv
+```
+
+You only ever do this setup once. From now on, any time you reopen the workshop, you just `cd claude_workshop && claude` and pick up where you left off.
+
 ## Try Some Basic Commands
+
+Now that the workshop folder is set up, try a few simple things to get a feel for how Claude Code works.
 
 ### Ask it to read a file
 
 ```
-> Read the skills/README.md and summarize what's in this repository
+> Read lincs_skills/README.md and summarize what's in this repository.
 ```
 
 Claude Code reads the file directly from disk --- no copying, no pasting. It reports back and waits for your next instruction.
