@@ -31,7 +31,7 @@ Claude Code reads the file, reports back, and waits for your next instruction. Y
 
 ```
 Convert this data to CIDOC-CRM using the LINCS application profile.
-Model each settlement as an E53_Place with an E48_Place_Name.
+Model each settlement as an E53_Place with an E41_Appellation (place name).
 ```
 
 It writes a Turtle file, shows you the output, and asks if you want to save it. The whole interaction is conversational, but the results are real files on your disk.
