@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Graph Patterns – HGIS to LOD Workshop</title>
+<title>Basic Graph Patterns – HGIS to LOD Modelling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">HGIS to LOD Workshop</span>
+    <span class="navbar-title">HGIS to LOD Modelling</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,67 +92,33 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./workshop-event.html"> 
-<span class="menu-text">Workshop (April 15–17)</span></a>
+    <a class="nav-link active" href="./graph-patterns.html" aria-current="page"> 
+<span class="menu-text">Basic Graph Patterns</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Claude Code Pre-Workshop (April 11)</span></a>
+    <a class="nav-link" href="./modelling-exercise-1.html"> 
+<span class="menu-text">Exercise 1</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./what-is-claude-code.html"> 
-<span class="menu-text">What Is Claude Code?</span></a>
+    <a class="nav-link" href="./advanced-patterns.html"> 
+<span class="menu-text">Advanced Patterns</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data-ethics.html"> 
-<span class="menu-text">Data Ethics</span></a>
+    <a class="nav-link" href="./modelling-exercise-2.html"> 
+<span class="menu-text">Exercise 2</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./installation.html"> 
-<span class="menu-text">Installation</span></a>
+    <a class="nav-link" href="./modelling-llms.html"> 
+<span class="menu-text">LLMs for Modelling</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-part-1-working-with-gis-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Part 1: Working with GIS Data</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-part-1-working-with-gis-data">    
-        <li>
-    <a class="dropdown-item" href="./first-session.html">
- <span class="dropdown-text">Your First Session</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./modelling-exercise-3.html"> 
+<span class="menu-text">Exercise 3</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./gis-exercises.html">
- <span class="dropdown-text">GIS Data Exercises</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./reference-diagram.html"> 
+<span class="menu-text">Reference Diagram</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-part-2-linked-open-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Part 2: Linked Open Data</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-part-2-linked-open-data">    
-        <li>
-    <a class="dropdown-item" href="./lincs-skills.html">
- <span class="dropdown-text">LINCS Skills</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./hands-on.html">
- <span class="dropdown-text">HGIS-to-LINCS Exercise</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modelling" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Modelling</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-modelling">    
-        <li>
-    <a class="dropdown-item" href="./graph-patterns.html">
- <span class="dropdown-text">Graph Patterns</span></a>
-  </li>  
-        <li class="dropdown-header">Graph Patterns</li>
-    </ul>
-  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -169,26 +135,39 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#graph-patterns" id="toc-graph-patterns" class="nav-link active" data-scroll-target="#graph-patterns">Graph Patterns</a></li>
-  <li><a href="#general-patterns" id="toc-general-patterns" class="nav-link" data-scroll-target="#general-patterns">General Patterns</a>
+  <li><a href="#general-patterns" id="toc-general-patterns" class="nav-link active" data-scroll-target="#general-patterns">General Patterns</a>
   <ul class="collapse">
-  <li><a href="#names-titles" id="toc-names-titles" class="nav-link" data-scroll-target="#names-titles">Names &amp; Titles</a></li>
+  <li><a href="#name" id="toc-name" class="nav-link" data-scroll-target="#name">Name</a></li>
   <li><a href="#type" id="toc-type" class="nav-link" data-scroll-target="#type">Type</a></li>
+  </ul></li>
+  <li><a href="#patterns-involving-events" id="toc-patterns-involving-events" class="nav-link" data-scroll-target="#patterns-involving-events">Patterns Involving Events</a>
+  <ul class="collapse">
+  <li><a href="#event-place" id="toc-event-place" class="nav-link" data-scroll-target="#event-place">Event Place</a></li>
   <li><a href="#event-date" id="toc-event-date" class="nav-link" data-scroll-target="#event-date">Event Date</a></li>
-  <li><a href="#event-location" id="toc-event-location" class="nav-link" data-scroll-target="#event-location">Event Location</a></li>
   </ul></li>
   <li><a href="#patterns-involving-people" id="toc-patterns-involving-people" class="nav-link" data-scroll-target="#patterns-involving-people">Patterns Involving People</a>
   <ul class="collapse">
+  <li><a href="#person-name" id="toc-person-name" class="nav-link" data-scroll-target="#person-name">Person Name</a></li>
   <li><a href="#birth-date" id="toc-birth-date" class="nav-link" data-scroll-target="#birth-date">Birth Date</a></li>
   <li><a href="#birth-place" id="toc-birth-place" class="nav-link" data-scroll-target="#birth-place">Birth Place</a></li>
   <li><a href="#death-date" id="toc-death-date" class="nav-link" data-scroll-target="#death-date">Death Date</a></li>
   <li><a href="#death-place" id="toc-death-place" class="nav-link" data-scroll-target="#death-place">Death Place</a></li>
   <li><a href="#occupation" id="toc-occupation" class="nav-link" data-scroll-target="#occupation">Occupation</a></li>
+  <li><a href="#residence" id="toc-residence" class="nav-link" data-scroll-target="#residence">Residence</a></li>
   </ul></li>
-  <li><a href="#patterns-involving-groups" id="toc-patterns-involving-groups" class="nav-link" data-scroll-target="#patterns-involving-groups">Patterns Involving Groups</a></li>
+  <li><a href="#patterns-involving-groups" id="toc-patterns-involving-groups" class="nav-link" data-scroll-target="#patterns-involving-groups">Patterns Involving Groups</a>
+  <ul class="collapse">
+  <li><a href="#group-name" id="toc-group-name" class="nav-link" data-scroll-target="#group-name">Group Name</a></li>
+  <li><a href="#formation" id="toc-formation" class="nav-link" data-scroll-target="#formation">Formation</a></li>
+  <li><a href="#dissolution" id="toc-dissolution" class="nav-link" data-scroll-target="#dissolution">Dissolution</a></li>
+  <li><a href="#membership" id="toc-membership" class="nav-link" data-scroll-target="#membership">Membership</a></li>
+  <li><a href="#joining" id="toc-joining" class="nav-link" data-scroll-target="#joining">Joining</a></li>
+  <li><a href="#leaving" id="toc-leaving" class="nav-link" data-scroll-target="#leaving">Leaving</a></li>
+  </ul></li>
   <li><a href="#patterns-involving-places" id="toc-patterns-involving-places" class="nav-link" data-scroll-target="#patterns-involving-places">Patterns Involving Places</a>
   <ul class="collapse">
-  <li><a href="#other-useful-commands" id="toc-other-useful-commands" class="nav-link" data-scroll-target="#other-useful-commands">Other useful commands</a></li>
+  <li><a href="#place-name" id="toc-place-name" class="nav-link" data-scroll-target="#place-name">Place Name</a></li>
+  <li><a href="#place-containment" id="toc-place-containment" class="nav-link" data-scroll-target="#place-containment">Place Containment</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -198,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Graph Patterns</h1>
+<h1 class="title">Basic Graph Patterns</h1>
 <p class="subtitle lead">A list of common CIDOC CRM graph patterns</p>
 </div>
 
@@ -216,68 +195,163 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="graph-patterns" class="level2">
-<h2 class="anchored" data-anchor-id="graph-patterns">Graph Patterns</h2>
-<p>This page lists common graph patterns that we encounter when modelling data in LINCS.</p>
-</section>
+<p>This page lists common graph patterns that we encounter when modelling data in <a href="https://lincsproject.ca">LINCS</a> using the <a href="https://cidoc-crm.org">CIDOC CRM</a> ontology. When modelling data, we select appropriate graph patterns and combine them together to create our data model. Then we apply the model to our dataset, resulting in a knowledge graph.</p>
 <section id="general-patterns" class="level2">
 <h2 class="anchored" data-anchor-id="general-patterns">General Patterns</h2>
-<section id="names-titles" class="level3">
-<h3 class="anchored" data-anchor-id="names-titles">Names &amp; Titles</h3>
+<section id="name" class="level3">
+<h3 class="anchored" data-anchor-id="name">Name</h3>
+<p>An entity has a name (or title).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/entity-name.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
 </section>
 <section id="type" class="level3">
 <h3 class="anchored" data-anchor-id="type">Type</h3>
+<p>An entity has a type.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/entity-type.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="patterns-involving-events" class="level2">
+<h2 class="anchored" data-anchor-id="patterns-involving-events">Patterns Involving Events</h2>
+<p>The following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.</p>
+<section id="event-place" class="level3">
+<h3 class="anchored" data-anchor-id="event-place">Event Place</h3>
+<p>An event took place at a certain place.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/event-place.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
 </section>
 <section id="event-date" class="level3">
 <h3 class="anchored" data-anchor-id="event-date">Event Date</h3>
-</section>
-<section id="event-location" class="level3">
-<h3 class="anchored" data-anchor-id="event-location">Event Location</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/Location.png" class="img-fluid figure-img"></p>
-<figcaption>Caption</figcaption>
-</figure>
-</div>
+<p>An event took place on a certain date.</p>
+<p><img src="./images/event-date.svg" class="img-fluid"></p>
 </section>
 </section>
 <section id="patterns-involving-people" class="level2">
 <h2 class="anchored" data-anchor-id="patterns-involving-people">Patterns Involving People</h2>
+<p>The following patterns are applicable to any person.</p>
+<section id="person-name" class="level3">
+<h3 class="anchored" data-anchor-id="person-name">Person Name</h3>
+<p>A person has a name.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/person-name.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
 <section id="birth-date" class="level3">
 <h3 class="anchored" data-anchor-id="birth-date">Birth Date</h3>
+<p>A person was born on a certain date.</p>
+<p><img src="./images/birth-date.svg" class="img-fluid"></p>
 </section>
 <section id="birth-place" class="level3">
 <h3 class="anchored" data-anchor-id="birth-place">Birth Place</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/Birth_Location.png" class="img-fluid figure-img"></p>
-<figcaption>Caption</figcaption>
-</figure>
-</div>
+<p>A person was born in a certain place.</p>
+<p><img src="./images/birth-place.svg" class="img-fluid"></p>
 </section>
 <section id="death-date" class="level3">
 <h3 class="anchored" data-anchor-id="death-date">Death Date</h3>
+<p>A person died on a certain date.</p>
+<p><img src="./images/death-date.svg" class="img-fluid"></p>
 </section>
 <section id="death-place" class="level3">
 <h3 class="anchored" data-anchor-id="death-place">Death Place</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/Death_Location.png" class="img-fluid figure-img"></p>
-<figcaption>Caption</figcaption>
-</figure>
-</div>
+<p>A person died in a certain place.</p>
+<p><img src="./images/death-place.svg" class="img-fluid"></p>
 </section>
 <section id="occupation" class="level3">
 <h3 class="anchored" data-anchor-id="occupation">Occupation</h3>
+<p>A person has an occupation such as an employment or appointment.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/person-occupation.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="residence" class="level3">
+<h3 class="anchored" data-anchor-id="residence">Residence</h3>
+<p>A person resides (or has previously resided) in a place.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/person-residence.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
 </section>
 </section>
 <section id="patterns-involving-groups" class="level2">
 <h2 class="anchored" data-anchor-id="patterns-involving-groups">Patterns Involving Groups</h2>
+<p>The following patterns are applicable to any group, including companies and other organizations.</p>
+<section id="group-name" class="level3">
+<h3 class="anchored" data-anchor-id="group-name">Group Name</h3>
+<p>A group has a name.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/group-name.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="formation" class="level3">
+<h3 class="anchored" data-anchor-id="formation">Formation</h3>
+<p>A group has a member (a person).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/group-formation.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="dissolution" class="level3">
+<h3 class="anchored" data-anchor-id="dissolution">Dissolution</h3>
+<p>A group has a member (a person).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/group-dissolution.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="membership" class="level3">
+<h3 class="anchored" data-anchor-id="membership">Membership</h3>
+<p>A group has a member (a person).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/group-member.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="joining" class="level3">
+<h3 class="anchored" data-anchor-id="joining">Joining</h3>
+</section>
+<section id="leaving" class="level3">
+<h3 class="anchored" data-anchor-id="leaving">Leaving</h3>
+</section>
 </section>
 <section id="patterns-involving-places" class="level2">
 <h2 class="anchored" data-anchor-id="patterns-involving-places">Patterns Involving Places</h2>
-<section id="other-useful-commands" class="level3">
-<h3 class="anchored" data-anchor-id="other-useful-commands">Other useful commands</h3>
+<p>The following patterns are applicable to any place.</p>
+<section id="place-name" class="level3">
+<h3 class="anchored" data-anchor-id="place-name">Place Name</h3>
+<p>A place has a name.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/place-name2.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="place-containment" class="level3">
+<h3 class="anchored" data-anchor-id="place-containment">Place Containment</h3>
+<p>A place contains another place.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/place-contain.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
 
 
 </section>

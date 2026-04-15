@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Claude Code for HGIS-to-LINCS – HGIS to LOD Workshop</title>
+<title>HGIS-to-LINCS – Modelling – HGIS to LOD Modelling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">HGIS to LOD Workshop</span>
+    <span class="navbar-title">HGIS to LOD Modelling</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,67 +92,33 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./workshop-event.html"> 
-<span class="menu-text">Workshop (April 15–17)</span></a>
+    <a class="nav-link" href="./graph-patterns.html"> 
+<span class="menu-text">Basic Graph Patterns</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Claude Code Pre-Workshop (April 11)</span></a>
+    <a class="nav-link" href="./modelling-exercise-1.html"> 
+<span class="menu-text">Exercise 1</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./what-is-claude-code.html"> 
-<span class="menu-text">What Is Claude Code?</span></a>
+    <a class="nav-link" href="./advanced-patterns.html"> 
+<span class="menu-text">Advanced Patterns</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data-ethics.html"> 
-<span class="menu-text">Data Ethics</span></a>
+    <a class="nav-link" href="./modelling-exercise-2.html"> 
+<span class="menu-text">Exercise 2</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./installation.html"> 
-<span class="menu-text">Installation</span></a>
+    <a class="nav-link" href="./modelling-llms.html"> 
+<span class="menu-text">LLMs for Modelling</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-part-1-working-with-gis-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Part 1: Working with GIS Data</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-part-1-working-with-gis-data">    
-        <li>
-    <a class="dropdown-item" href="./first-session.html">
- <span class="dropdown-text">Your First Session</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./modelling-exercise-3.html"> 
+<span class="menu-text">Exercise 3</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./gis-exercises.html">
- <span class="dropdown-text">GIS Data Exercises</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./reference-diagram.html"> 
+<span class="menu-text">Reference Diagram</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-part-2-linked-open-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Part 2: Linked Open Data</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-part-2-linked-open-data">    
-        <li>
-    <a class="dropdown-item" href="./lincs-skills.html">
- <span class="dropdown-text">LINCS Skills</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./hands-on.html">
- <span class="dropdown-text">HGIS-to-LINCS Exercise</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modelling" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Modelling</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-modelling">    
-        <li>
-    <a class="dropdown-item" href="./graph-patterns.html">
- <span class="dropdown-text">Graph Patterns</span></a>
-  </li>  
-        <li class="dropdown-header">Graph Patterns</li>
-    </ul>
-  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -169,15 +135,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-this-workshop-is" id="toc-what-this-workshop-is" class="nav-link active" data-scroll-target="#what-this-workshop-is">What This Workshop Is</a></li>
-  <li><a href="#why-a-coding-agent" id="toc-why-a-coding-agent" class="nav-link" data-scroll-target="#why-a-coding-agent">Why a Coding Agent?</a></li>
-  <li><a href="#before-the-workshop" id="toc-before-the-workshop" class="nav-link" data-scroll-target="#before-the-workshop">Before the Workshop</a></li>
-  <li><a href="#workshop-schedule" id="toc-workshop-schedule" class="nav-link" data-scroll-target="#workshop-schedule">Workshop Schedule</a>
-  <ul class="collapse">
-  <li><a href="#part-1-working-with-gis-data-000100" id="toc-part-1-working-with-gis-data-000100" class="nav-link" data-scroll-target="#part-1-working-with-gis-data-000100">Part 1: Working with GIS Data (0:00–1:00)</a></li>
-  <li><a href="#break-100110" id="toc-break-100110" class="nav-link" data-scroll-target="#break-100110">Break (1:00–1:10)</a></li>
-  <li><a href="#part-2-linked-open-data-110200" id="toc-part-2-linked-open-data-110200" class="nav-link" data-scroll-target="#part-2-linked-open-data-110200">Part 2: Linked Open Data (1:10–2:00)</a></li>
-  </ul></li>
+  <li><a href="#what-this-workshop-session-is-about" id="toc-what-this-workshop-session-is-about" class="nav-link active" data-scroll-target="#what-this-workshop-session-is-about">What This Workshop Session Is About</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
   </ul>
 </nav>
     </div>
@@ -186,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Claude Code for HGIS-to-LINCS</h1>
+<h1 class="title">HGIS-to-LINCS – Modelling</h1>
 <p class="subtitle lead">A hands-on workshop for historians converting historical GIS data to Linked Open Data</p>
 </div>
 
@@ -214,101 +173,27 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is an online pre-workshop session for the <strong><a href="./workshop-event.html">HGIS to LOD Workshop</a></strong> taking place April 15–17 in Ottawa.</p>
+<p>This is a workshop session for the <strong><a href="https://jburnford.github.io/claude_code_workshop/workshop-event.html">HGIS to LOD Workshop</a></strong> taking place April 15–17 in Ottawa. This is the April 15 session about data modelling. For more information, see the <a href="https://jburnford.github.io/claude_code_workshop/workshop-event.html">main workshop website</a>.</p>
 </div>
 </div>
-<section id="what-this-workshop-is" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-workshop-is">What This Workshop Is</h2>
-<p>This workshop teaches you to use <a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a> — Anthropic’s command-line AI assistant — to work with Historical GIS data and convert it into <a href="https://lincsproject.ca/">LINCS</a>-compatible Linked Open Data. No programming experience is required.</p>
-<p>By the end of this session, you will have:</p>
+<section id="what-this-workshop-session-is-about" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-workshop-session-is-about">What This Workshop Session Is About</h2>
+<p>This workshop session is about data modelling with CIDOC CRM, following the practices of the LINCS project. It is not specifically about modelling with LLMs, but rather, it tries to convey the process of modelling a dataset.</p>
+<p>For more info, see the <a href="https://jburnford.github.io/claude_code_workshop/workshop-event.html">main workshop website</a>.</p>
+</section>
+<section id="schedule" class="level2">
+<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
 <ol type="1">
-<li><strong>Used Claude Code</strong> to explore, clean, and analyze GIS data through conversation</li>
-<li><strong>Learned to give effective instructions</strong> to an AI coding assistant</li>
-<li><strong>Loaded LINCS-specific skills</strong> that give Claude deep knowledge of CIDOC-CRM and the LINCS application profile</li>
-<li><strong>Converted sample HGIS data</strong> to LINCS-compatible RDF/Turtle</li>
+<li><a href="./graph-patterns.html">Basic Graph Patterns</a></li>
+<li><a href="./modelling-exercise-1.html">Exercise 1</a></li>
+<li><a href="./advanced-patterns.html">Advanced Patterns</a></li>
+<li><a href="./modelling-exercise-2.html">Exercise 2</a></li>
+<li><a href="./modelling-llms.html">LLMs for Modelling</a></li>
+<li><a href="./modelling-exercise-3.html">Exercise 3</a></li>
+<li><a href="./reference-diagram.html">Reference Diagram</a></li>
 </ol>
-</section>
-<section id="why-a-coding-agent" class="level2">
-<h2 class="anchored" data-anchor-id="why-a-coding-agent">Why a Coding Agent?</h2>
-<p>Most GenAI tools (ChatGPT, Gemini, Claude.ai) work through a web browser, where you copy and paste text in and out. Coding agents are different: they run in your terminal and can directly read, write, and edit files on your computer. We use <strong>Claude Code</strong> in this workshop, but the same workflow applies to OpenAI’s <strong>Codex CLI</strong> and Google’s <strong>Gemini CLI</strong> — all three are mature options, and most of what you learn here transfers between them.</p>
-<p>This local, file-aware approach makes a coding agent far more useful for data work than a browser chat:</p>
-<ul>
-<li>It reads your CSV, GeoJSON, and Shapefile attribute tables directly</li>
-<li>It writes output files to your project folder</li>
-<li>It runs Python, R, or shell commands on your behalf</li>
-<li>It remembers project context across a session</li>
-<li>It can be extended with <strong>skills</strong> (Claude Code) or equivalent context files — reusable knowledge packages that make the agent an expert in a specific domain</li>
-</ul>
-</section>
-<section id="before-the-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="before-the-workshop">Before the Workshop</h2>
-<p>Please complete the <strong><a href="./installation.html">Installation</a></strong> steps before arriving. This includes creating an Anthropic account and installing Claude Code (or signing up for Codex as a browser-based alternative). If you get stuck, bring your laptop and we will help you at the start of the session.</p>
-</section>
-<section id="workshop-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="workshop-schedule">Workshop Schedule</h2>
-<section id="part-1-working-with-gis-data-000100" class="level3">
-<h3 class="anchored" data-anchor-id="part-1-working-with-gis-data-000100">Part 1: Working with GIS Data (0:00–1:00)</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Section</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0:00</td>
-<td>Troubleshoot remaining installations</td>
-</tr>
-<tr class="even">
-<td>0:10</td>
-<td><a href="./what-is-claude-code.html">What Is Claude Code?</a> — orientation and key concepts</td>
-</tr>
-<tr class="odd">
-<td>0:20</td>
-<td><a href="./data-ethics.html">Data Ethics and Privacy</a> — OCAP, sensitive data, and what not to share</td>
-</tr>
-<tr class="even">
-<td>0:30</td>
-<td><a href="./first-session.html">Your First Session</a> — guided walkthrough</td>
-</tr>
-<tr class="odd">
-<td>0:40</td>
-<td><a href="./gis-exercises.html">GIS Data Exercises</a> — exploring and analyzing HGIS data with Claude Code</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="break-100110" class="level3">
-<h3 class="anchored" data-anchor-id="break-100110">Break (1:00–1:10)</h3>
-</section>
-<section id="part-2-linked-open-data-110200" class="level3">
-<h3 class="anchored" data-anchor-id="part-2-linked-open-data-110200">Part 2: Linked Open Data (1:10–2:00)</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Section</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1:10</td>
-<td><a href="./lincs-skills.html">LINCS Skills</a> — loading domain expertise for LOD work</td>
-</tr>
-<tr class="even">
-<td>1:30</td>
-<td><a href="./hands-on.html">HGIS-to-LINCS Exercise</a> — converting GIS data to CIDOC-CRM / RDF</td>
-</tr>
-<tr class="odd">
-<td>1:50</td>
-<td>Discussion, questions, and next steps</td>
-</tr>
-</tbody>
-</table>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
