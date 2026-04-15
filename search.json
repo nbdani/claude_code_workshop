@@ -135,16 +135,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Claude Code for HGIS-to-LINCS – Modelling",
+    "title": "HGIS-to-LINCS – Modelling",
     "section": "",
     "text": "Note\n\n\n\nThis is a workshop session for the HGIS to LOD Workshop taking place April 15–17 in Ottawa. For more info, see the main website."
   },
   {
     "objectID": "index.html#what-this-workshop-session-is-about",
     "href": "index.html#what-this-workshop-session-is-about",
-    "title": "Claude Code for HGIS-to-LINCS – Modelling",
+    "title": "HGIS-to-LINCS – Modelling",
     "section": "What This Workshop Session Is About",
-    "text": "What This Workshop Session Is About\nThis workshop session is about data modelling with CIDOC CRM, following the practices of the LINCS project. It is not specifically about modelling with LLMs, but rather, it tries to convey the process of modelling a dataset."
+    "text": "What This Workshop Session Is About\nThis workshop session is about data modelling with CIDOC CRM, following the practices of the LINCS project. It is not specifically about modelling with LLMs, but rather, it tries to convey the process of modelling a dataset.\nFor more info, see the main website."
   },
   {
     "objectID": "graph-patterns.html",
