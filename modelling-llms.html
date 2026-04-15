@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./modelling-llms.html">
- <span class="dropdown-text">LLMs as Modelling Assistants</span></a>
+ <span class="dropdown-text">LLMs as Modelling Aid</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./modelling-exercise-3.html">
@@ -192,8 +192,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#llms-as-modelling-assistants" id="toc-llms-as-modelling-assistants" class="nav-link active" data-scroll-target="#llms-as-modelling-assistants">LLMs as Modelling Assistants</a></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link active" data-scroll-target="#skills">Skills</a></li>
   </ul>
 </nav>
     </div>
@@ -220,16 +219,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="llms-as-modelling-assistants" class="level2">
-<h2 class="anchored" data-anchor-id="llms-as-modelling-assistants">LLMs as Modelling Assistants</h2>
-<p>Imagine that you want to model a complex pattern but you are not an expert on CIDOC CRM. You may ask a Large Language Model (LLM) for help and it will respond, but most LLMs don’t know, out of the box, how LINCS uses CIDOC CRM and which practices it follows.</p>
+<p>Imagine that you want to model a complex pattern but you are not an expert on CIDOC CRM. You may ask a Large Language Model (LLM) for help and it will give a response, but this may be incorrect because most LLMs don’t know, out of the box, how LINCS uses CIDOC CRM and which practices it follows.</p>
 <p>For example, if you ask an LLM the following:</p>
 <p><code>How do you model gender in CIDOC CRM?</code></p>
-<p>It may mention multiple different ways of modelling gender, such as the following:</p>
-<pre><code>E21 Person → P2 has type → E55 Type (gender)</code></pre>
-<p><strong>The above is not recommended by LINCS</strong>.</p>
-<p>The LLM may also mention the more complex pattern that LINCS is using (based on attribute assignment), but not necessarily suggest that you adopt it. Most likely, it will mention general resources such as <a href="https://www.getty.edu/research/tools/vocabularies/aat/">Getty AAT</a> or <a href="https://www.wikidata.org">Wikidata</a> as sources of gender types rather than a more specialized and inclusive vocabulary such as <a href="https://homosaurus.org/">Homosaurus</a>.</p>
-</section>
+<p>It may mention multiple different ways of modelling gender, such as:</p>
+<p><code>E21 Person → P2 has type → E55 Type (gender)</code></p>
+<p><strong>The above is NOT recommended by LINCS</strong>. Gender identity is too complex to model it as a simple type without any context around it.</p>
+<p>The LLM may also mention the <a href="./advanced-patterns.html">more complex pattern</a> that LINCS is using (based on attribute assignments), but not necessarily suggest that you adopt it. Most likely, it will mention general resources such as <a href="https://www.getty.edu/research/tools/vocabularies/aat/">Getty AAT</a> or <a href="https://www.wikidata.org">Wikidata</a> as sources of gender URIs rather than a more specialized and inclusive vocabulary like <a href="https://homosaurus.org/">Homosaurus</a>.</p>
 <section id="skills" class="level2">
 <h2 class="anchored" data-anchor-id="skills">Skills</h2>
 <p>If the LLM is given specific knowledge about LINCS through appropriate <a href="./lincs-skills.html">Skills files</a>, it will be able to respond more accurately and will make fewer mistakes when helping you transform the data.</p>

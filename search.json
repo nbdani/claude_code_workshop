@@ -557,14 +557,7 @@
     "href": "modelling-llms.html",
     "title": "LLMs as Modelling Assistants",
     "section": "",
-    "text": "Imagine that you want to model a complex pattern but you are not an expert on CIDOC CRM. You may ask a Large Language Model (LLM) for help and it will respond, but most LLMs don’t know, out of the box, how LINCS uses CIDOC CRM and which practices it follows.\nFor example, if you ask an LLM the following:\nHow do you model gender in CIDOC CRM?\nIt may mention multiple different ways of modelling gender, such as the following:\nE21 Person → P2 has type → E55 Type (gender)\nThe above is not recommended by LINCS.\nThe LLM may also mention the more complex pattern that LINCS is using (based on attribute assignment), but not necessarily suggest that you adopt it. Most likely, it will mention general resources such as Getty AAT or Wikidata as sources of gender types rather than a more specialized and inclusive vocabulary such as Homosaurus."
-  },
-  {
-    "objectID": "modelling-llms.html#llms-as-modelling-assistants",
-    "href": "modelling-llms.html#llms-as-modelling-assistants",
-    "title": "LLMs as Modelling Assistants",
-    "section": "",
-    "text": "Imagine that you want to model a complex pattern but you are not an expert on CIDOC CRM. You may ask a Large Language Model (LLM) for help and it will respond, but most LLMs don’t know, out of the box, how LINCS uses CIDOC CRM and which practices it follows.\nFor example, if you ask an LLM the following:\nHow do you model gender in CIDOC CRM?\nIt may mention multiple different ways of modelling gender, such as the following:\nE21 Person → P2 has type → E55 Type (gender)\nThe above is not recommended by LINCS.\nThe LLM may also mention the more complex pattern that LINCS is using (based on attribute assignment), but not necessarily suggest that you adopt it. Most likely, it will mention general resources such as Getty AAT or Wikidata as sources of gender types rather than a more specialized and inclusive vocabulary such as Homosaurus."
+    "text": "Imagine that you want to model a complex pattern but you are not an expert on CIDOC CRM. You may ask a Large Language Model (LLM) for help and it will give a response, but this may be incorrect because most LLMs don’t know, out of the box, how LINCS uses CIDOC CRM and which practices it follows.\nFor example, if you ask an LLM the following:\nHow do you model gender in CIDOC CRM?\nIt may mention multiple different ways of modelling gender, such as:\nE21 Person → P2 has type → E55 Type (gender)\nThe above is NOT recommended by LINCS. Gender identity is too complex to model it as a simple type without any context around it.\nThe LLM may also mention the more complex pattern that LINCS is using (based on attribute assignments), but not necessarily suggest that you adopt it. Most likely, it will mention general resources such as Getty AAT or Wikidata as sources of gender URIs rather than a more specialized and inclusive vocabulary like Homosaurus."
   },
   {
     "objectID": "modelling-llms.html#skills",
