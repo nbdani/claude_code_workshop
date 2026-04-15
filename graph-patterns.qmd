@@ -1,0 +1,47 @@
+---
+title: "Graph Patterns"
+subtitle: "A list of common CIDOC CRM graph patterns"
+---
+
+## Graph Patterns
+
+This page lists common graph patterns that we encounter when modelling data in LINCS.
+
+## General Patterns
+
+### Names & Titles
+
+### Type
+
+### Event Date
+
+### Event Location
+
+![Caption](./images/Location.png)
+
+## Patterns Involving People
+
+### Birth Date
+
+### Birth Place
+
+![Caption](./images/Birth_Location.png)
+
+### Death Date
+
+### Death Place
+
+![Caption](./images/Death_Location.png)
+
+### Occupation
+
+
+## Patterns Involving Groups
+
+
+## Patterns Involving Places
+
+
+
+### Other useful commands
+
