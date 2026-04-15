@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Modelling Exercise 3 – HGIS to LOD Workshop</title>
+<title>LLMs as a Modelling Aid – HGIS to LOD Workshop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -188,10 +188,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#spot-the-errors" id="toc-spot-the-errors" class="nav-link active" data-scroll-target="#spot-the-errors">Spot the errors</a>
-  <ul class="collapse">
-  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">Quiz</a></li>
-  </ul></li>
+  <li><a href="#llms-as-a-modelling-aid" id="toc-llms-as-a-modelling-aid" class="nav-link active" data-scroll-target="#llms-as-a-modelling-aid">LLMs as a Modelling Aid</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a></li>
   </ul>
 </nav>
     </div>
@@ -200,8 +198,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Modelling Exercise 3</h1>
-<p class="subtitle lead">Spot the errors in this model</p>
+<h1 class="title">LLMs as a Modelling Aid</h1>
+<p class="subtitle lead">What can go wrong</p>
 </div>
 
 
@@ -218,29 +216,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="spot-the-errors" class="level2">
-<h2 class="anchored" data-anchor-id="spot-the-errors">Spot the errors</h2>
-<p>You asked an LLM to model and transform a certain dataset into Linked Data. The LLM returned this knowledge graph. How many errors can you see?</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>NOTE
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>This graph intentionally contains errors. DO NOT use it as reference!</strong></p>
-</div>
-</div>
-<section id="quiz" class="level3">
-<h3 class="anchored" data-anchor-id="quiz">Quiz</h3>
-<p>List all the errors you find here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls</p>
-<p>(feel free to respond multiple times if you find more)</p>
-
-
+<section id="llms-as-a-modelling-aid" class="level2">
+<h2 class="anchored" data-anchor-id="llms-as-a-modelling-aid">LLMs as a Modelling Aid</h2>
+<p>Imagine that you want to model a complex pattern but you are not an expert on CIDOC CRM. You may ask a Large Language Model (LLM) for help and it will respond, but most LLMs don’t know, out of the box, how LINCS uses CIDOC CRM and which practices it follows.</p>
+<p>For example, if you ask an LLM the following:</p>
+<p><code>How do you model gender in CIDOC CRM?</code></p>
+<p>It may mention multiple different ways of modelling gender, such as the following:</p>
+<pre><code>E21 Person → P2 has type → E55 Type (gender)</code></pre>
+<p><strong>The above is not recommended by LINCS</strong>.</p>
+<p>The LLM may also mention the more complex pattern that LINCS is using (based on attribute assignment), but not necessarily suggest that you adopt it. Most likely, it will mention general resources such as <a href="https://www.getty.edu/research/tools/vocabularies/aat/">Getty AAT</a> or <a href="https://www.wikidata.org">Wikidata</a> as sources of gender types rather than a more specialized and inclusive vocabulary such as <a href="https://homosaurus.org/">Homosaurus</a>.</p>
 </section>
+<section id="skills" class="level2">
+<h2 class="anchored" data-anchor-id="skills">Skills</h2>
+<p>If the LLM is given specific knowledge about LINCS through appropriate <a href="./lincs-skills.html">Skills files</a>, it will be able to respond more accurately and will make fewer mistakes when helping you transform the data.</p>
+<p>On the other hand, if an LLM does the modelling and transformation completely unsupervised, many things can go wrong, as we will see in <a href="./modelling-exercise-3.html">Exercise 3</a>.</p>
+
+
 </section>
 
 </main> <!-- /main -->
