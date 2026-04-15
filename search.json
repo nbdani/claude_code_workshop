@@ -133,116 +133,46 @@
     "text": "Workshop Schedule\n\nPart 1: Working with GIS Data (0:00–1:00)\n\n\n\nTime\nSection\n\n\n\n\n0:00\nTroubleshoot remaining installations\n\n\n0:10\nWhat Is Claude Code? — orientation and key concepts\n\n\n0:20\nData Ethics and Privacy — OCAP, sensitive data, and what not to share\n\n\n0:30\nYour First Session — guided walkthrough\n\n\n0:40\nGIS Data Exercises — exploring and analyzing HGIS data with Claude Code\n\n\n\n\n\nBreak (1:00–1:10)\n\n\nPart 2: Linked Open Data (1:10–2:00)\n\n\n\nTime\nSection\n\n\n\n\n1:10\nLINCS Skills — loading domain expertise for LOD work\n\n\n1:30\nHGIS-to-LINCS Exercise — converting GIS data to CIDOC-CRM / RDF\n\n\n1:50\nDiscussion, questions, and next steps"
   },
   {
-    "objectID": "gis-exercises.html",
-    "href": "gis-exercises.html",
-    "title": "GIS Data Exercises",
+    "objectID": "graph-patterns.html",
+    "href": "graph-patterns.html",
+    "title": "Graph Patterns",
     "section": "",
-    "text": "ImportantBefore you start\n\n\n\nMake sure you have completed Step 5 of the Installation guide — you need an activated Python virtual environment with pandas, matplotlib, geopandas, and rdflib installed before working through Exercises 3–5 and Part 2. Exercises 1 and 2 do not need Python (Claude Code reads the CSVs directly)."
+    "text": "This page lists common graph patterns that we encounter when modelling data in LINCS."
   },
   {
-    "objectID": "gis-exercises.html#the-dataset",
-    "href": "gis-exercises.html#the-dataset",
-    "title": "GIS Data Exercises",
-    "section": "The Dataset",
-    "text": "The Dataset\nWe are working with canada_boundaries_temporal.gpkg, a GeoPackage containing the evolving political boundaries of Canada from 1667 to 2001. It is derived from Nicholson, Whebell, Galois, and Stavely, Territorial Evolution, 1670–2001 (Borealis, CC BY-NC 4.0), originally published as part of the Historical Atlas of Canada Online Learning Project. It includes:\n\n\n\n\n\n\n\n\nTable\nRows\nDescription\n\n\n\n\nboundaries_poly\n815\nTerritorial polygons with sovereignty, temporal range\n\n\nboundary_changes\n69\nHistorical events (treaties, acts) that changed boundaries\n\n\nboundaries_arc\n1,387\nBoundary line segments\n\n\nlakes\n125\nMajor lakes\n\n\nrivers\n527\nMajor rivers\n\n\nshoreline\n1,275\nCoastal segments\n\n\n\nCSV extracts of the two key attribute tables (boundaries_poly.csv and boundary_changes.csv) are also included for those who prefer working without spatial libraries.\n\nDownload the Data\nDownload workshop-data.zip (~64 MB) from the workshop release page.\nIn your claude_workshop folder, create a data/ subfolder and unzip the archive into it so the files sit at:\n\ndata/canada_boundaries_temporal.gpkg\ndata/boundaries_poly.csv\ndata/boundary_changes.csv"
-  },
-  {
-    "objectID": "gis-exercises.html#exercise-1-data-exploration",
-    "href": "gis-exercises.html#exercise-1-data-exploration",
-    "title": "GIS Data Exercises",
-    "section": "Exercise 1: Data Exploration",
-    "text": "Exercise 1: Data Exploration\nStart a Claude Code session in the workshop directory and try:\nRead data/boundaries_poly.csv and give me an overview.\nHow many distinct territorial entities exist? How many time periods?\nThen dig deeper:\nCreate a timeline showing how many territorial entities existed in each year.\nWhich sovereign power controlled the most territory names over time?\n\n\n\n\n\n\nNoteGeoPackage vs CSV\n\n\n\nIf you want Claude Code to work directly with the GeoPackage (which includes geometry), ask it to use Python with geopandas or sqlite3. The CSV files have the same attribute data but no spatial geometry."
-  },
-  {
-    "objectID": "gis-exercises.html#exercise-2-querying-the-boundary-changes",
-    "href": "gis-exercises.html#exercise-2-querying-the-boundary-changes",
-    "title": "GIS Data Exercises",
-    "section": "Exercise 2: Querying the Boundary Changes",
-    "text": "Exercise 2: Querying the Boundary Changes\nThe boundary_changes table contains short descriptions of each historical event. Try asking Claude Code for specific summaries and counts:\nRead data/boundary_changes.csv. Count the events per century and list them in a table.\nList the treaties named in the description column, ranked by how many boundary changes each one is associated with.\nFilter the rows where the description mentions Indigenous territories, treaties with First Nations, or named Indigenous groups, and list them as a table with year, description, and territories affected.\nThe historical interpretation of these results — why one treaty mattered more than another, what the patterns mean — is your job. Claude Code is good at retrieving and counting; it is not a substitute for the contextual knowledge you bring as a historian."
-  },
-  {
-    "objectID": "gis-exercises.html#exercise-3-write-a-script",
-    "href": "gis-exercises.html#exercise-3-write-a-script",
-    "title": "GIS Data Exercises",
-    "section": "Exercise 3: Write a Script",
-    "text": "Exercise 3: Write a Script\nThis is where Claude Code shines — ask it to write code for you:\nWrite a Python script that reads boundaries_poly.csv and produces\na summary table showing, for each sovereign entity, the years they\nfirst and last appear, and how many territorial polygons they controlled.\nClaude Code will write the script, ask permission to save it, and then offer to run it. Review the output and iterate:\nGood, but add a column showing the total number of years each\nsovereign was present. Sort by that column descending."
-  },
-  {
-    "objectID": "gis-exercises.html#exercise-4-visualization",
-    "href": "gis-exercises.html#exercise-4-visualization",
-    "title": "GIS Data Exercises",
-    "section": "Exercise 4: Visualization",
-    "text": "Exercise 4: Visualization\nUsing matplotlib, create a stacked area chart showing the number of\nterritorial entities controlled by each sovereign power over time.\nSave it as sovereignty_timeline.png.\nOr, if you prefer a simpler output:\nCreate a text-based timeline showing major boundary events from\n1667 to 1999. Format it as a markdown table I could put in a paper."
-  },
-  {
-    "objectID": "gis-exercises.html#exercise-5-spatial-queries-advanced",
-    "href": "gis-exercises.html#exercise-5-spatial-queries-advanced",
-    "title": "GIS Data Exercises",
-    "section": "Exercise 5: Spatial Queries (Advanced)",
-    "text": "Exercise 5: Spatial Queries (Advanced)\nThis exercise uses the full canada_boundaries_temporal.gpkg file (74 MB), included in the workshop-data.zip download above. You will also need geopandas installed (pip install geopandas).\nUsing geopandas, read the boundaries_poly layer from\ndata/canada_boundaries_temporal.gpkg. Calculate the approximate\narea of each territory in 1867 (Confederation year).\nWhich was largest?\nCreate a simple map showing Canadian territorial boundaries in 1867.\nUse different colors for each sovereign. Save as confederation_1867.png.\n\n\n\n\n\n\nTipSkip this if you like\n\n\n\nThe spatial exercises are optional. Exercises 1–4 and all of Part 2 work with the CSV files included in the workshop repository."
-  },
-  {
-    "objectID": "gis-exercises.html#if-you-get-stuck",
-    "href": "gis-exercises.html#if-you-get-stuck",
-    "title": "GIS Data Exercises",
-    "section": "If You Get Stuck",
-    "text": "If You Get Stuck\nIf something is not working — Python is not installed, a library is missing, a command throws an error — ask Claude Code. Describe the problem in plain language: “I got this error when I tried to run the script, what’s wrong?” Troubleshooting is one of the things it does best, and learning to debug with Claude Code is just as valuable as learning to analyze data with it."
-  },
-  {
-    "objectID": "gis-exercises.html#reflection",
-    "href": "gis-exercises.html#reflection",
-    "title": "GIS Data Exercises",
-    "section": "Reflection",
-    "text": "Reflection\nBefore we break, take a moment to consider:\n\nHow did working with an AI assistant compare to exploring this data manually?\nWhat did Claude Code get right? What did it get wrong?\nWhat questions about the data would you not have thought to ask?\n\nAfter the break, we will use what we have learned about this dataset to convert it to Linked Open Data using the LINCS application profile."
-  },
-  {
-    "objectID": "data-ethics.html",
-    "href": "data-ethics.html",
-    "title": "Data Ethics and Privacy",
+    "objectID": "graph-patterns.html#graph-patterns",
+    "href": "graph-patterns.html#graph-patterns",
+    "title": "Graph Patterns",
     "section": "",
-    "text": "Claude Code, Codex, and every other cloud-based AI tool sends your data to remote servers for processing. When you ask Claude Code to read a CSV file, the contents of that file leave your computer. This is fine for many datasets. It is not fine for all of them.\nBefore using any AI tool with your data, ask: who has rights over this data, and what am I allowed to do with it?"
+    "text": "This page lists common graph patterns that we encounter when modelling data in LINCS."
   },
   {
-    "objectID": "data-ethics.html#the-core-issue",
-    "href": "data-ethics.html#the-core-issue",
-    "title": "Data Ethics and Privacy",
-    "section": "",
-    "text": "Claude Code, Codex, and every other cloud-based AI tool sends your data to remote servers for processing. When you ask Claude Code to read a CSV file, the contents of that file leave your computer. This is fine for many datasets. It is not fine for all of them.\nBefore using any AI tool with your data, ask: who has rights over this data, and what am I allowed to do with it?"
+    "objectID": "graph-patterns.html#general-patterns",
+    "href": "graph-patterns.html#general-patterns",
+    "title": "Graph Patterns",
+    "section": "General Patterns",
+    "text": "General Patterns\n\nNames & Titles\n\n\nType\n\n\nEvent Date\n\n\nEvent Location\n\n\n\nCaption"
   },
   {
-    "objectID": "data-ethics.html#ocap-principles",
-    "href": "data-ethics.html#ocap-principles",
-    "title": "Data Ethics and Privacy",
-    "section": "OCAP Principles",
-    "text": "OCAP Principles\nHistorians working with Indigenous data in Canada need to understand OCAP — the First Nations principles of Ownership, Control, Access, and Possession:\n\nOwnership: First Nations communities collectively own their cultural knowledge, data, and information\nControl: First Nations communities have the right to control all aspects of data management and research processes\nAccess: First Nations communities must have access to data about themselves and their communities\nPossession: First Nations communities must have physical control of data\n\nSending Indigenous community data to Anthropic’s or OpenAI’s servers almost certainly violates the Possession and Control principles. The data leaves the community’s physical control and is processed by a third-party corporation, regardless of what that corporation’s privacy policy says.\nThis is not a technical limitation to work around. It is a matter of Indigenous data sovereignty.\nIf your research involves Indigenous data, consult with the relevant community and your institution’s research ethics board before using any cloud-based AI tool with that data."
+    "objectID": "graph-patterns.html#patterns-involving-people",
+    "href": "graph-patterns.html#patterns-involving-people",
+    "title": "Graph Patterns",
+    "section": "Patterns Involving People",
+    "text": "Patterns Involving People\n\nBirth Date\n\n\nBirth Place\n\n\n\nCaption\n\n\n\n\nDeath Date\n\n\nDeath Place\n\n\n\nCaption\n\n\n\n\nOccupation"
   },
   {
-    "objectID": "data-ethics.html#what-subscriber-privacy-actually-means",
-    "href": "data-ethics.html#what-subscriber-privacy-actually-means",
-    "title": "Data Ethics and Privacy",
-    "section": "What Subscriber Privacy Actually Means",
-    "text": "What Subscriber Privacy Actually Means\nAI providers vary widely in how they handle your data, and the details matter:\n\nAnthropic uses an opt-in model: your data is not used for training unless you choose to allow it. This applies to both free and paid tiers.\nOpenAI, xAI, Perplexity, and others use an opt-out model: your data is used for training by default, even on paid plans, unless you find the setting and turn it off. Many users do not know this.\n\nDo not assume that paying for a subscription protects your data. Check the specific provider’s settings and policies.\nEven with training opt-out enabled, your data is not private in the way that data on your own computer is private:\n\nYour data is transmitted over the internet to the provider’s servers\nIt is processed on infrastructure you do not control\nIt may be stored temporarily for safety monitoring\nIt is subject to the provider’s terms of service, which can change\nIt is subject to the legal jurisdiction where the servers are located (typically the United States)\n\nA paid subscription is not a data agreement. If your institution requires specific data handling guarantees — as is common for health data, personnel records, or data covered by research ethics protocols — you need a formal agreement between your institution and the AI provider."
+    "objectID": "graph-patterns.html#patterns-involving-groups",
+    "href": "graph-patterns.html#patterns-involving-groups",
+    "title": "Graph Patterns",
+    "section": "Patterns Involving Groups",
+    "text": "Patterns Involving Groups"
   },
   {
-    "objectID": "data-ethics.html#what-is-safe-to-use",
-    "href": "data-ethics.html#what-is-safe-to-use",
-    "title": "Data Ethics and Privacy",
-    "section": "What Is Safe to Use",
-    "text": "What Is Safe to Use\nThere is no simple checklist. Every dataset requires you to consider who has rights over it, what restrictions apply, and whether sending it to a cloud service is appropriate.\nAs a rough guide, data that you created yourself — your own notes, your own writing, your own code — is straightforward. Open government datasets explicitly published for reuse (like the Canada boundaries data we use in this workshop) are generally fine, but check the licence. Beyond that, the answer depends on the specific data and context.\n“Publicly available” does not mean “free to use however you like.” Newspaper archives may be under copyright. Government records are sometimes restricted or not open by default in all jurisdictions. Indigenous communities that shared data online did not consent to that data being ingested by AI companies. The fact that something is technically accessible does not settle the ethical question.\nUse with care:\n\nArchival materials with access restrictions or donor agreements\nOral history transcripts (informed consent may not have covered AI processing)\nData collected under research ethics protocols — check whether your protocol permits cloud processing\nUnpublished research data\nPublished materials that may be under copyright (newspaper archives, published books, etc.)\n\nDo not use without explicit authorization:\n\nData produced by or about Indigenous communities — even if publicly available online. OCAP principles apply to the relationship, not just the access method.\nData held in trust under OCAP or community data governance agreements\nHealth or medical records\nPersonal information about living individuals\nData covered by FIPPA, PIPEDA, or institutional data governance policies\nData subject to NDA or contractual restrictions"
-  },
-  {
-    "objectID": "data-ethics.html#practical-strategies",
-    "href": "data-ethics.html#practical-strategies",
-    "title": "Data Ethics and Privacy",
-    "section": "Practical Strategies",
-    "text": "Practical Strategies\n\nWork with metadata instead of data\nYou can often describe your data to Claude Code without giving it the actual records:\nI have a dataset with columns: name, community, date_of_birth,\ntraditional_territory. I need to model this in CIDOC-CRM.\nWhat classes and properties should I use?\nClaude Code can help you design a data model, write transformation scripts, and debug code without ever seeing the sensitive data itself.\n\n\nUse synthetic or anonymized data\nCreate a small sample dataset with fictional entries that mirrors the structure of your real data. Use that for developing your workflow with Claude Code, then run the final scripts on your real data locally, without AI assistance.\n\n\nRun scripts locally\nClaude Code can write a Python script that transforms your data. You can then run that script yourself, on your own machine, without Claude Code. The script does not send data anywhere — it is just a file on your computer.\n\n\nInstitutional agreements\nSome Canadian universities are negotiating enterprise agreements with AI providers that include data residency and processing guarantees. Check with your institution’s IT or research services office. These agreements may allow cloud processing of data that would otherwise be off-limits."
-  },
-  {
-    "objectID": "data-ethics.html#the-bottom-line",
-    "href": "data-ethics.html#the-bottom-line",
-    "title": "Data Ethics and Privacy",
-    "section": "The Bottom Line",
-    "text": "The Bottom Line\nThese tools are powerful, but they are cloud services operated by American corporations. Treat them the way you would treat any other cloud service: useful for work that is already public or that you own outright, but not a place to put data that belongs to someone else or that carries legal or ethical restrictions.\nWhen in doubt, describe your data to the tool instead of showing it. You get most of the benefit with none of the risk."
+    "objectID": "graph-patterns.html#patterns-involving-places",
+    "href": "graph-patterns.html#patterns-involving-places",
+    "title": "Graph Patterns",
+    "section": "Patterns Involving Places",
+    "text": "Patterns Involving Places\n\nOther useful commands"
   },
   {
     "objectID": "first-session.html",
@@ -327,6 +257,118 @@
     "title": "Your First Session",
     "section": "Exercise: Explore on Your Own (5 minutes)",
     "text": "Exercise: Explore on Your Own (5 minutes)\nPick whichever dataset you found more interesting and push it further. A few ideas:\nQuebec Arrivals\n\nAsk Claude Code to count the arrivals by month across the whole period and produce a table.\nAsk it to map the top 10 ports of departure to modern country names.\nAsk it to filter to ships carrying timber and list the top 10 ports for the timber trade.\n\nInternet Archive\n\nRe-run the search with a different term — your hometown, a historical figure, a publication.\nAsk Claude Code to pull the OCR text from any “texts” items and report the most common nouns.\nAsk it to produce a citation table with author, title, year, and format for all 10 items.\n\nWhen you are comfortable with the basics, move on to GIS Data Exercises."
+  },
+  {
+    "objectID": "data-ethics.html",
+    "href": "data-ethics.html",
+    "title": "Data Ethics and Privacy",
+    "section": "",
+    "text": "Claude Code, Codex, and every other cloud-based AI tool sends your data to remote servers for processing. When you ask Claude Code to read a CSV file, the contents of that file leave your computer. This is fine for many datasets. It is not fine for all of them.\nBefore using any AI tool with your data, ask: who has rights over this data, and what am I allowed to do with it?"
+  },
+  {
+    "objectID": "data-ethics.html#the-core-issue",
+    "href": "data-ethics.html#the-core-issue",
+    "title": "Data Ethics and Privacy",
+    "section": "",
+    "text": "Claude Code, Codex, and every other cloud-based AI tool sends your data to remote servers for processing. When you ask Claude Code to read a CSV file, the contents of that file leave your computer. This is fine for many datasets. It is not fine for all of them.\nBefore using any AI tool with your data, ask: who has rights over this data, and what am I allowed to do with it?"
+  },
+  {
+    "objectID": "data-ethics.html#ocap-principles",
+    "href": "data-ethics.html#ocap-principles",
+    "title": "Data Ethics and Privacy",
+    "section": "OCAP Principles",
+    "text": "OCAP Principles\nHistorians working with Indigenous data in Canada need to understand OCAP — the First Nations principles of Ownership, Control, Access, and Possession:\n\nOwnership: First Nations communities collectively own their cultural knowledge, data, and information\nControl: First Nations communities have the right to control all aspects of data management and research processes\nAccess: First Nations communities must have access to data about themselves and their communities\nPossession: First Nations communities must have physical control of data\n\nSending Indigenous community data to Anthropic’s or OpenAI’s servers almost certainly violates the Possession and Control principles. The data leaves the community’s physical control and is processed by a third-party corporation, regardless of what that corporation’s privacy policy says.\nThis is not a technical limitation to work around. It is a matter of Indigenous data sovereignty.\nIf your research involves Indigenous data, consult with the relevant community and your institution’s research ethics board before using any cloud-based AI tool with that data."
+  },
+  {
+    "objectID": "data-ethics.html#what-subscriber-privacy-actually-means",
+    "href": "data-ethics.html#what-subscriber-privacy-actually-means",
+    "title": "Data Ethics and Privacy",
+    "section": "What Subscriber Privacy Actually Means",
+    "text": "What Subscriber Privacy Actually Means\nAI providers vary widely in how they handle your data, and the details matter:\n\nAnthropic uses an opt-in model: your data is not used for training unless you choose to allow it. This applies to both free and paid tiers.\nOpenAI, xAI, Perplexity, and others use an opt-out model: your data is used for training by default, even on paid plans, unless you find the setting and turn it off. Many users do not know this.\n\nDo not assume that paying for a subscription protects your data. Check the specific provider’s settings and policies.\nEven with training opt-out enabled, your data is not private in the way that data on your own computer is private:\n\nYour data is transmitted over the internet to the provider’s servers\nIt is processed on infrastructure you do not control\nIt may be stored temporarily for safety monitoring\nIt is subject to the provider’s terms of service, which can change\nIt is subject to the legal jurisdiction where the servers are located (typically the United States)\n\nA paid subscription is not a data agreement. If your institution requires specific data handling guarantees — as is common for health data, personnel records, or data covered by research ethics protocols — you need a formal agreement between your institution and the AI provider."
+  },
+  {
+    "objectID": "data-ethics.html#what-is-safe-to-use",
+    "href": "data-ethics.html#what-is-safe-to-use",
+    "title": "Data Ethics and Privacy",
+    "section": "What Is Safe to Use",
+    "text": "What Is Safe to Use\nThere is no simple checklist. Every dataset requires you to consider who has rights over it, what restrictions apply, and whether sending it to a cloud service is appropriate.\nAs a rough guide, data that you created yourself — your own notes, your own writing, your own code — is straightforward. Open government datasets explicitly published for reuse (like the Canada boundaries data we use in this workshop) are generally fine, but check the licence. Beyond that, the answer depends on the specific data and context.\n“Publicly available” does not mean “free to use however you like.” Newspaper archives may be under copyright. Government records are sometimes restricted or not open by default in all jurisdictions. Indigenous communities that shared data online did not consent to that data being ingested by AI companies. The fact that something is technically accessible does not settle the ethical question.\nUse with care:\n\nArchival materials with access restrictions or donor agreements\nOral history transcripts (informed consent may not have covered AI processing)\nData collected under research ethics protocols — check whether your protocol permits cloud processing\nUnpublished research data\nPublished materials that may be under copyright (newspaper archives, published books, etc.)\n\nDo not use without explicit authorization:\n\nData produced by or about Indigenous communities — even if publicly available online. OCAP principles apply to the relationship, not just the access method.\nData held in trust under OCAP or community data governance agreements\nHealth or medical records\nPersonal information about living individuals\nData covered by FIPPA, PIPEDA, or institutional data governance policies\nData subject to NDA or contractual restrictions"
+  },
+  {
+    "objectID": "data-ethics.html#practical-strategies",
+    "href": "data-ethics.html#practical-strategies",
+    "title": "Data Ethics and Privacy",
+    "section": "Practical Strategies",
+    "text": "Practical Strategies\n\nWork with metadata instead of data\nYou can often describe your data to Claude Code without giving it the actual records:\nI have a dataset with columns: name, community, date_of_birth,\ntraditional_territory. I need to model this in CIDOC-CRM.\nWhat classes and properties should I use?\nClaude Code can help you design a data model, write transformation scripts, and debug code without ever seeing the sensitive data itself.\n\n\nUse synthetic or anonymized data\nCreate a small sample dataset with fictional entries that mirrors the structure of your real data. Use that for developing your workflow with Claude Code, then run the final scripts on your real data locally, without AI assistance.\n\n\nRun scripts locally\nClaude Code can write a Python script that transforms your data. You can then run that script yourself, on your own machine, without Claude Code. The script does not send data anywhere — it is just a file on your computer.\n\n\nInstitutional agreements\nSome Canadian universities are negotiating enterprise agreements with AI providers that include data residency and processing guarantees. Check with your institution’s IT or research services office. These agreements may allow cloud processing of data that would otherwise be off-limits."
+  },
+  {
+    "objectID": "data-ethics.html#the-bottom-line",
+    "href": "data-ethics.html#the-bottom-line",
+    "title": "Data Ethics and Privacy",
+    "section": "The Bottom Line",
+    "text": "The Bottom Line\nThese tools are powerful, but they are cloud services operated by American corporations. Treat them the way you would treat any other cloud service: useful for work that is already public or that you own outright, but not a place to put data that belongs to someone else or that carries legal or ethical restrictions.\nWhen in doubt, describe your data to the tool instead of showing it. You get most of the benefit with none of the risk."
+  },
+  {
+    "objectID": "gis-exercises.html",
+    "href": "gis-exercises.html",
+    "title": "GIS Data Exercises",
+    "section": "",
+    "text": "ImportantBefore you start\n\n\n\nMake sure you have completed Step 5 of the Installation guide — you need an activated Python virtual environment with pandas, matplotlib, geopandas, and rdflib installed before working through Exercises 3–5 and Part 2. Exercises 1 and 2 do not need Python (Claude Code reads the CSVs directly)."
+  },
+  {
+    "objectID": "gis-exercises.html#the-dataset",
+    "href": "gis-exercises.html#the-dataset",
+    "title": "GIS Data Exercises",
+    "section": "The Dataset",
+    "text": "The Dataset\nWe are working with canada_boundaries_temporal.gpkg, a GeoPackage containing the evolving political boundaries of Canada from 1667 to 2001. It is derived from Nicholson, Whebell, Galois, and Stavely, Territorial Evolution, 1670–2001 (Borealis, CC BY-NC 4.0), originally published as part of the Historical Atlas of Canada Online Learning Project. It includes:\n\n\n\n\n\n\n\n\nTable\nRows\nDescription\n\n\n\n\nboundaries_poly\n815\nTerritorial polygons with sovereignty, temporal range\n\n\nboundary_changes\n69\nHistorical events (treaties, acts) that changed boundaries\n\n\nboundaries_arc\n1,387\nBoundary line segments\n\n\nlakes\n125\nMajor lakes\n\n\nrivers\n527\nMajor rivers\n\n\nshoreline\n1,275\nCoastal segments\n\n\n\nCSV extracts of the two key attribute tables (boundaries_poly.csv and boundary_changes.csv) are also included for those who prefer working without spatial libraries.\n\nDownload the Data\nDownload workshop-data.zip (~64 MB) from the workshop release page.\nIn your claude_workshop folder, create a data/ subfolder and unzip the archive into it so the files sit at:\n\ndata/canada_boundaries_temporal.gpkg\ndata/boundaries_poly.csv\ndata/boundary_changes.csv"
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-1-data-exploration",
+    "href": "gis-exercises.html#exercise-1-data-exploration",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 1: Data Exploration",
+    "text": "Exercise 1: Data Exploration\nStart a Claude Code session in the workshop directory and try:\nRead data/boundaries_poly.csv and give me an overview.\nHow many distinct territorial entities exist? How many time periods?\nThen dig deeper:\nCreate a timeline showing how many territorial entities existed in each year.\nWhich sovereign power controlled the most territory names over time?\n\n\n\n\n\n\nNoteGeoPackage vs CSV\n\n\n\nIf you want Claude Code to work directly with the GeoPackage (which includes geometry), ask it to use Python with geopandas or sqlite3. The CSV files have the same attribute data but no spatial geometry."
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-2-querying-the-boundary-changes",
+    "href": "gis-exercises.html#exercise-2-querying-the-boundary-changes",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 2: Querying the Boundary Changes",
+    "text": "Exercise 2: Querying the Boundary Changes\nThe boundary_changes table contains short descriptions of each historical event. Try asking Claude Code for specific summaries and counts:\nRead data/boundary_changes.csv. Count the events per century and list them in a table.\nList the treaties named in the description column, ranked by how many boundary changes each one is associated with.\nFilter the rows where the description mentions Indigenous territories, treaties with First Nations, or named Indigenous groups, and list them as a table with year, description, and territories affected.\nThe historical interpretation of these results — why one treaty mattered more than another, what the patterns mean — is your job. Claude Code is good at retrieving and counting; it is not a substitute for the contextual knowledge you bring as a historian."
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-3-write-a-script",
+    "href": "gis-exercises.html#exercise-3-write-a-script",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 3: Write a Script",
+    "text": "Exercise 3: Write a Script\nThis is where Claude Code shines — ask it to write code for you:\nWrite a Python script that reads boundaries_poly.csv and produces\na summary table showing, for each sovereign entity, the years they\nfirst and last appear, and how many territorial polygons they controlled.\nClaude Code will write the script, ask permission to save it, and then offer to run it. Review the output and iterate:\nGood, but add a column showing the total number of years each\nsovereign was present. Sort by that column descending."
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-4-visualization",
+    "href": "gis-exercises.html#exercise-4-visualization",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 4: Visualization",
+    "text": "Exercise 4: Visualization\nUsing matplotlib, create a stacked area chart showing the number of\nterritorial entities controlled by each sovereign power over time.\nSave it as sovereignty_timeline.png.\nOr, if you prefer a simpler output:\nCreate a text-based timeline showing major boundary events from\n1667 to 1999. Format it as a markdown table I could put in a paper."
+  },
+  {
+    "objectID": "gis-exercises.html#exercise-5-spatial-queries-advanced",
+    "href": "gis-exercises.html#exercise-5-spatial-queries-advanced",
+    "title": "GIS Data Exercises",
+    "section": "Exercise 5: Spatial Queries (Advanced)",
+    "text": "Exercise 5: Spatial Queries (Advanced)\nThis exercise uses the full canada_boundaries_temporal.gpkg file (74 MB), included in the workshop-data.zip download above. You will also need geopandas installed (pip install geopandas).\nUsing geopandas, read the boundaries_poly layer from\ndata/canada_boundaries_temporal.gpkg. Calculate the approximate\narea of each territory in 1867 (Confederation year).\nWhich was largest?\nCreate a simple map showing Canadian territorial boundaries in 1867.\nUse different colors for each sovereign. Save as confederation_1867.png.\n\n\n\n\n\n\nTipSkip this if you like\n\n\n\nThe spatial exercises are optional. Exercises 1–4 and all of Part 2 work with the CSV files included in the workshop repository."
+  },
+  {
+    "objectID": "gis-exercises.html#if-you-get-stuck",
+    "href": "gis-exercises.html#if-you-get-stuck",
+    "title": "GIS Data Exercises",
+    "section": "If You Get Stuck",
+    "text": "If You Get Stuck\nIf something is not working — Python is not installed, a library is missing, a command throws an error — ask Claude Code. Describe the problem in plain language: “I got this error when I tried to run the script, what’s wrong?” Troubleshooting is one of the things it does best, and learning to debug with Claude Code is just as valuable as learning to analyze data with it."
+  },
+  {
+    "objectID": "gis-exercises.html#reflection",
+    "href": "gis-exercises.html#reflection",
+    "title": "GIS Data Exercises",
+    "section": "Reflection",
+    "text": "Reflection\nBefore we break, take a moment to consider:\n\nHow did working with an AI assistant compare to exploring this data manually?\nWhat did Claude Code get right? What did it get wrong?\nWhat questions about the data would you not have thought to ask?\n\nAfter the break, we will use what we have learned about this dataset to convert it to Linked Open Data using the LINCS application profile."
   },
   {
     "objectID": "hands-on.html",
