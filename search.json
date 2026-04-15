@@ -151,14 +151,14 @@
     "href": "graph-patterns.html#patterns-involving-events",
     "title": "Graph Patterns",
     "section": "Patterns Involving Events",
-    "text": "Patterns Involving Events\nThe following patterns are applicable to any event or its subclasses (colored in blue), such as Activity, Birth, Death, Occupation, Production, Move, etc.\n\nEvent Date\nAn event took place on a certain date.\n\n\nEvent Place\nAn event took place at a certain place."
+    "text": "Patterns Involving Events\nThe following patterns are applicable to any event or its subclasses (colored in blue), such as Activity, Birth, Death, Occupation, Production, Move, etc.\n\nEvent Date\nAn event took place on a certain date.\n\n\n\nEvent Place\nAn event took place at a certain place."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-people",
     "href": "graph-patterns.html#patterns-involving-people",
     "title": "Graph Patterns",
     "section": "Patterns Involving People",
-    "text": "Patterns Involving People\nThe following patterns are applicable to any person.\n\nBirth Date\nA person was born on a certain date.\n\n\nBirth Place\nA person was born in a certain place.\n\n\n\nDeath Date\nA person died on a certain date.\n\n\nDeath Place\n\n\n\nOccupation\nA person had an occupation such as an employment or appointment."
+    "text": "Patterns Involving People\nThe following patterns are applicable to any person.\n\nPerson Name\nA person has a name.\n\n\n\nBirth Date\nA person was born on a certain date.\n\n\n\nBirth Place\nA person was born in a certain place.\n\n\n\nDeath Date\nA person died on a certain date.\n\n\n\nDeath Place\nA person died in a certain place.\n\n\n\nOccupation\nA person had an occupation such as an employment or appointment."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-groups",
@@ -172,7 +172,7 @@
     "href": "graph-patterns.html#patterns-involving-places",
     "title": "Graph Patterns",
     "section": "Patterns Involving Places",
-    "text": "Patterns Involving Places\n\nOther useful commands"
+    "text": "Patterns Involving Places\n\nPlace Name\nA place has a name.\n\n\n\nContainment\nA place contains another place.\n\n\n\n\n\n\n\nOther useful commands"
   },
   {
     "objectID": "first-session.html",
