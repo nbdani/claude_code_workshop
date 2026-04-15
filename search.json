@@ -165,14 +165,14 @@
     "href": "graph-patterns.html#patterns-involving-groups",
     "title": "Graph Patterns",
     "section": "Patterns Involving Groups",
-    "text": "Patterns Involving Groups\n\nMembership\nA group has a member (a person).\n\n\n\n\n\n\n\nJoining\n\n\nLeaving"
+    "text": "Patterns Involving Groups\nThe following patterns are applicable to any group, including companies and other organizations.\n\nGroup Name\nA group has a name.\n\n\n\n\n\n\n\nMembership\nA group has a member (a person).\n\n\n\n\n\n\n\nJoining\n\n\nLeaving"
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-places",
     "href": "graph-patterns.html#patterns-involving-places",
     "title": "Graph Patterns",
     "section": "Patterns Involving Places",
-    "text": "Patterns Involving Places\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nContainment\nA place contains another place."
+    "text": "Patterns Involving Places\nThe following patterns are applicable to any place.\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nContainment\nA place contains another place."
   },
   {
     "objectID": "first-session.html",
