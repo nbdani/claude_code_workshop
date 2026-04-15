@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GIS Data Exercises – HGIS to LOD Workshop</title>
+<title>Modelling Exercise 4 – HGIS to LOD Workshop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -135,17 +135,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-dataset" id="toc-the-dataset" class="nav-link active" data-scroll-target="#the-dataset">The Dataset</a>
+  <li><a href="#place-or-presence" id="toc-place-or-presence" class="nav-link active" data-scroll-target="#place-or-presence">Place or Presence?</a>
   <ul class="collapse">
-  <li><a href="#download-the-data" id="toc-download-the-data" class="nav-link" data-scroll-target="#download-the-data">Download the Data</a></li>
+  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">Quiz</a></li>
   </ul></li>
-  <li><a href="#exercise-1-data-exploration" id="toc-exercise-1-data-exploration" class="nav-link" data-scroll-target="#exercise-1-data-exploration">Exercise 1: Data Exploration</a></li>
-  <li><a href="#exercise-2-querying-the-boundary-changes" id="toc-exercise-2-querying-the-boundary-changes" class="nav-link" data-scroll-target="#exercise-2-querying-the-boundary-changes">Exercise 2: Querying the Boundary Changes</a></li>
-  <li><a href="#exercise-3-write-a-script" id="toc-exercise-3-write-a-script" class="nav-link" data-scroll-target="#exercise-3-write-a-script">Exercise 3: Write a Script</a></li>
-  <li><a href="#exercise-4-visualization" id="toc-exercise-4-visualization" class="nav-link" data-scroll-target="#exercise-4-visualization">Exercise 4: Visualization</a></li>
-  <li><a href="#exercise-5-spatial-queries-advanced" id="toc-exercise-5-spatial-queries-advanced" class="nav-link" data-scroll-target="#exercise-5-spatial-queries-advanced">Exercise 5: Spatial Queries (Advanced)</a></li>
-  <li><a href="#if-you-get-stuck" id="toc-if-you-get-stuck" class="nav-link" data-scroll-target="#if-you-get-stuck">If You Get Stuck</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -154,8 +147,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">GIS Data Exercises</h1>
-<p class="subtitle lead">Exploring and analyzing HGIS data with Claude Code</p>
+<h1 class="title">Modelling Exercise 4</h1>
+<p class="subtitle lead">A farm in Halifax</p>
 </div>
 
 
@@ -172,167 +165,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Before you start
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Make sure you have completed Step 5 of the <a href="./installation.html#step-5-set-up-python-with-a-virtual-environment">Installation guide</a> — you need an activated Python virtual environment with <code>pandas</code>, <code>matplotlib</code>, <code>geopandas</code>, and <code>rdflib</code> installed before working through Exercises 3–5 and Part 2. Exercises 1 and 2 do not need Python (Claude Code reads the CSVs directly).</p>
-</div>
-</div>
-<section id="the-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="the-dataset">The Dataset</h2>
-<p>We are working with <code>canada_boundaries_temporal.gpkg</code>, a GeoPackage containing the evolving political boundaries of Canada from 1667 to 2001. It is derived from Nicholson, Whebell, Galois, and Stavely, <em><a href="https://doi.org/10.5683/SP2/IQ7E0X">Territorial Evolution, 1670–2001</a></em> (Borealis, <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>), originally published as part of the Historical Atlas of Canada Online Learning Project. It includes:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 23%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Table</th>
-<th>Rows</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>boundaries_poly</code></td>
-<td>815</td>
-<td>Territorial polygons with sovereignty, temporal range</td>
-</tr>
-<tr class="even">
-<td><code>boundary_changes</code></td>
-<td>69</td>
-<td>Historical events (treaties, acts) that changed boundaries</td>
-</tr>
-<tr class="odd">
-<td><code>boundaries_arc</code></td>
-<td>1,387</td>
-<td>Boundary line segments</td>
-</tr>
-<tr class="even">
-<td><code>lakes</code></td>
-<td>125</td>
-<td>Major lakes</td>
-</tr>
-<tr class="odd">
-<td><code>rivers</code></td>
-<td>527</td>
-<td>Major rivers</td>
-</tr>
-<tr class="even">
-<td><code>shoreline</code></td>
-<td>1,275</td>
-<td>Coastal segments</td>
-</tr>
-</tbody>
-</table>
-<p>CSV extracts of the two key attribute tables (<code>boundaries_poly.csv</code> and <code>boundary_changes.csv</code>) are also included for those who prefer working without spatial libraries.</p>
-<section id="download-the-data" class="level3">
-<h3 class="anchored" data-anchor-id="download-the-data">Download the Data</h3>
-<p><a href="https://github.com/jburnford/claude_code_workshop/releases/download/workshop-data-2026-04/workshop-data.zip"><strong>Download <code>workshop-data.zip</code></strong></a> (~64 MB) from the workshop release page.</p>
-<p>In your <code>claude_workshop</code> folder, create a <code>data/</code> subfolder and unzip the archive into it so the files sit at:</p>
-<ul>
-<li><code>data/canada_boundaries_temporal.gpkg</code></li>
-<li><code>data/boundaries_poly.csv</code></li>
-<li><code>data/boundary_changes.csv</code></li>
-</ul>
-</section>
-</section>
-<section id="exercise-1-data-exploration" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-data-exploration">Exercise 1: Data Exploration</h2>
-<p>Start a Claude Code session in the workshop directory and try:</p>
-<pre><code>Read data/boundaries_poly.csv and give me an overview.
-How many distinct territorial entities exist? How many time periods?</code></pre>
-<p>Then dig deeper:</p>
-<pre><code>Create a timeline showing how many territorial entities existed in each year.
-Which sovereign power controlled the most territory names over time?</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>GeoPackage vs CSV
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you want Claude Code to work directly with the GeoPackage (which includes geometry), ask it to use Python with <code>geopandas</code> or <code>sqlite3</code>. The CSV files have the same attribute data but no spatial geometry.</p>
-</div>
-</div>
-</section>
-<section id="exercise-2-querying-the-boundary-changes" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-querying-the-boundary-changes">Exercise 2: Querying the Boundary Changes</h2>
-<p>The <code>boundary_changes</code> table contains short descriptions of each historical event. Try asking Claude Code for specific summaries and counts:</p>
-<pre><code>Read data/boundary_changes.csv. Count the events per century and list them in a table.</code></pre>
-<pre><code>List the treaties named in the description column, ranked by how many boundary changes each one is associated with.</code></pre>
-<pre><code>Filter the rows where the description mentions Indigenous territories, treaties with First Nations, or named Indigenous groups, and list them as a table with year, description, and territories affected.</code></pre>
-<p>The historical interpretation of these results — <em>why</em> one treaty mattered more than another, what the patterns mean — is your job. Claude Code is good at retrieving and counting; it is not a substitute for the contextual knowledge you bring as a historian.</p>
-</section>
-<section id="exercise-3-write-a-script" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-write-a-script">Exercise 3: Write a Script</h2>
-<p>This is where Claude Code shines — ask it to write code for you:</p>
-<pre><code>Write a Python script that reads boundaries_poly.csv and produces
-a summary table showing, for each sovereign entity, the years they
-first and last appear, and how many territorial polygons they controlled.</code></pre>
-<p>Claude Code will write the script, ask permission to save it, and then offer to run it. Review the output and iterate:</p>
-<pre><code>Good, but add a column showing the total number of years each
-sovereign was present. Sort by that column descending.</code></pre>
-</section>
-<section id="exercise-4-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4-visualization">Exercise 4: Visualization</h2>
-<pre><code>Using matplotlib, create a stacked area chart showing the number of
-territorial entities controlled by each sovereign power over time.
-Save it as sovereignty_timeline.png.</code></pre>
-<p>Or, if you prefer a simpler output:</p>
-<pre><code>Create a text-based timeline showing major boundary events from
-1667 to 1999. Format it as a markdown table I could put in a paper.</code></pre>
-</section>
-<section id="exercise-5-spatial-queries-advanced" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5-spatial-queries-advanced">Exercise 5: Spatial Queries (Advanced)</h2>
-<p>This exercise uses the full <code>canada_boundaries_temporal.gpkg</code> file (74 MB), included in the <code>workshop-data.zip</code> download above. You will also need <code>geopandas</code> installed (<code>pip install geopandas</code>).</p>
-<pre><code>Using geopandas, read the boundaries_poly layer from
-data/canada_boundaries_temporal.gpkg. Calculate the approximate
-area of each territory in 1867 (Confederation year).
-Which was largest?</code></pre>
-<pre><code>Create a simple map showing Canadian territorial boundaries in 1867.
-Use different colors for each sovereign. Save as confederation_1867.png.</code></pre>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Skip this if you like
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The spatial exercises are optional. Exercises 1–4 and all of Part 2 work with the CSV files included in the workshop repository.</p>
-</div>
-</div>
-</section>
-<section id="if-you-get-stuck" class="level2">
-<h2 class="anchored" data-anchor-id="if-you-get-stuck">If You Get Stuck</h2>
-<p>If something is not working — Python is not installed, a library is missing, a command throws an error — ask Claude Code. Describe the problem in plain language: “I got this error when I tried to run the script, what’s wrong?” Troubleshooting is one of the things it does best, and learning to debug with Claude Code is just as valuable as learning to analyze data with it.</p>
-</section>
-<section id="reflection" class="level2">
-<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
-<p>Before we break, take a moment to consider:</p>
-<ul>
-<li>How did working with an AI assistant compare to exploring this data manually?</li>
-<li>What did Claude Code get right? What did it get wrong?</li>
-<li>What questions about the data would you not have thought to ask?</li>
-</ul>
-<p>After the break, we will use what we have learned about this dataset to convert it to Linked Open Data using the LINCS application profile.</p>
+<section id="place-or-presence" class="level2">
+<h2 class="anchored" data-anchor-id="place-or-presence">Place or Presence?</h2>
+<p>When is it appropriate to use an E53 Place and when an E93 Presence?</p>
+<p>A place is an extent in space without a temporal dimension.</p>
+<p>A presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).</p>
+<section id="quiz" class="level3">
+<h3 class="anchored" data-anchor-id="quiz">Quiz</h3>
+<p>Do this quiz to check if you can recognize a place from a presence: <a href="https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls">https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
