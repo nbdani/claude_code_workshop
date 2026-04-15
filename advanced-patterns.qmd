@@ -1,0 +1,32 @@
+---
+title: "Advanced Graph Patterns"
+subtitle: "A list of advanced CIDOC CRM graph patterns"
+---
+
+This page lists some advanced graph patterns that we encounter when modelling data in [LINCS](https://lincsproject.ca) using the [CIDOC CRM](https://cidoc-crm.org) ontology. This are more difficult to use compared to [basic graph patterns](./basic-graph-patterns.html), but offer a more detailed and comprehensive modelling.
+
+## General Patterns
+
+### Attribute Assignment
+
+An attribute is assigned to something by someone. Used to model uncertain or conflicting statements.
+
+
+## Patterns Involving People
+
+### Identity (Gender, Ethnicity, Religion, ...)
+
+A person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern.
+
+[DIAGRAM]
+
+## Patterns Involving Places
+
+The following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.
+
+### Presence
+
+A presence is used to model the extent in space and time of a certain phenomenon, such as the location of an object over time, the spatiotemporal extent of an event, etc.
+
+[DIAGRAMS]
+

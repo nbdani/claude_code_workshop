@@ -1,57 +1,25 @@
 ---
-title: "Claude Code for HGIS-to-LINCS"
+title: "HGIS-to-LINCS – Modelling"
 subtitle: "A hands-on workshop for historians converting historical GIS data to Linked Open Data"
 ---
 
 ::: {.callout-note}
-This is an online pre-workshop session for the **[HGIS to LOD Workshop](workshop-event.qmd)** taking place April 15--17 in Ottawa.
+This is a workshop session for the **[HGIS to LOD Workshop](https://jburnford.github.io/claude_code_workshop/workshop-event.html)** taking place April 15--17 in Ottawa. This is the April 15 session about data modelling.
+For more information, see the [main workshop website](https://jburnford.github.io/claude_code_workshop/workshop-event.html).
 :::
 
-## What This Workshop Is
+## What This Workshop Session Is About
 
-This workshop teaches you to use [Claude Code](https://docs.anthropic.com/en/docs/claude-code) --- Anthropic's command-line AI assistant --- to work with Historical GIS data and convert it into [LINCS](https://lincsproject.ca/)-compatible Linked Open Data. No programming experience is required.
+This workshop session is about data modelling with CIDOC CRM, following the practices of the LINCS project. It is not specifically about modelling with LLMs, but rather, it tries to convey the process of modelling a dataset.
 
-By the end of this session, you will have:
+For more info, see the [main workshop website](https://jburnford.github.io/claude_code_workshop/workshop-event.html).
 
-1. **Used Claude Code** to explore, clean, and analyze GIS data through conversation
-2. **Learned to give effective instructions** to an AI coding assistant
-3. **Loaded LINCS-specific skills** that give Claude deep knowledge of CIDOC-CRM and the LINCS application profile
-4. **Converted sample HGIS data** to LINCS-compatible RDF/Turtle
+## Schedule
 
-## Why a Coding Agent?
-
-Most GenAI tools (ChatGPT, Gemini, Claude.ai) work through a web browser, where you copy and paste text in and out. Coding agents are different: they run in your terminal and can directly read, write, and edit files on your computer. We use **Claude Code** in this workshop, but the same workflow applies to OpenAI's **Codex CLI** and Google's **Gemini CLI** --- all three are mature options, and most of what you learn here transfers between them.
-
-This local, file-aware approach makes a coding agent far more useful for data work than a browser chat:
-
-- It reads your CSV, GeoJSON, and Shapefile attribute tables directly
-- It writes output files to your project folder
-- It runs Python, R, or shell commands on your behalf
-- It remembers project context across a session
-- It can be extended with **skills** (Claude Code) or equivalent context files --- reusable knowledge packages that make the agent an expert in a specific domain
-
-## Before the Workshop
-
-Please complete the **[Installation](installation.qmd)** steps before arriving. This includes creating an Anthropic account and installing Claude Code (or signing up for Codex as a browser-based alternative). If you get stuck, bring your laptop and we will help you at the start of the session.
-
-## Workshop Schedule
-
-### Part 1: Working with GIS Data (0:00--1:00)
-
-| Time | Section |
-|------|---------|
-| 0:00 | Troubleshoot remaining installations |
-| 0:10 | [What Is Claude Code?](what-is-claude-code.qmd) --- orientation and key concepts |
-| 0:20 | [Data Ethics and Privacy](data-ethics.qmd) --- OCAP, sensitive data, and what not to share |
-| 0:30 | [Your First Session](first-session.qmd) --- guided walkthrough |
-| 0:40 | [GIS Data Exercises](gis-exercises.qmd) --- exploring and analyzing HGIS data with Claude Code |
-
-### Break (1:00--1:10)
-
-### Part 2: Linked Open Data (1:10--2:00)
-
-| Time | Section |
-|------|---------|
-| 1:10 | [LINCS Skills](lincs-skills.qmd) --- loading domain expertise for LOD work |
-| 1:30 | [HGIS-to-LINCS Exercise](hands-on.qmd) --- converting GIS data to CIDOC-CRM / RDF |
-| 1:50 | Discussion, questions, and next steps |
+1. [Basic Graph Patterns](./graph-patterns.html)
+2. [Exercise 1](./modelling-exercise-1.html)
+3. [Advanced Patterns](./advanced-patterns.html)
+4. [Exercise 2](./modelling-exercise-2.html)
+5. [LLMs for Modelling](./modelling-llms.html)
+6. [Exercise 3](./modelling-exercise-3.html)
+7. [Reference Diagram](./reference-diagram.html)

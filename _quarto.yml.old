@@ -1,0 +1,55 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "!intro_llms_for_historians/"
+
+website:
+  title: "HGIS to LOD Workshop"
+  navbar:
+    left:
+      - href: workshop-event.qmd
+        text: Workshop (April 15--17)
+      - href: index.qmd
+        text: Claude Code Pre-Workshop (April 11)
+      - href: what-is-claude-code.qmd
+        text: What Is Claude Code?
+      - href: data-ethics.qmd
+        text: Data Ethics
+      - href: installation.qmd
+        text: Installation
+      - text: "Part 1: Working with GIS Data"
+        menu:
+          - href: first-session.qmd
+            text: Your First Session
+          - href: gis-exercises.qmd
+            text: GIS Data Exercises
+      - text: "Part 2: Linked Open Data"
+        menu:
+          - href: lincs-skills.qmd
+            text: LINCS Skills
+          - href: hands-on.qmd
+            text: HGIS-to-LINCS Exercise
+      - text: "Modelling"
+        menu:
+          - href: graph-patterns.qmd
+            text: Basic Graph Patterns
+          - href: modelling-exercise-1.qmd
+            text: Exercise 1
+          - href: advanced-patterns.qmd
+            text: Advanced Graph Patterns
+          - href: modelling-exercise-2.qmd
+            text: Exercise 2
+          - href: modelling-llms.qmd
+            text: LLMs as Modelling Aid
+          - href: modelling-exercise-3.qmd
+            text: Exercise 3
+          - href: reference-diagram.qmd
+            text: Reference Diagram
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3

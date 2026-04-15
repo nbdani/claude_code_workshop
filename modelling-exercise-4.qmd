@@ -1,0 +1,16 @@
+---
+title: "Modelling Exercise 4"
+subtitle: "A farm in Halifax"
+---
+
+## Place or Presence?
+
+When is it appropriate to use an E53 Place and when an E93 Presence?
+
+A place is an extent in space without a temporal dimension.
+
+A presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).
+
+### Quiz
+
+Do this quiz to check if you can recognize a place from a presence: [https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls](https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls)

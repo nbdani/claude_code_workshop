@@ -1,0 +1,24 @@
+---
+title: "LLMs as Modelling Assistants"
+subtitle: "How to use them appropriately"
+---
+
+Imagine that you want to model a complex pattern but you are not an expert on CIDOC CRM. You may ask a Large Language Model (LLM) for help and it will give a response, but this may be incorrect because most LLMs don't know, out of the box, how LINCS uses CIDOC CRM and which practices it follows.
+
+For example, if you ask an LLM the following:
+
+`How do you model gender in CIDOC CRM?`
+
+It may mention multiple different ways of modelling gender, such as:
+
+`E21 Person → P2 has type → E55 Type` (e.g. "woman")
+
+**The above is NOT recommended by LINCS**. Gender identity is too complex to model it as a simple type without any context around it.
+
+The LLM may also mention the [more complex pattern](./advanced-patterns.html) that LINCS is using for gender (based on attribute assignments), but not necessarily suggest that you adopt it. Most likely, it will mention general resources such as [Getty AAT](https://www.getty.edu/research/tools/vocabularies/aat/) or [Wikidata](https://www.wikidata.org) as sources of gender URIs rather than a more specialized and inclusive vocabulary like [Homosaurus](https://homosaurus.org/).
+
+## LINCS Skills
+
+If the LLM is given specific knowledge about LINCS through appropriate [Skills files](https://jburnford.github.io/claude_code_workshop/lincs-skills.html), it will be able to respond more accurately and will make fewer mistakes when helping you transform the data.
+
+On the other hand, if an LLM does the modelling and transformation completely unsupervised, many things can go wrong, as we will see in [Exercise 3](./modelling-exercise-3.html).

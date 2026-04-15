@@ -1,73 +1,131 @@
 ---
-title: "Graph Patterns"
+title: "Basic Graph Patterns"
 subtitle: "A list of common CIDOC CRM graph patterns"
 ---
 
-This page lists common graph patterns that we encounter when modelling data in [LINCS](https://lincsproject.ca) using the [CIDOC CRM](https://cidoc-crm.org) ontology. When modelling data, we select appropriate graph patterns and combine them together to create our data model. Then, we apply the model to our data, resulting in a knowledge graph.
+This page lists common graph patterns that we encounter when modelling data in [LINCS](https://lincsproject.ca) using the [CIDOC CRM](https://cidoc-crm.org) ontology. When modelling data, we select appropriate graph patterns and combine them together to create our data model. Then we apply the model to our dataset, resulting in a knowledge graph.
 
 ## General Patterns
 
-### Names & Titles
+### Name
 
 An entity has a name (or title).
 
-![Caption](./images/entity-name.svg)
+![](./images/entity-name.svg){fig-align="center" width=60%}
 
 ### Type
 
 An entity has a type.
 
-![Caption](./images/entity-type.svg)
+![](./images/entity-type.svg){fig-align="center" width=60%}
 
-## Patterns Involving Event
+## Patterns Involving Events
 
-The following patterns are applicable to any event or its subclasses (colored in blue), such as Birth, Death, Occupation, Production...
-
-### Event Date
-
-An event took place on a certain date.
+The following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.
 
 ### Event Place
 
 An event took place at a certain place.
 
-![Caption](./images/event-place.svg)
+![](./images/event-place.svg){fig-align="center" width=60%}
+
+### Event Date
+
+An event took place on a certain date.
+
+![](./images/event-date.svg)
 
 ## Patterns Involving People
 
 The following patterns are applicable to any person.
 
+### Person Name
+
+A person has a name.
+
+![](./images/person-name.svg){fig-align="center" width=60%}
+
 ### Birth Date
 
 A person was born on a certain date.
+
+![](./images/birth-date.svg)
 
 ### Birth Place
 
 A person was born in a certain place.
 
-![Caption](./images/birth-place.svg)
+![](./images/birth-place.svg)
 
 ### Death Date
 
 A person died on a certain date.
 
+![](./images/death-date.svg)
+
 ### Death Place
 
-![Caption](./images/Death_Location.png)
+A person died in a certain place.
+
+![](./images/death-place.svg)
 
 ### Occupation
 
-A person had an occupation such as an employment or appointment.
+A person has an occupation such as an employment or appointment.
+
+![](./images/person-occupation.svg){fig-align="center" width=60%}
+
+### Residence
+
+A person resides (or has previously resided) in a place.
+
+![](./images/person-residence.svg){fig-align="center" width=60%}
 
 ## Patterns Involving Groups
 
-### Occupation
+The following patterns are applicable to any group, including companies and other organizations.
+
+### Group Name
+
+A group has a name.
+
+![](./images/group-name.svg){fig-align="center" width=60%}
+
+### Formation
 
 A group has a member (a person).
 
+![](./images/group-formation.svg){fig-align="center" width=60%}
+
+### Dissolution
+
+A group has a member (a person).
+
+![](./images/group-dissolution.svg){fig-align="center" width=60%}
+
+### Membership
+
+A group has a member (a person).
+
+![](./images/group-member.svg){fig-align="center" width=60%}
+
+### Joining
+
+### Leaving
+
 ## Patterns Involving Places
 
+The following patterns are applicable to any place.
 
+### Place Name
 
-### Other useful commands
+A place has a name.
+
+![](./images/place-name2.svg){fig-align="center" width=60%}
+
+### Place Containment
+
+A place contains another place.
+
+![](./images/place-contain.svg){fig-align="center" width=60%}
 
