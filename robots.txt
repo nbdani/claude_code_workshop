@@ -1,1 +1,1 @@
-Sitemap: https://jburnford.github.io/claude_code_workshop/sitemap.xml
+Sitemap: https://nbdani.github.io/claude_code_workshop/sitemap.xml
