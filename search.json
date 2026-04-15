@@ -291,14 +291,14 @@
     "href": "advanced-patterns.html#patterns-involving-people",
     "title": "Advanced Graph Patterns",
     "section": "Patterns Involving People",
-    "text": "Patterns Involving People\n\nIdentity (Gender, Ethnicity, Religion, …)\nA person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern."
+    "text": "Patterns Involving People\n\nIdentity (Gender, Ethnicity, Religion, …)\nA person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern.\n[DIAGRAM]"
   },
   {
     "objectID": "advanced-patterns.html#patterns-involving-places",
     "href": "advanced-patterns.html#patterns-involving-places",
     "title": "Advanced Graph Patterns",
     "section": "Patterns Involving Places",
-    "text": "Patterns Involving Places\nThe following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.\n\nPresence\nA presence is used to model the extent in space and time of a certain phenomenon, such as the location of an object over time, the spatiotemporal extent of an event, etc."
+    "text": "Patterns Involving Places\nThe following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.\n\nPresence\nA presence is used to model the extent in space and time of a certain phenomenon, such as the location of an object over time, the spatiotemporal extent of an event, etc.\n[DIAGRAMS]"
   },
   {
     "objectID": "data-ethics.html",
@@ -522,14 +522,14 @@
     "href": "modelling-exercise-1.html",
     "title": "Modelling Exercise 1",
     "section": "",
-    "text": "You want to model the following dataset.\n\n\n\nperson\nbirth_place\nbirth_date\nlives_in\nworks_as\n\n\n\n\nAlex\nOttawa, Ontario\n24 June 1974\nToronto, Ontario\nphysician\n\n\nBillie\nLima, Peru\n10 April 1959\nWinnipeg, Manitoba\njournalist\n\n\nClaude\nLaval, Quebec\n3 October 1982\nParis, France\nresearcher\n\n\n\n\n\nLooking at basic graph patterns, which ones would you use?\nWrite them down here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+    "text": "You want to model the following dataset.\n\n\n\nperson\nbirth_place\nbirth_date\nlives_in\nworks_as\n\n\n\n\nAlex\nOttawa, Ontario\n24 June 1974\nToronto, Ontario\nphysician\n\n\nBillie\nLima, Peru\n10 April 1959\nWinnipeg, Manitoba\njournalist\n\n\nClaude\nLaval, Quebec\n3 October 1982\nParis, France\nresearcher\n\n\n\n\n\nLooking at basic graph patterns, which ones would you use?\nWrite them down here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls, preferably one at a time."
   },
   {
     "objectID": "modelling-exercise-1.html#model-this-dataset",
     "href": "modelling-exercise-1.html#model-this-dataset",
     "title": "Modelling Exercise 1",
     "section": "",
-    "text": "You want to model the following dataset.\n\n\n\nperson\nbirth_place\nbirth_date\nlives_in\nworks_as\n\n\n\n\nAlex\nOttawa, Ontario\n24 June 1974\nToronto, Ontario\nphysician\n\n\nBillie\nLima, Peru\n10 April 1959\nWinnipeg, Manitoba\njournalist\n\n\nClaude\nLaval, Quebec\n3 October 1982\nParis, France\nresearcher\n\n\n\n\n\nLooking at basic graph patterns, which ones would you use?\nWrite them down here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+    "text": "You want to model the following dataset.\n\n\n\nperson\nbirth_place\nbirth_date\nlives_in\nworks_as\n\n\n\n\nAlex\nOttawa, Ontario\n24 June 1974\nToronto, Ontario\nphysician\n\n\nBillie\nLima, Peru\n10 April 1959\nWinnipeg, Manitoba\njournalist\n\n\nClaude\nLaval, Quebec\n3 October 1982\nParis, France\nresearcher\n\n\n\n\n\nLooking at basic graph patterns, which ones would you use?\nWrite them down here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls, preferably one at a time."
   },
   {
     "objectID": "modelling-exercise-3.html",
