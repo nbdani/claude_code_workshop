@@ -3,31 +3,53 @@ title: "Graph Patterns"
 subtitle: "A list of common CIDOC CRM graph patterns"
 ---
 
-## Graph Patterns
-
-This page lists common graph patterns that we encounter when modelling data in LINCS.
+This page lists common graph patterns that we encounter when modelling data in [LINCS](https://lincsproject.ca) using the [CIDOC CRM](https://cidoc-crm.org) ontology. When modelling data, we select appropriate graph patterns and combine them together to create our data model. Then, we apply the model to our data, resulting in a knowledge graph.
 
 ## General Patterns
 
 ### Names & Titles
 
+An entity has a name (or title).
+
+![Caption](./images/entity-name.svg)
+
 ### Type
+
+An entity has a type.
+
+![Caption](./images/entity-type.svg)
+
+## Patterns Involving Event
+
+The following patterns are applicable to any event or its subclasses (colored in blue), such as Birth, Death, Occupation, Production...
 
 ### Event Date
 
-### Event Location
+An event took place on a certain date.
 
-![Caption](./images/Location.png)
+### Event Place
+
+An event took place at a certain place.
+
+![Caption](./images/event-place.svg)
 
 ## Patterns Involving People
 
+The following patterns are applicable to any person.
+
 ### Birth Date
+
+A person was born on a certain date.
 
 ### Birth Place
 
-![Caption](./images/Birth_Location.png)
+A person was born in a certain place.
+
+![Caption](./images/birth-place.svg)
 
 ### Death Date
+
+A person died on a certain date.
 
 ### Death Place
 
@@ -35,9 +57,13 @@ This page lists common graph patterns that we encounter when modelling data in L
 
 ### Occupation
 
+A person had an occupation such as an employment or appointment.
 
 ## Patterns Involving Groups
 
+### Occupation
+
+A group has a member (a person).
 
 ## Patterns Involving Places
 
