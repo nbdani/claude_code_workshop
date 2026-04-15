@@ -138,6 +138,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#general-patterns" id="toc-general-patterns" class="nav-link active" data-scroll-target="#general-patterns">General Patterns</a>
   <ul class="collapse">
   <li><a href="#name" id="toc-name" class="nav-link" data-scroll-target="#name">Name</a></li>
+  <li><a href="#identifier" id="toc-identifier" class="nav-link" data-scroll-target="#identifier">Identifier</a></li>
+  <li><a href="#string-value" id="toc-string-value" class="nav-link" data-scroll-target="#string-value">String Value</a></li>
   <li><a href="#type" id="toc-type" class="nav-link" data-scroll-target="#type">Type</a></li>
   </ul></li>
   <li><a href="#patterns-involving-events" id="toc-patterns-involving-events" class="nav-link" data-scroll-target="#patterns-involving-events">Patterns Involving Events</a>
@@ -165,6 +167,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#patterns-involving-places" id="toc-patterns-involving-places" class="nav-link" data-scroll-target="#patterns-involving-places">Patterns Involving Places</a>
   <ul class="collapse">
   <li><a href="#place-name" id="toc-place-name" class="nav-link" data-scroll-target="#place-name">Place Name</a></li>
+  <li><a href="#place-coordinates" id="toc-place-coordinates" class="nav-link" data-scroll-target="#place-coordinates">Place Coordinates</a></li>
   <li><a href="#place-containment" id="toc-place-containment" class="nav-link" data-scroll-target="#place-containment">Place Containment</a></li>
   <li><a href="#move" id="toc-move" class="nav-link" data-scroll-target="#move">Move</a></li>
   </ul></li>
@@ -199,16 +202,34 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="general-patterns">General Patterns</h2>
 <section id="name" class="level3">
 <h3 class="anchored" data-anchor-id="name">Name</h3>
-<p>An entity has a name (or title).</p>
+<p>An entity may have a name (or title).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./images/entity-name.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
 </figure>
 </div>
 </section>
+<section id="identifier" class="level3">
+<h3 class="anchored" data-anchor-id="identifier">Identifier</h3>
+<p>An entity may have an identifier.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/entity-identifier.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="string-value" class="level3">
+<h3 class="anchored" data-anchor-id="string-value">String Value</h3>
+<p>A name (or title) or identifier has a string value.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/string-value.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
 <section id="type" class="level3">
 <h3 class="anchored" data-anchor-id="type">Type</h3>
-<p>An entity has a type.</p>
+<p>An entity may have a type.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./images/entity-type.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
@@ -337,6 +358,15 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
+<section id="place-coordinates" class="level3">
+<h3 class="anchored" data-anchor-id="place-coordinates">Place Coordinates</h3>
+<p>A place has certain geographic coordinates.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/place-coords.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
 <section id="place-containment" class="level3">
 <h3 class="anchored" data-anchor-id="place-containment">Place Containment</h3>
 <p>A place contains another place.</p>
@@ -351,7 +381,7 @@ ul.task-list li input[type="checkbox"] {
 <p>An object was moved from a place to a place.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./images/object-move.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="./images/object-move.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 

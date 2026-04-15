@@ -165,7 +165,7 @@
     "href": "graph-patterns.html#general-patterns",
     "title": "Basic Graph Patterns",
     "section": "General Patterns",
-    "text": "General Patterns\n\nName\nAn entity has a name (or title).\n\n\n\n\n\n\n\nType\nAn entity has a type."
+    "text": "General Patterns\n\nName\nAn entity may have a name (or title).\n\n\n\n\n\n\n\nIdentifier\nAn entity may have an identifier.\n\n\n\n\n\n\n\nString Value\nA name (or title) or identifier has a string value.\n\n\n\n\n\n\n\nType\nAn entity may have a type."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-events",
@@ -193,7 +193,7 @@
     "href": "graph-patterns.html#patterns-involving-places",
     "title": "Basic Graph Patterns",
     "section": "Patterns Involving Places",
-    "text": "Patterns Involving Places\nThe following patterns are applicable to any place.\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nPlace Containment\nA place contains another place.\n\n\n\n\n\n\n\nMove\nAn object was moved from a place to a place."
+    "text": "Patterns Involving Places\nThe following patterns are applicable to any place.\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nPlace Coordinates\nA place has certain geographic coordinates.\n\n\n\n\n\n\n\nPlace Containment\nA place contains another place.\n\n\n\n\n\n\n\nMove\nAn object was moved from a place to a place."
   },
   {
     "objectID": "first-session.html",
