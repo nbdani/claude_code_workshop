@@ -1,8 +1,0 @@
----
-title: "Reference Diagram"
-subtitle: "A reference diagram combining relevant graph patterns together"
----
-
-Click on the diagram to open a larger version.
-
-[![](./images/reference-diagram.svg)](./images/reference-diagram.svg)

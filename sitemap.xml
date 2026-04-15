@@ -1,71 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/workshop-event.html</loc>
-    <lastmod>2026-04-15T04:41:22.160Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/workshop-event.html</loc>
+    <lastmod>2026-04-15T15:14:01.001Z</lastmod>
   </url>
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/reference-diagram.html</loc>
-    <lastmod>2026-04-15T08:03:40.819Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/lincs-skills.html</loc>
+    <lastmod>2026-04-15T15:14:01.001Z</lastmod>
   </url>
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/modelling-exercise-4.html</loc>
-    <lastmod>2026-04-15T13:09:11.864Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/index.html</loc>
+    <lastmod>2026-04-15T15:14:01.001Z</lastmod>
   </url>
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/modelling-exercise-2.html</loc>
-    <lastmod>2026-04-15T13:24:36.671Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/graph-patterns.html</loc>
+    <lastmod>2026-04-15T15:14:00.999Z</lastmod>
   </url>
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/lincs-skills.html</loc>
-    <lastmod>2026-04-15T04:41:22.160Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/first-session.html</loc>
+    <lastmod>2026-04-15T15:14:00.998Z</lastmod>
   </url>
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/index.html</loc>
-    <lastmod>2026-04-15T15:07:38.266Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/data-ethics.html</loc>
+    <lastmod>2026-04-15T15:14:00.998Z</lastmod>
   </url>
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/graph-patterns.html</loc>
-    <lastmod>2026-04-15T12:02:21.363Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/gis-exercises.html</loc>
+    <lastmod>2026-04-15T15:14:00.998Z</lastmod>
   </url>
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/first-session.html</loc>
-    <lastmod>2026-04-15T04:41:22.159Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/hands-on.html</loc>
+    <lastmod>2026-04-15T15:14:00.999Z</lastmod>
   </url>
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/advanced-patterns.html</loc>
-    <lastmod>2026-04-15T14:59:41.510Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/installation.html</loc>
+    <lastmod>2026-04-15T15:14:01.001Z</lastmod>
   </url>
   <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/data-ethics.html</loc>
-    <lastmod>2026-04-15T04:41:22.159Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/gis-exercises.html</loc>
-    <lastmod>2026-04-15T04:41:22.159Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/hands-on.html</loc>
-    <lastmod>2026-04-15T04:41:22.159Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/installation.html</loc>
-    <lastmod>2026-04-15T04:41:22.160Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/modelling-exercise-1.html</loc>
-    <lastmod>2026-04-15T14:59:16.517Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/modelling-exercise-3.html</loc>
-    <lastmod>2026-04-15T14:49:44.643Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/modelling-llms.html</loc>
-    <lastmod>2026-04-15T14:48:01.188Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nbdani.github.io/claude_code_workshop/what-is-claude-code.html</loc>
-    <lastmod>2026-04-15T04:41:22.160Z</lastmod>
+    <loc>https://nbdani.github.io/gis_modelling_workshop/what-is-claude-code.html</loc>
+    <lastmod>2026-04-15T15:14:01.001Z</lastmod>
   </url>
 </urlset>

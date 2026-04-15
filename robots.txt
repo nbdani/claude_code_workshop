@@ -1,1 +1,1 @@
-Sitemap: https://nbdani.github.io/claude_code_workshop/sitemap.xml
+Sitemap: https://nbdani.github.io/gis_modelling_workshop/sitemap.xml
