@@ -165,7 +165,7 @@
     "href": "graph-patterns.html#patterns-involving-groups",
     "title": "Graph Patterns",
     "section": "Patterns Involving Groups",
-    "text": "Patterns Involving Groups\nThe following patterns are applicable to any group, including companies and other organizations.\n\nGroup Name\nA group has a name.\n\n\n\n\n\n\n\nMembership\nA group has a member (a person).\n\n\n\n\n\n\n\nJoining\n\n\nLeaving"
+    "text": "Patterns Involving Groups\nThe following patterns are applicable to any group, including companies and other organizations.\n\nGroup Name\nA group has a name.\n\n\n\n\n\n\n\nFormation\nA group has a member (a person).\n\n\n\n\n\n\n\nDissolution\nA group has a member (a person).\n\n\n\n\n\n\n\nMembership\nA group has a member (a person).\n\n\n\n\n\n\n\nJoining\n\n\nLeaving"
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-places",
