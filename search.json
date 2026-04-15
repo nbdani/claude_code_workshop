@@ -144,14 +144,14 @@
     "href": "graph-patterns.html#general-patterns",
     "title": "Graph Patterns",
     "section": "General Patterns",
-    "text": "General Patterns\n\nNames (and Titles)\nAn entity has a name (or title).\n\n\n\n\n\n\n\nType\nAn entity has a type."
+    "text": "General Patterns\n\nNames\nAn entity has a name (or title).\n\n\n\n\n\n\n\nType\nAn entity has a type."
   },
   {
-    "objectID": "graph-patterns.html#patterns-involving-event",
-    "href": "graph-patterns.html#patterns-involving-event",
+    "objectID": "graph-patterns.html#patterns-involving-events",
+    "href": "graph-patterns.html#patterns-involving-events",
     "title": "Graph Patterns",
-    "section": "Patterns Involving Event",
-    "text": "Patterns Involving Event\nThe following patterns are applicable to any event or its subclasses (colored in blue), such as Birth, Death, Occupation, Production…\n\nEvent Date\nAn event took place on a certain date.\n\n\nEvent Place\nAn event took place at a certain place."
+    "section": "Patterns Involving Events",
+    "text": "Patterns Involving Events\nThe following patterns are applicable to any event or its subclasses (colored in blue), such as Activity, Birth, Death, Occupation, Production, Move, etc.\n\nEvent Date\nAn event took place on a certain date.\n\n\nEvent Place\nAn event took place at a certain place."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-people",
