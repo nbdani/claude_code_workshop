@@ -31,6 +31,10 @@ website:
             text: LINCS Skills
           - href: hands-on.qmd
             text: HGIS-to-LINCS Exercise
+      - text: "Modelling"
+        menu:
+          - href: graph-patterns.qmd
+          - text: Graph Patterns
 
 format:
   html:
