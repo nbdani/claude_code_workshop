@@ -1,0 +1,20 @@
+---
+title: "Modelling Exercise 1"
+subtitle: "Let's try to model a simple dataset"
+---
+
+## Model This Dataset
+
+You want to model the following dataset.
+
+| person | birth_place | birth_date | lives_in | works_as
+|------|------|------|------|------|
+| Alex | Ottawa, Ontario | 24 June 1974 | Toronto, Ontario | physician
+| Billie | Lima, Peru | 10 April 1959 | Winnipeg, Manitoba | journalist
+| Claude | Laval, Quebec | 3 October 1982 | Paris, France | researcher
+
+### Question
+
+Looking at [basic graph patterns](./graph-patterns.html), which ones would you use?
+
+Write them down here: [https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls](https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls)
