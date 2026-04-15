@@ -33,7 +33,7 @@ website:
             text: HGIS-to-LINCS Exercise
       - text: "Modelling"
         menu:
-          - href: graph_patterns.qmd
+          - href: graph-patterns.qmd
           - text: Graph Patterns
 
 format:
