@@ -137,14 +137,14 @@
     "href": "graph-patterns.html",
     "title": "Graph Patterns",
     "section": "",
-    "text": "This page lists common graph patterns that we encounter when modelling data in LINCS using the CIDOC CRM ontology. When modelling data, we select appropriate graph patterns and combine them together to create our data model. Then, we apply the model to our data, resulting in a knowledge graph."
+    "text": "This page lists common graph patterns that we encounter when modelling data in LINCS using the CIDOC CRM ontology. When modelling data, we select appropriate graph patterns and combine them together to create our data model. Then we apply the model to our dataset, resulting in a knowledge graph."
   },
   {
     "objectID": "graph-patterns.html#general-patterns",
     "href": "graph-patterns.html#general-patterns",
     "title": "Graph Patterns",
     "section": "General Patterns",
-    "text": "General Patterns\n\nNames & Titles\nAn entity has a name (or title).\n\n\n\nCaption\n\n\n\n\nType\nAn entity has a type.\n\n\n\nCaption"
+    "text": "General Patterns\n\nNames (and Titles)\nAn entity has a name (or title).\n\n\n\nCaption\n\n\n\n\nType\nAn entity has a type.\n\n\n\nCaption"
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-event",
