@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Installation – HGIS to LOD Workshop</title>
+<title>Advanced Graph Patterns – HGIS to LOD Workshop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -143,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Data Ethics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./installation.html" aria-current="page"> 
+    <a class="nav-link" href="./installation.html"> 
 <span class="menu-text">Installation</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -223,25 +188,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#choose-your-interface" id="toc-choose-your-interface" class="nav-link active" data-scroll-target="#choose-your-interface">Choose Your Interface</a></li>
-  <li><a href="#option-a-install-claude-code" id="toc-option-a-install-claude-code" class="nav-link" data-scroll-target="#option-a-install-claude-code">Option A: Install Claude Code</a>
+  <li><a href="#general-patterns" id="toc-general-patterns" class="nav-link active" data-scroll-target="#general-patterns">General Patterns</a>
   <ul class="collapse">
-  <li><a href="#step-1-subscribe-to-claude-pro" id="toc-step-1-subscribe-to-claude-pro" class="nav-link" data-scroll-target="#step-1-subscribe-to-claude-pro">Step 1: Subscribe to Claude Pro</a></li>
-  <li><a href="#step-2-install-claude-code" id="toc-step-2-install-claude-code" class="nav-link" data-scroll-target="#step-2-install-claude-code">Step 2: Install Claude Code</a></li>
-  <li><a href="#step-3-first-launch" id="toc-step-3-first-launch" class="nav-link" data-scroll-target="#step-3-first-launch">Step 3: First Launch</a></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
+  <li><a href="#attribute-assignment" id="toc-attribute-assignment" class="nav-link" data-scroll-target="#attribute-assignment">Attribute Assignment</a></li>
   </ul></li>
-  <li><a href="#create-a-workshop-folder" id="toc-create-a-workshop-folder" class="nav-link" data-scroll-target="#create-a-workshop-folder">Create a Workshop Folder</a>
+  <li><a href="#patterns-involving-places" id="toc-patterns-involving-places" class="nav-link" data-scroll-target="#patterns-involving-places">Patterns Involving Places</a>
   <ul class="collapse">
-  <li><a href="#workshop-folder-checklist" id="toc-workshop-folder-checklist" class="nav-link" data-scroll-target="#workshop-folder-checklist">Workshop Folder Checklist</a></li>
+  <li><a href="#identity-gender-ethnicity-religion" id="toc-identity-gender-ethnicity-religion" class="nav-link" data-scroll-target="#identity-gender-ethnicity-religion">Identity (Gender, Ethnicity, Religion, …)</a></li>
   </ul></li>
-  <li><a href="#option-b-codex-openai-alternative" id="toc-option-b-codex-openai-alternative" class="nav-link" data-scroll-target="#option-b-codex-openai-alternative">Option B: Codex (OpenAI Alternative)</a>
+  <li><a href="#patterns-involving-places-1" id="toc-patterns-involving-places-1" class="nav-link" data-scroll-target="#patterns-involving-places-1">Patterns Involving Places</a>
   <ul class="collapse">
-  <li><a href="#step-1-ensure-you-have-chatgpt-access" id="toc-step-1-ensure-you-have-chatgpt-access" class="nav-link" data-scroll-target="#step-1-ensure-you-have-chatgpt-access">Step 1: Ensure You Have ChatGPT Access</a></li>
-  <li><a href="#step-2-install-codex-cli" id="toc-step-2-install-codex-cli" class="nav-link" data-scroll-target="#step-2-install-codex-cli">Step 2: Install Codex CLI</a></li>
-  <li><a href="#differences-to-be-aware-of" id="toc-differences-to-be-aware-of" class="nav-link" data-scroll-target="#differences-to-be-aware-of">Differences to Be Aware Of</a></li>
-  <li><a href="#checklist-1" id="toc-checklist-1" class="nav-link" data-scroll-target="#checklist-1">Checklist</a></li>
+  <li><a href="#presence" id="toc-presence" class="nav-link" data-scroll-target="#presence">Presence</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -251,8 +208,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Installation</h1>
-<p class="subtitle lead">Get set up before the workshop</p>
+<h1 class="title">Advanced Graph Patterns</h1>
+<p class="subtitle lead">A list of advanced CIDOC CRM graph patterns</p>
 </div>
 
 
@@ -269,187 +226,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="choose-your-interface" class="level2">
-<h2 class="anchored" data-anchor-id="choose-your-interface">Choose Your Interface</h2>
-<p>Claude Code now offers four ways to interact with the same underlying tool:</p>
-<ul>
-<li><strong>Terminal</strong> — a command-line prompt in Terminal (Mac/Linux) or PowerShell (Windows). <strong>This is what we will use in the workshop.</strong></li>
-<li><strong>Desktop app</strong> — a standalone Mac/Windows app with no terminal required.</li>
-<li><strong>VS Code extension</strong> — a chat panel inside Visual Studio Code, alongside your files.</li>
-<li><strong>JetBrains plugin</strong> — the same idea for IntelliJ, PyCharm, RubyMine, and other JetBrains IDEs.</li>
-</ul>
-<p>All four share the same skills, slash commands, and file-access behaviour. The workshop instructions assume the terminal, but if you prefer one of the other interfaces you can follow along — the prompts and skills work identically. We are happy to help you get any of them running at the start of the session.</p>
-<p>If you would rather use OpenAI’s coding agent instead, see <a href="#option-b-codex-openai-alternative">Option B: Codex</a> below.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Windows users
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>On Windows, the smoothest path for a first-time terminal user is the <strong>Desktop app</strong> or the <strong>VS Code extension</strong> — both avoid the differences between PowerShell, CMD, and Git Bash. If you do want the terminal, Claude Code now requires <a href="https://git-scm.com/downloads/win">Git for Windows</a>; install it first.</p>
-<p>For longer-term use beyond this workshop, the best terminal experience on Windows is through <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a>, which gives you a full Linux terminal inside Windows. Installing WSL is too large a step for a workshop, but it is worth doing on your own time if you plan to use Claude Code regularly.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Reading the code blocks in this workshop
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There are two kinds of code blocks across this site:</p>
-<ul>
-<li><strong>Terminal commands</strong> are tagged <code>bash</code> (or <code>powershell</code>) and meant to be typed into your system terminal. You will see these on this installation page.</li>
-<li><strong>Claude Code prompts</strong> are plain code blocks (no language tag). Once Claude Code is running you can copy-paste them straight into the <code>&gt;</code> prompt — there is no <code>&gt;</code> to type or strip out, just the words you would say to Claude.</li>
-</ul>
-<p>Claude Code is not running yet, so everything on this installation page is a terminal command. Once you finish this page, you will only run a handful of terminal commands ever again. Almost everything from the <a href="./first-session.html">first session</a> onward happens <strong>inside Claude Code</strong>.</p>
-</div>
-</div>
-<hr>
-</section>
-<section id="option-a-install-claude-code" class="level2">
-<h2 class="anchored" data-anchor-id="option-a-install-claude-code">Option A: Install Claude Code</h2>
-<section id="step-1-subscribe-to-claude-pro" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-subscribe-to-claude-pro">Step 1: Subscribe to Claude Pro</h3>
-<p>Claude Code requires a paid Claude account. The simplest option for the workshop is <strong>Claude Pro</strong> (about CAD $27/month), which includes Claude Code access at no extra cost.</p>
-<ol type="1">
-<li>Go to <a href="https://claude.ai/">claude.ai</a> and create an account</li>
-<li>Click <strong>Upgrade to Pro</strong> and add a payment method</li>
-<li>That’s it — there is no API key to copy. You will log in with your Claude account the first time you launch Claude Code.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>About cost and usage limits
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Claude Pro is a flat monthly subscription, but the Claude Code usage limits on the Pro tier are modest — heavy use during the workshop may bump you into a cool-down period before your quota resets. If you expect to use Claude Code regularly after the workshop, the <strong>Max</strong> plan offers significantly higher limits. If you already have a Pro, Max, Team, or Enterprise plan you are set. The free Claude.ai plan does <strong>not</strong> include Claude Code. (Pay-per-use API billing through the <a href="https://console.anthropic.com/">Anthropic Console</a> is also supported but is not the recommended path for this workshop.)</p>
-</div>
-</div>
-</section>
-<section id="step-2-install-claude-code" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-install-claude-code">Step 2: Install Claude Code</h3>
-<p>Follow the official <strong><a href="https://code.claude.com/docs/en/quickstart">Claude Code Quickstart</a></strong>, which has up-to-date install instructions for all four interfaces (Terminal, Desktop, VS Code, JetBrains) on Mac, Windows, and Linux.</p>
-<p>For the workshop we will use the <strong>terminal</strong> interface. The native installer is a single command and <strong>no longer requires Node.js</strong>:</p>
-<ul>
-<li><strong>macOS / Linux / WSL</strong>: <code>curl -fsSL https://claude.ai/install.sh | bash</code></li>
-<li><strong>Windows PowerShell</strong>: <code>irm https://claude.ai/install.ps1 | iex</code></li>
-<li><strong>Homebrew (Mac)</strong>: <code>brew install --cask claude-code</code></li>
-<li><strong>WinGet (Windows)</strong>: <code>winget install Anthropic.ClaudeCode</code></li>
-</ul>
-<p>After installing, verify with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="step-3-first-launch" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-first-launch">Step 3: First Launch</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The first time you launch Claude Code it will open a browser window so you can log in with your Claude account (the same email and password you used at <a href="https://claude.ai/">claude.ai</a>). Once you are logged in, you should see the Claude Code prompt (a <code>&gt;</code> waiting for input). Type <code>/exit</code> to close for now.</p>
-</section>
-<section id="troubleshooting" class="level3">
-<h3 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h3>
-<ul>
-<li><strong>“command not found” after install</strong> — Close and reopen your terminal so it picks up the new <code>claude</code> binary on your PATH.</li>
-<li><strong>Permission errors on Mac/Linux</strong> — The native installer writes to <code>~/.local/bin/claude</code> and does not need <code>sudo</code>. If you hit a permission error, see the <a href="https://code.claude.com/docs/en/troubleshooting">Claude Code troubleshooting guide</a>.</li>
-<li><strong>Windows: <code>&amp;&amp;</code> is not a valid statement separator</strong> — You are in PowerShell, not CMD. Use the PowerShell command above (<code>irm ... | iex</code>).</li>
-</ul>
-</section>
-<section id="checklist" class="level3">
-<h3 class="anchored" data-anchor-id="checklist">Checklist</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Claude Pro (or Max/Team/Enterprise) account ready</label></li>
-<li><label><input type="checkbox"><code>claude --version</code> shows a version number</label></li>
-<li><label><input type="checkbox"><code>claude</code> launches and signs you in through the browser (then <code>/exit</code>)</label></li>
-</ul>
-<hr>
+<p>This page lists some advanced graph patterns that we encounter when modelling data in <a href="https://lincsproject.ca">LINCS</a> using the <a href="https://cidoc-crm.org">CIDOC CRM</a> ontology. This are more difficult to use compared to <a href="./basic-graph-patterns.html">basic graph patterns</a>, but offer a more detailed and comprehensive modelling.</p>
+<section id="general-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="general-patterns">General Patterns</h2>
+<section id="attribute-assignment" class="level3">
+<h3 class="anchored" data-anchor-id="attribute-assignment">Attribute Assignment</h3>
+<p>An attribute is assigned to something by someone. Used to model uncertain or conflicting statements.</p>
 </section>
 </section>
-<section id="create-a-workshop-folder" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-workshop-folder">Create a Workshop Folder</h2>
-<p>This section applies to <strong>everyone</strong> — Claude Code and Codex users alike. It’s the last thing you need to do in your system terminal before the workshop. Everything else — cloning the skills repository, setting up Python, downloading data — will happen inside Claude Code itself in the <a href="./first-session.html">first session</a>.</p>
-<p>Create an empty folder called <code>claude_workshop</code> and move into it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> claude_workshop</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> claude_workshop</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>That’s the workshop folder. You will launch Claude Code from here, and Claude will fill it in (<code>lincs_skills/</code>, <code>.venv/</code>, <code>data/</code>) once you start your first session.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Don’t worry about Python yet
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You do <strong>not</strong> need to check whether Python is installed, install missing packages, or create a virtual environment yourself. The very first thing you will do in the first session is ask Claude Code to check what is on your machine and set up whatever is missing. If Python itself is not installed, Claude will tell you exactly what to do.</p>
-</div>
-</div>
-<section id="workshop-folder-checklist" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-folder-checklist">Workshop Folder Checklist</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">You have an empty <code>claude_workshop</code> folder somewhere convenient (e.g.&nbsp;your Desktop or home folder)</label></li>
-<li><label><input type="checkbox">You can open a terminal in that folder and the prompt shows you are inside it (try <code>pwd</code>)</label></li>
-</ul>
-<hr>
+<section id="patterns-involving-places" class="level2">
+<h2 class="anchored" data-anchor-id="patterns-involving-places">Patterns Involving Places</h2>
+<section id="identity-gender-ethnicity-religion" class="level3">
+<h3 class="anchored" data-anchor-id="identity-gender-ethnicity-religion">Identity (Gender, Ethnicity, Religion, …)</h3>
+<p>A person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern.</p>
 </section>
 </section>
-<section id="option-b-codex-openai-alternative" class="level2">
-<h2 class="anchored" data-anchor-id="option-b-codex-openai-alternative">Option B: Codex (OpenAI Alternative)</h2>
-<p><a href="https://github.com/openai/codex">Codex CLI</a> is OpenAI’s coding agent. Like Claude Code, it runs in the terminal and reads/writes files on your machine. There is also a browser-based interface at <a href="https://chatgpt.com/codex">chatgpt.com/codex</a> where tasks run in a cloud sandbox. Codex requires a ChatGPT <strong>Plus, Pro, Business, Edu, or Enterprise</strong> subscription (or, with extra setup, an OpenAI API key).</p>
-<section id="step-1-ensure-you-have-chatgpt-access" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-ensure-you-have-chatgpt-access">Step 1: Ensure You Have ChatGPT Access</h3>
-<p>If you already have a paid ChatGPT plan you are set. If not, sign up at <a href="https://chatgpt.com/">chatgpt.com</a>.</p>
-</section>
-<section id="step-2-install-codex-cli" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-install-codex-cli">Step 2: Install Codex CLI</h3>
-<p>The easiest install paths are:</p>
-<ul>
-<li><strong>macOS (Homebrew)</strong>: <code>brew install --cask codex</code></li>
-<li><strong>Any platform with Node.js 18+</strong>: <code>npm install -g @openai/codex</code></li>
-<li><strong>Direct binary</strong>: download from the <a href="https://github.com/openai/codex/releases/latest">latest GitHub release</a></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Codex still needs Node.js (if you go the npm route)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Unlike Claude Code, the npm install of Codex requires <a href="https://nodejs.org/">Node.js 18+</a>. If you do not already have Node.js installed and you are not on macOS, the binary download is the simplest option.</p>
-</div>
-</div>
-<p>Once installed, <a href="#create-a-workshop-folder">create your workshop folder</a> following the shared section above. Then launch Codex from inside it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> claude_workshop</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">codex</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The first time you run it, choose <strong>Sign in with ChatGPT</strong> and complete the browser login. From there, ask Codex to set up Python, clone the LINCS skills repository, and download the workshop data, just as you would with Claude Code in the <a href="./first-session.html">first session</a>.</p>
-<p>If you prefer the browser interface instead, download the LINCS skills repository as a ZIP from <a href="https://github.com/jburnford/lincs_skills">github.com/jburnford/lincs_skills</a> (green <strong>Code</strong> button &gt; <strong>Download ZIP</strong>) and upload files to each task at <a href="https://chatgpt.com/codex">chatgpt.com/codex</a>.</p>
-</section>
-<section id="differences-to-be-aware-of" class="level3">
-<h3 class="anchored" data-anchor-id="differences-to-be-aware-of">Differences to Be Aware Of</h3>
-<ul>
-<li><strong>Slash commands</strong> (<code>/cidoc-crm</code>, <code>/lincs-profile</code>) are a Claude Code feature. In Codex, you can ask it to read the skill file directly: “Read lincs_skills/skills/cidoc-crm.md and use it as reference material.”</li>
-<li>The core workflow — giving natural language instructions to work with data — is the same across both tools.</li>
-</ul>
-</section>
-<section id="checklist-1" class="level3">
-<h3 class="anchored" data-anchor-id="checklist-1">Checklist</h3>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>codex</code> launches in terminal, or you can access <a href="https://chatgpt.com/codex">chatgpt.com/codex</a></label></li>
-<li><label><input type="checkbox">You have created an empty <code>claude_workshop</code> folder</label></li>
-</ul>
+<section id="patterns-involving-places-1" class="level2">
+<h2 class="anchored" data-anchor-id="patterns-involving-places-1">Patterns Involving Places</h2>
+<p>The following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.</p>
+<section id="presence" class="level3">
+<h3 class="anchored" data-anchor-id="presence">Presence</h3>
+<p>A presence is used to model the extent in space and time of a certain phenomenon, such as the location of an object over time, the spatiotemporal extent of an event, etc.</p>
 
 
 </section>

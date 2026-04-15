@@ -63,6 +63,20 @@
     "text": "Click on the diagram to open a larger version."
   },
   {
+    "objectID": "modelling-exercise-2.html",
+    "href": "modelling-exercise-2.html",
+    "title": "Modelling Exercise 2",
+    "section": "",
+    "text": "When is it appropriate to use an E53 Place and when an E93 Presence?\nA place is an extent in space without a temporal dimension.\nA presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).\n\n\nDo this quiz to check if you can recognize a place from a presence: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+  },
+  {
+    "objectID": "modelling-exercise-2.html#place-or-presence",
+    "href": "modelling-exercise-2.html#place-or-presence",
+    "title": "Modelling Exercise 2",
+    "section": "",
+    "text": "When is it appropriate to use an E53 Place and when an E93 Presence?\nA place is an extent in space without a temporal dimension.\nA presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).\n\n\nDo this quiz to check if you can recognize a place from a presence: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+  },
+  {
     "objectID": "lincs-skills.html",
     "href": "lincs-skills.html",
     "title": "LINCS Skills",
@@ -142,42 +156,42 @@
   {
     "objectID": "graph-patterns.html",
     "href": "graph-patterns.html",
-    "title": "Graph Patterns",
+    "title": "Basic Graph Patterns",
     "section": "",
     "text": "This page lists common graph patterns that we encounter when modelling data in LINCS using the CIDOC CRM ontology. When modelling data, we select appropriate graph patterns and combine them together to create our data model. Then we apply the model to our dataset, resulting in a knowledge graph."
   },
   {
     "objectID": "graph-patterns.html#general-patterns",
     "href": "graph-patterns.html#general-patterns",
-    "title": "Graph Patterns",
+    "title": "Basic Graph Patterns",
     "section": "General Patterns",
     "text": "General Patterns\n\nName\nAn entity has a name (or title).\n\n\n\n\n\n\n\nType\nAn entity has a type."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-events",
     "href": "graph-patterns.html#patterns-involving-events",
-    "title": "Graph Patterns",
+    "title": "Basic Graph Patterns",
     "section": "Patterns Involving Events",
     "text": "Patterns Involving Events\nThe following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.\n\nEvent Place\nAn event took place at a certain place.\n\n\n\n\n\n\n\nEvent Date\nAn event took place on a certain date."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-people",
     "href": "graph-patterns.html#patterns-involving-people",
-    "title": "Graph Patterns",
+    "title": "Basic Graph Patterns",
     "section": "Patterns Involving People",
     "text": "Patterns Involving People\nThe following patterns are applicable to any person.\n\nPerson Name\nA person has a name.\n\n\n\n\n\n\n\nBirth Date\nA person was born on a certain date.\n\n\n\nBirth Place\nA person was born in a certain place.\n\n\n\nDeath Date\nA person died on a certain date.\n\n\n\nDeath Place\nA person died in a certain place.\n\n\n\nOccupation\nA person has an occupation such as an employment or appointment.\n\n\n\n\n\n\n\nResidence\nA person resides (or has previously resided) in a place."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-groups",
     "href": "graph-patterns.html#patterns-involving-groups",
-    "title": "Graph Patterns",
+    "title": "Basic Graph Patterns",
     "section": "Patterns Involving Groups",
     "text": "Patterns Involving Groups\nThe following patterns are applicable to any group, including companies and other organizations.\n\nGroup Name\nA group has a name.\n\n\n\n\n\n\n\nFormation\nA group has a member (a person).\n\n\n\n\n\n\n\nDissolution\nA group has a member (a person).\n\n\n\n\n\n\n\nMembership\nA group has a member (a person).\n\n\n\n\n\n\n\nJoining\n\n\nLeaving"
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-places",
     "href": "graph-patterns.html#patterns-involving-places",
-    "title": "Graph Patterns",
+    "title": "Basic Graph Patterns",
     "section": "Patterns Involving Places",
     "text": "Patterns Involving Places\nThe following patterns are applicable to any place.\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nPlace Containment\nA place contains another place."
   },
@@ -264,6 +278,34 @@
     "title": "Your First Session",
     "section": "Exercise: Explore on Your Own (5 minutes)",
     "text": "Exercise: Explore on Your Own (5 minutes)\nPick whichever dataset you found more interesting and push it further. A few ideas:\nQuebec Arrivals\n\nAsk Claude Code to count the arrivals by month across the whole period and produce a table.\nAsk it to map the top 10 ports of departure to modern country names.\nAsk it to filter to ships carrying timber and list the top 10 ports for the timber trade.\n\nInternet Archive\n\nRe-run the search with a different term — your hometown, a historical figure, a publication.\nAsk Claude Code to pull the OCR text from any “texts” items and report the most common nouns.\nAsk it to produce a citation table with author, title, year, and format for all 10 items.\n\nWhen you are comfortable with the basics, move on to GIS Data Exercises."
+  },
+  {
+    "objectID": "advanced-patterns.html",
+    "href": "advanced-patterns.html",
+    "title": "Advanced Graph Patterns",
+    "section": "",
+    "text": "This page lists some advanced graph patterns that we encounter when modelling data in LINCS using the CIDOC CRM ontology. This are more difficult to use compared to basic graph patterns, but offer a more detailed and comprehensive modelling."
+  },
+  {
+    "objectID": "advanced-patterns.html#general-patterns",
+    "href": "advanced-patterns.html#general-patterns",
+    "title": "Advanced Graph Patterns",
+    "section": "General Patterns",
+    "text": "General Patterns\n\nAttribute Assignment\nAn attribute is assigned to something by someone. Used to model uncertain or conflicting statements."
+  },
+  {
+    "objectID": "advanced-patterns.html#patterns-involving-places",
+    "href": "advanced-patterns.html#patterns-involving-places",
+    "title": "Advanced Graph Patterns",
+    "section": "Patterns Involving Places",
+    "text": "Patterns Involving Places\n\nIdentity (Gender, Ethnicity, Religion, …)\nA person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern."
+  },
+  {
+    "objectID": "advanced-patterns.html#patterns-involving-places-1",
+    "href": "advanced-patterns.html#patterns-involving-places-1",
+    "title": "Advanced Graph Patterns",
+    "section": "Patterns Involving Places",
+    "text": "Patterns Involving Places\nThe following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.\n\nPresence\nA presence is used to model the extent in space and time of a certain phenomenon, such as the location of an object over time, the spatiotemporal extent of an event, etc."
   },
   {
     "objectID": "data-ethics.html",
@@ -487,7 +529,28 @@
     "href": "modelling-exercise-1.html",
     "title": "Modelling Exercise 1",
     "section": "",
-    "text": "person\nperson_uri\nbirth_place\nbirth_place_uri\nbirth_date"
+    "text": "You want to model the following dataset.\n\n\n\nperson\nbirth_place\nbirth_date\nlives_in\nworks_as\n\n\n\n\nAlex\nOttawa, Ontario\n24 June 1974\nToronto, Ontario\nphysician\n\n\nBillie\nLima, Peru\n10 April 1959\nWinnipeg, Manitoba\njournalist\n\n\nClaude\nLaval, Quebec\n3 October 1982\nParis, France\nresearcher\n\n\n\n\n\nLooking at basic graph patterns, which ones would you use?\nWrite them down here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+  },
+  {
+    "objectID": "modelling-exercise-1.html#model-this-dataset",
+    "href": "modelling-exercise-1.html#model-this-dataset",
+    "title": "Modelling Exercise 1",
+    "section": "",
+    "text": "You want to model the following dataset.\n\n\n\nperson\nbirth_place\nbirth_date\nlives_in\nworks_as\n\n\n\n\nAlex\nOttawa, Ontario\n24 June 1974\nToronto, Ontario\nphysician\n\n\nBillie\nLima, Peru\n10 April 1959\nWinnipeg, Manitoba\njournalist\n\n\nClaude\nLaval, Quebec\n3 October 1982\nParis, France\nresearcher\n\n\n\n\n\nLooking at basic graph patterns, which ones would you use?\nWrite them down here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+  },
+  {
+    "objectID": "modelling-exercise-3.html",
+    "href": "modelling-exercise-3.html",
+    "title": "Modelling Exercise 3",
+    "section": "",
+    "text": "You asked an LLM to model a certain dataset and it returned this knowledge graph. How many errors can you see?\n\n\nList all the errors you find here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls\n(feel free to respond multiple times if you find more)"
+  },
+  {
+    "objectID": "modelling-exercise-3.html#spot-the-errors",
+    "href": "modelling-exercise-3.html#spot-the-errors",
+    "title": "Modelling Exercise 3",
+    "section": "",
+    "text": "You asked an LLM to model a certain dataset and it returned this knowledge graph. How many errors can you see?\n\n\nList all the errors you find here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls\n(feel free to respond multiple times if you find more)"
   },
   {
     "objectID": "what-is-claude-code.html",
