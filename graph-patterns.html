@@ -169,13 +169,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#graph-patterns" id="toc-graph-patterns" class="nav-link active" data-scroll-target="#graph-patterns">Graph Patterns</a></li>
-  <li><a href="#general-patterns" id="toc-general-patterns" class="nav-link" data-scroll-target="#general-patterns">General Patterns</a>
+  <li><a href="#general-patterns" id="toc-general-patterns" class="nav-link active" data-scroll-target="#general-patterns">General Patterns</a>
   <ul class="collapse">
   <li><a href="#names-titles" id="toc-names-titles" class="nav-link" data-scroll-target="#names-titles">Names &amp; Titles</a></li>
   <li><a href="#type" id="toc-type" class="nav-link" data-scroll-target="#type">Type</a></li>
+  </ul></li>
+  <li><a href="#patterns-involving-event" id="toc-patterns-involving-event" class="nav-link" data-scroll-target="#patterns-involving-event">Patterns Involving Event</a>
+  <ul class="collapse">
   <li><a href="#event-date" id="toc-event-date" class="nav-link" data-scroll-target="#event-date">Event Date</a></li>
-  <li><a href="#event-location" id="toc-event-location" class="nav-link" data-scroll-target="#event-location">Event Location</a></li>
+  <li><a href="#event-place" id="toc-event-place" class="nav-link" data-scroll-target="#event-place">Event Place</a></li>
   </ul></li>
   <li><a href="#patterns-involving-people" id="toc-patterns-involving-people" class="nav-link" data-scroll-target="#patterns-involving-people">Patterns Involving People</a>
   <ul class="collapse">
@@ -185,7 +187,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#death-place" id="toc-death-place" class="nav-link" data-scroll-target="#death-place">Death Place</a></li>
   <li><a href="#occupation" id="toc-occupation" class="nav-link" data-scroll-target="#occupation">Occupation</a></li>
   </ul></li>
-  <li><a href="#patterns-involving-groups" id="toc-patterns-involving-groups" class="nav-link" data-scroll-target="#patterns-involving-groups">Patterns Involving Groups</a></li>
+  <li><a href="#patterns-involving-groups" id="toc-patterns-involving-groups" class="nav-link" data-scroll-target="#patterns-involving-groups">Patterns Involving Groups</a>
+  <ul class="collapse">
+  <li><a href="#occupation-1" id="toc-occupation-1" class="nav-link" data-scroll-target="#occupation-1">Occupation</a></li>
+  </ul></li>
   <li><a href="#patterns-involving-places" id="toc-patterns-involving-places" class="nav-link" data-scroll-target="#patterns-involving-places">Patterns Involving Places</a>
   <ul class="collapse">
   <li><a href="#other-useful-commands" id="toc-other-useful-commands" class="nav-link" data-scroll-target="#other-useful-commands">Other useful commands</a></li>
@@ -216,26 +221,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="graph-patterns" class="level2">
-<h2 class="anchored" data-anchor-id="graph-patterns">Graph Patterns</h2>
-<p>This page lists common graph patterns that we encounter when modelling data in LINCS.</p>
-</section>
+<p>This page lists common graph patterns that we encounter when modelling data in <a href="https://lincsproject.ca">LINCS</a> using the <a href="https://cidoc-crm.org">CIDOC CRM</a> ontology. When modelling data, we select appropriate graph patterns and combine them together to create our data model. Then, we apply the model to our data, resulting in a knowledge graph.</p>
 <section id="general-patterns" class="level2">
 <h2 class="anchored" data-anchor-id="general-patterns">General Patterns</h2>
 <section id="names-titles" class="level3">
 <h3 class="anchored" data-anchor-id="names-titles">Names &amp; Titles</h3>
+<p>An entity has a name (or title).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/entity-name.svg" class="img-fluid figure-img"></p>
+<figcaption>Caption</figcaption>
+</figure>
+</div>
 </section>
 <section id="type" class="level3">
 <h3 class="anchored" data-anchor-id="type">Type</h3>
-</section>
-<section id="event-date" class="level3">
-<h3 class="anchored" data-anchor-id="event-date">Event Date</h3>
-</section>
-<section id="event-location" class="level3">
-<h3 class="anchored" data-anchor-id="event-location">Event Location</h3>
+<p>An entity has a type.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./images/Location.png" class="img-fluid figure-img"></p>
+<p><img src="./images/entity-type.svg" class="img-fluid figure-img"></p>
+<figcaption>Caption</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="patterns-involving-event" class="level2">
+<h2 class="anchored" data-anchor-id="patterns-involving-event">Patterns Involving Event</h2>
+<p>The following patterns are applicable to any event or its subclasses (colored in blue), such as Birth, Death, Occupation, Production…</p>
+<section id="event-date" class="level3">
+<h3 class="anchored" data-anchor-id="event-date">Event Date</h3>
+<p>An event took place on a certain date.</p>
+</section>
+<section id="event-place" class="level3">
+<h3 class="anchored" data-anchor-id="event-place">Event Place</h3>
+<p>An event took place at a certain place.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/event-place.svg" class="img-fluid figure-img"></p>
 <figcaption>Caption</figcaption>
 </figure>
 </div>
@@ -243,20 +265,24 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="patterns-involving-people" class="level2">
 <h2 class="anchored" data-anchor-id="patterns-involving-people">Patterns Involving People</h2>
+<p>The following patterns are applicable to any person.</p>
 <section id="birth-date" class="level3">
 <h3 class="anchored" data-anchor-id="birth-date">Birth Date</h3>
+<p>A person was born on a certain date.</p>
 </section>
 <section id="birth-place" class="level3">
 <h3 class="anchored" data-anchor-id="birth-place">Birth Place</h3>
+<p>A person was born in a certain place.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./images/Birth_Location.png" class="img-fluid figure-img"></p>
+<p><img src="./images/birth-place.svg" class="img-fluid figure-img"></p>
 <figcaption>Caption</figcaption>
 </figure>
 </div>
 </section>
 <section id="death-date" class="level3">
 <h3 class="anchored" data-anchor-id="death-date">Death Date</h3>
+<p>A person died on a certain date.</p>
 </section>
 <section id="death-place" class="level3">
 <h3 class="anchored" data-anchor-id="death-place">Death Place</h3>
@@ -269,10 +295,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="occupation" class="level3">
 <h3 class="anchored" data-anchor-id="occupation">Occupation</h3>
+<p>A person had an occupation such as an employment or appointment.</p>
 </section>
 </section>
 <section id="patterns-involving-groups" class="level2">
 <h2 class="anchored" data-anchor-id="patterns-involving-groups">Patterns Involving Groups</h2>
+<section id="occupation-1" class="level3">
+<h3 class="anchored" data-anchor-id="occupation-1">Occupation</h3>
+<p>A group has a member (a person).</p>
+</section>
 </section>
 <section id="patterns-involving-places" class="level2">
 <h2 class="anchored" data-anchor-id="patterns-involving-places">Patterns Involving Places</h2>

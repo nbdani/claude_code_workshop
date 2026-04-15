@@ -137,35 +137,35 @@
     "href": "graph-patterns.html",
     "title": "Graph Patterns",
     "section": "",
-    "text": "This page lists common graph patterns that we encounter when modelling data in LINCS."
-  },
-  {
-    "objectID": "graph-patterns.html#graph-patterns",
-    "href": "graph-patterns.html#graph-patterns",
-    "title": "Graph Patterns",
-    "section": "",
-    "text": "This page lists common graph patterns that we encounter when modelling data in LINCS."
+    "text": "This page lists common graph patterns that we encounter when modelling data in LINCS using the CIDOC CRM ontology. When modelling data, we select appropriate graph patterns and combine them together to create our data model. Then, we apply the model to our data, resulting in a knowledge graph."
   },
   {
     "objectID": "graph-patterns.html#general-patterns",
     "href": "graph-patterns.html#general-patterns",
     "title": "Graph Patterns",
     "section": "General Patterns",
-    "text": "General Patterns\n\nNames & Titles\n\n\nType\n\n\nEvent Date\n\n\nEvent Location\n\n\n\nCaption"
+    "text": "General Patterns\n\nNames & Titles\nAn entity has a name (or title).\n\n\n\nCaption\n\n\n\n\nType\nAn entity has a type.\n\n\n\nCaption"
+  },
+  {
+    "objectID": "graph-patterns.html#patterns-involving-event",
+    "href": "graph-patterns.html#patterns-involving-event",
+    "title": "Graph Patterns",
+    "section": "Patterns Involving Event",
+    "text": "Patterns Involving Event\nThe following patterns are applicable to any event or its subclasses (colored in blue), such as Birth, Death, Occupation, Production…\n\nEvent Date\nAn event took place on a certain date.\n\n\nEvent Place\nAn event took place at a certain place.\n\n\n\nCaption"
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-people",
     "href": "graph-patterns.html#patterns-involving-people",
     "title": "Graph Patterns",
     "section": "Patterns Involving People",
-    "text": "Patterns Involving People\n\nBirth Date\n\n\nBirth Place\n\n\n\nCaption\n\n\n\n\nDeath Date\n\n\nDeath Place\n\n\n\nCaption\n\n\n\n\nOccupation"
+    "text": "Patterns Involving People\nThe following patterns are applicable to any person.\n\nBirth Date\nA person was born on a certain date.\n\n\nBirth Place\nA person was born in a certain place.\n\n\n\nCaption\n\n\n\n\nDeath Date\nA person died on a certain date.\n\n\nDeath Place\n\n\n\nCaption\n\n\n\n\nOccupation\nA person had an occupation such as an employment or appointment."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-groups",
     "href": "graph-patterns.html#patterns-involving-groups",
     "title": "Graph Patterns",
     "section": "Patterns Involving Groups",
-    "text": "Patterns Involving Groups"
+    "text": "Patterns Involving Groups\n\nOccupation\nA group has a member (a person)."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-places",
