@@ -555,21 +555,21 @@
   {
     "objectID": "modelling-llms.html",
     "href": "modelling-llms.html",
-    "title": "LLMs as a Modelling Aid",
+    "title": "LLMs as Modelling Assistants",
     "section": "",
     "text": "Imagine that you want to model a complex pattern but you are not an expert on CIDOC CRM. You may ask a Large Language Model (LLM) for help and it will respond, but most LLMs don’t know, out of the box, how LINCS uses CIDOC CRM and which practices it follows.\nFor example, if you ask an LLM the following:\nHow do you model gender in CIDOC CRM?\nIt may mention multiple different ways of modelling gender, such as the following:\nE21 Person → P2 has type → E55 Type (gender)\nThe above is not recommended by LINCS.\nThe LLM may also mention the more complex pattern that LINCS is using (based on attribute assignment), but not necessarily suggest that you adopt it. Most likely, it will mention general resources such as Getty AAT or Wikidata as sources of gender types rather than a more specialized and inclusive vocabulary such as Homosaurus."
   },
   {
-    "objectID": "modelling-llms.html#llms-as-a-modelling-aid",
-    "href": "modelling-llms.html#llms-as-a-modelling-aid",
-    "title": "LLMs as a Modelling Aid",
+    "objectID": "modelling-llms.html#llms-as-modelling-assistants",
+    "href": "modelling-llms.html#llms-as-modelling-assistants",
+    "title": "LLMs as Modelling Assistants",
     "section": "",
     "text": "Imagine that you want to model a complex pattern but you are not an expert on CIDOC CRM. You may ask a Large Language Model (LLM) for help and it will respond, but most LLMs don’t know, out of the box, how LINCS uses CIDOC CRM and which practices it follows.\nFor example, if you ask an LLM the following:\nHow do you model gender in CIDOC CRM?\nIt may mention multiple different ways of modelling gender, such as the following:\nE21 Person → P2 has type → E55 Type (gender)\nThe above is not recommended by LINCS.\nThe LLM may also mention the more complex pattern that LINCS is using (based on attribute assignment), but not necessarily suggest that you adopt it. Most likely, it will mention general resources such as Getty AAT or Wikidata as sources of gender types rather than a more specialized and inclusive vocabulary such as Homosaurus."
   },
   {
     "objectID": "modelling-llms.html#skills",
     "href": "modelling-llms.html#skills",
-    "title": "LLMs as a Modelling Aid",
+    "title": "LLMs as Modelling Assistants",
     "section": "Skills",
     "text": "Skills\nIf the LLM is given specific knowledge about LINCS through appropriate Skills files, it will be able to respond more accurately and will make fewer mistakes when helping you transform the data.\nOn the other hand, if an LLM does the modelling and transformation completely unsupervised, many things can go wrong, as we will see in Exercise 3."
   },
