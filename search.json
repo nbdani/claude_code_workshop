@@ -193,7 +193,7 @@
     "href": "graph-patterns.html#patterns-involving-places",
     "title": "Basic Graph Patterns",
     "section": "Patterns Involving Places",
-    "text": "Patterns Involving Places\nThe following patterns are applicable to any place.\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nPlace Coordinates\nA place has certain geographic coordinates.\n\n\n\n\n\n\n\nPlace Containment\nA place contains another place.\n\n\n\n\n\n\n\nMove\nAn object was moved from a place to a place."
+    "text": "Patterns Involving Places\nThe following patterns are applicable to any place.\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nPlace Coordinates\nA place has certain geographic coordinates.\n\n\n\n\n\n\n\nPlace Coordinates\nA place has certain geographic coordinates.\n\n\n\n\n\n\n\nPlace Relations\nA place contains another place.\n\n\n\n\n\nA place borders another place.\n\n\n\n\n\nA place overlaps with another place.\n\n\n\n\n\nA place approximates another place.\n\n\n\n\n\n\n\nMove\nAn object was moved from a place to a place."
   },
   {
     "objectID": "first-session.html",
@@ -298,7 +298,7 @@
     "href": "advanced-patterns.html#patterns-involving-places",
     "title": "Advanced Graph Patterns",
     "section": "Patterns Involving Places",
-    "text": "Patterns Involving Places\nThe following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.\n\nPresence\nA presence is used to model the extent in space and time of a certain phenomenon, such as the location of an object over time, the spatiotemporal extent of an event, etc.\n[DIAGRAMS]"
+    "text": "Patterns Involving Places\nThe following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.\n\nPresence\nA presence is used to model the extent in space and time of a certain phenomenon, such as the location of an object over time, the spatiotemporal extent of an event, etc.\n\n\nPresence Coordinates\nA presence may be associated to geographic coordinates.\n\n\n\nPresence Relations\nA presence can also be related to another presence (in multiple ways) or to an event."
   },
   {
     "objectID": "data-ethics.html",
