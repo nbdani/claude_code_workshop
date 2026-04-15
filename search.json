@@ -144,14 +144,14 @@
     "href": "graph-patterns.html#general-patterns",
     "title": "Graph Patterns",
     "section": "General Patterns",
-    "text": "General Patterns\n\nNames\nAn entity has a name (or title).\n\n\n\n\n\n\n\nType\nAn entity has a type."
+    "text": "General Patterns\n\nName\nAn entity has a name (or title).\n\n\n\n\n\n\n\nType\nAn entity has a type."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-events",
     "href": "graph-patterns.html#patterns-involving-events",
     "title": "Graph Patterns",
     "section": "Patterns Involving Events",
-    "text": "Patterns Involving Events\nThe following patterns are applicable to any event or its subclasses (colored in blue), such as Activity, Birth, Death, Occupation, Production, Move, etc.\n\nEvent Date\nAn event took place on a certain date.\n\n\n\nEvent Place\nAn event took place at a certain place."
+    "text": "Patterns Involving Events\nThe following patterns are applicable to any event or its subclasses (colored in blue), such as Activity, Birth, Death, Occupation, Production, Move, etc.\n\nEvent Place\nAn event took place at a certain place.\n\n\n\n\n\n\n\nEvent Date\nAn event took place on a certain date."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-people",
@@ -165,14 +165,14 @@
     "href": "graph-patterns.html#patterns-involving-groups",
     "title": "Graph Patterns",
     "section": "Patterns Involving Groups",
-    "text": "Patterns Involving Groups\n\nOccupation\nA group has a member (a person)."
+    "text": "Patterns Involving Groups\n\nMembership\nA group has a member (a person).\n\n\nJoining\n\n\nLeaving"
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-places",
     "href": "graph-patterns.html#patterns-involving-places",
     "title": "Graph Patterns",
     "section": "Patterns Involving Places",
-    "text": "Patterns Involving Places\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nContainment\nA place contains another place.\n\n\n\n\n\n\n\nOther useful commands"
+    "text": "Patterns Involving Places\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nContainment\nA place contains another place."
   },
   {
     "objectID": "first-session.html",
