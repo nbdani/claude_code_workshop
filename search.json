@@ -287,15 +287,15 @@
     "text": "General Patterns\n\nAttribute Assignment\nAn attribute is assigned to something by someone. Used to model uncertain or conflicting statements."
   },
   {
-    "objectID": "advanced-patterns.html#patterns-involving-places",
-    "href": "advanced-patterns.html#patterns-involving-places",
+    "objectID": "advanced-patterns.html#patterns-involving-people",
+    "href": "advanced-patterns.html#patterns-involving-people",
     "title": "Advanced Graph Patterns",
-    "section": "Patterns Involving Places",
-    "text": "Patterns Involving Places\n\nIdentity (Gender, Ethnicity, Religion, …)\nA person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern."
+    "section": "Patterns Involving People",
+    "text": "Patterns Involving People\n\nIdentity (Gender, Ethnicity, Religion, …)\nA person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern."
   },
   {
-    "objectID": "advanced-patterns.html#patterns-involving-places-1",
-    "href": "advanced-patterns.html#patterns-involving-places-1",
+    "objectID": "advanced-patterns.html#patterns-involving-places",
+    "href": "advanced-patterns.html#patterns-involving-places",
     "title": "Advanced Graph Patterns",
     "section": "Patterns Involving Places",
     "text": "Patterns Involving Places\nThe following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.\n\nPresence\nA presence is used to model the extent in space and time of a certain phenomenon, such as the location of an object over time, the spatiotemporal extent of an event, etc."
