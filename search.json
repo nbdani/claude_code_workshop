@@ -186,14 +186,14 @@
     "href": "graph-patterns.html#patterns-involving-groups",
     "title": "Basic Graph Patterns",
     "section": "Patterns Involving Groups",
-    "text": "Patterns Involving Groups\nThe following patterns are applicable to any group, including companies and other organizations.\n\nGroup Name\nA group has a name.\n\n\n\n\n\n\n\nFormation\nA group has a member (a person).\n\n\n\n\n\n\n\nDissolution\nA group has a member (a person).\n\n\n\n\n\n\n\nMembership\nA group has a member (a person).\n\n\n\n\n\n\n\nJoining\n\n\nLeaving"
+    "text": "Patterns Involving Groups\nThe following patterns are applicable to any group, including companies and other organizations.\n\nGroup Name\nA group has a name.\n\n\n\n\n\n\n\nFormation\nA group has a member (a person).\n\n\n\n\n\n\n\nDissolution\nA group has a member (a person).\n\n\n\n\n\n\n\nMembership\nA group has a member (a person)."
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-places",
     "href": "graph-patterns.html#patterns-involving-places",
     "title": "Basic Graph Patterns",
     "section": "Patterns Involving Places",
-    "text": "Patterns Involving Places\nThe following patterns are applicable to any place.\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nPlace Containment\nA place contains another place."
+    "text": "Patterns Involving Places\nThe following patterns are applicable to any place.\n\nPlace Name\nA place has a name.\n\n\n\n\n\n\n\nPlace Containment\nA place contains another place.\n\n\n\n\n\n\n\nMove\nAn object was moved from a place to a place."
   },
   {
     "objectID": "first-session.html",
@@ -287,18 +287,11 @@
     "text": "This page lists some advanced graph patterns that we encounter when modelling data in LINCS using the CIDOC CRM ontology. This are more difficult to use compared to basic graph patterns, but offer a more detailed and comprehensive modelling."
   },
   {
-    "objectID": "advanced-patterns.html#general-patterns",
-    "href": "advanced-patterns.html#general-patterns",
-    "title": "Advanced Graph Patterns",
-    "section": "General Patterns",
-    "text": "General Patterns\n\nAttribute Assignment\nAn attribute is assigned to something by someone. Used to model uncertain or conflicting statements."
-  },
-  {
     "objectID": "advanced-patterns.html#patterns-involving-people",
     "href": "advanced-patterns.html#patterns-involving-people",
     "title": "Advanced Graph Patterns",
     "section": "Patterns Involving People",
-    "text": "Patterns Involving People\n\nIdentity (Gender, Ethnicity, Religion, …)\nA person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern.\n[DIAGRAM]"
+    "text": "Patterns Involving People\n\nIdentity (Gender, Ethnicity, Religion, …)\nA person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern."
   },
   {
     "objectID": "advanced-patterns.html#patterns-involving-places",
