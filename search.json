@@ -543,14 +543,14 @@
     "href": "modelling-exercise-3.html",
     "title": "Modelling Exercise 3",
     "section": "",
-    "text": "You asked an LLM to model and transform a certain dataset into Linked Data for LINCS, but without giving the LLM the appropriate skills files that tell it which graph patterns LINCS uses.\nThe LLM returned this knowledge graph. How many errors can you see?\n\n\n\n\n\n\nImportantNOTE\n\n\n\nThis graph intentionally contains errors. DO NOT use it as reference!\n\n\n\n\nList all the errors you find here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls\n(feel free to respond multiple times if you find more)"
+    "text": "You asked an LLM to model and transform a certain dataset into Linked Data for LINCS, but without giving the LLM the appropriate skills files that tell it which graph patterns LINCS uses.\nThe LLM returned this knowledge graph. How many errors can you see?\n\n\n\n\n\n\nImportantNOTE\n\n\n\nThis graph intentionally contains errors. DO NOT use it as reference!\n\n\n\n\n\nList all the errors you find here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls\n(feel free to respond multiple times if you find more)"
   },
   {
     "objectID": "modelling-exercise-3.html#spot-the-errors",
     "href": "modelling-exercise-3.html#spot-the-errors",
     "title": "Modelling Exercise 3",
     "section": "",
-    "text": "You asked an LLM to model and transform a certain dataset into Linked Data for LINCS, but without giving the LLM the appropriate skills files that tell it which graph patterns LINCS uses.\nThe LLM returned this knowledge graph. How many errors can you see?\n\n\n\n\n\n\nImportantNOTE\n\n\n\nThis graph intentionally contains errors. DO NOT use it as reference!\n\n\n\n\nList all the errors you find here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls\n(feel free to respond multiple times if you find more)"
+    "text": "You asked an LLM to model and transform a certain dataset into Linked Data for LINCS, but without giving the LLM the appropriate skills files that tell it which graph patterns LINCS uses.\nThe LLM returned this knowledge graph. How many errors can you see?\n\n\n\n\n\n\nImportantNOTE\n\n\n\nThis graph intentionally contains errors. DO NOT use it as reference!\n\n\n\n\n\nList all the errors you find here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls\n(feel free to respond multiple times if you find more)"
   },
   {
     "objectID": "modelling-llms.html",
