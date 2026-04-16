@@ -179,7 +179,7 @@
     "href": "graph-patterns.html#patterns-involving-events",
     "title": "Basic Graph Patterns",
     "section": "Patterns Involving Events",
-    "text": "Patterns Involving Events\nThe following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.\n\nEvent Place\nAn event took place at a certain place.\n\n\n\n\n\n\n\nEvent Date (human-readable)\nAn event took place on a certain date.\n\n\n\nEvent Date (machine-readable)"
+    "text": "Patterns Involving Events\nThe following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.\n\nEvent Place\nAn event took place at a certain place.\n\n\n\n\n\n\n\nEvent Date, human-readable\nAn event took place on a certain date.\n\n\n\nEvent Date, machine-readable"
   },
   {
     "objectID": "graph-patterns.html#patterns-involving-people",
