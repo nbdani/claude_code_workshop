@@ -58,37 +58,44 @@
   {
     "objectID": "reference-diagram.html",
     "href": "reference-diagram.html",
-    "title": "Reference Diagram",
+    "title": "Reference Diagrams",
     "section": "",
     "text": "Click on the diagram to open a larger version."
   },
   {
-    "objectID": "modelling-exercise-4.html",
-    "href": "modelling-exercise-4.html",
-    "title": "Modelling Exercise 4",
+    "objectID": "reference-diagram.html#reference-diagram",
+    "href": "reference-diagram.html#reference-diagram",
+    "title": "Reference Diagrams",
     "section": "",
-    "text": "When is it appropriate to use an E53 Place and when an E93 Presence?\nA place is an extent in space without a temporal dimension.\nA presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).\n\n\nDo this quiz to check if you can recognize a place from a presence: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+    "text": "Click on the diagram to open a larger version."
   },
   {
-    "objectID": "modelling-exercise-4.html#place-or-presence",
-    "href": "modelling-exercise-4.html#place-or-presence",
-    "title": "Modelling Exercise 4",
-    "section": "",
-    "text": "When is it appropriate to use an E53 Place and when an E93 Presence?\nA place is an extent in space without a temporal dimension.\nA presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).\n\n\nDo this quiz to check if you can recognize a place from a presence: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+    "objectID": "reference-diagram.html#example-1",
+    "href": "reference-diagram.html#example-1",
+    "title": "Reference Diagrams",
+    "section": "Example 1",
+    "text": "Example 1"
+  },
+  {
+    "objectID": "reference-diagram.html#example-2",
+    "href": "reference-diagram.html#example-2",
+    "title": "Reference Diagrams",
+    "section": "Example 2",
+    "text": "Example 2"
   },
   {
     "objectID": "modelling-exercise-2.html",
     "href": "modelling-exercise-2.html",
     "title": "Modelling Exercise 2",
     "section": "",
-    "text": "When is it appropriate to use an E53 Place and when an E93 Presence?\nA place is an extent in space without a temporal dimension.\nA presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).\n\n\nDo this quiz to check if you can recognize a place from a presence: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+    "text": "When is it appropriate to use an E53 Place and when an E93 Presence?\nA place is an extent in space without a temporal dimension.\nA presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).\n\n\nAre these places or presences?\n\nThe tip of Mount Everest\nThe current city centre of Ottawa, Canada\nThe track followed by a runner in the 2026 Rotterdam Marathon\nThe island of Sicily\nThe location of a farm in Halifax County in 1882–1885\nNorthumberland National Park in England\nThe trajectory of HMS Titanic from 10 April to 15 April 1912"
   },
   {
     "objectID": "modelling-exercise-2.html#place-or-presence",
     "href": "modelling-exercise-2.html#place-or-presence",
     "title": "Modelling Exercise 2",
     "section": "",
-    "text": "When is it appropriate to use an E53 Place and when an E93 Presence?\nA place is an extent in space without a temporal dimension.\nA presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).\n\n\nDo this quiz to check if you can recognize a place from a presence: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls"
+    "text": "When is it appropriate to use an E53 Place and when an E93 Presence?\nA place is an extent in space without a temporal dimension.\nA presence has both a spatial and temporal dimension. It can be projected onto a spatial extent (place) and a temporal extent (time span).\n\n\nAre these places or presences?\n\nThe tip of Mount Everest\nThe current city centre of Ottawa, Canada\nThe track followed by a runner in the 2026 Rotterdam Marathon\nThe island of Sicily\nThe location of a farm in Halifax County in 1882–1885\nNorthumberland National Park in England\nThe trajectory of HMS Titanic from 10 April to 15 April 1912"
   },
   {
     "objectID": "lincs-skills.html",
@@ -536,14 +543,14 @@
     "href": "modelling-exercise-3.html",
     "title": "Modelling Exercise 3",
     "section": "",
-    "text": "You asked an LLM to model and transform a certain dataset into Linked Data for LINCS, but without giving the LLM the appropriate skills files that tell it which graph patterns LINCS uses.\nThe LLM returned this knowledge graph. How many errors can you see?\n\n\n\n\n\n\nImportantNOTE\n\n\n\nThis graph intentionally contains errors. DO NOT use it as reference!\n\n\n\n\n\nList all the errors you find here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls\n(feel free to respond multiple times if you find more)"
+    "text": "You asked an LLM to model and transform a certain dataset into Linked Data for LINCS, but without giving the LLM the appropriate skills files that tell it which graph patterns LINCS uses.\nThe LLM returned this knowledge graph. How many errors can you see?\n\n\n\n\n\n\nImportantNOTE\n\n\n\nThis graph intentionally contains errors. DO NOT use it as reference!"
   },
   {
     "objectID": "modelling-exercise-3.html#spot-the-errors",
     "href": "modelling-exercise-3.html#spot-the-errors",
     "title": "Modelling Exercise 3",
     "section": "",
-    "text": "You asked an LLM to model and transform a certain dataset into Linked Data for LINCS, but without giving the LLM the appropriate skills files that tell it which graph patterns LINCS uses.\nThe LLM returned this knowledge graph. How many errors can you see?\n\n\n\n\n\n\nImportantNOTE\n\n\n\nThis graph intentionally contains errors. DO NOT use it as reference!\n\n\n\n\n\nList all the errors you find here: https://app.sli.do/event/hJfrRAUyKwLfvD2VMPzyUc/live/polls\n(feel free to respond multiple times if you find more)"
+    "text": "You asked an LLM to model and transform a certain dataset into Linked Data for LINCS, but without giving the LLM the appropriate skills files that tell it which graph patterns LINCS uses.\nThe LLM returned this knowledge graph. How many errors can you see?\n\n\n\n\n\n\nImportantNOTE\n\n\n\nThis graph intentionally contains errors. DO NOT use it as reference!"
   },
   {
     "objectID": "modelling-llms.html",
