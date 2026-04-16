@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Modelling Exercise 1 – HGIS to LOD Modelling</title>
+<title>Advanced Graph Patterns – HGIS to LOD Modelling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -96,11 +96,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Basic Graph Patterns</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./modelling-exercise-1.html" aria-current="page"> 
+    <a class="nav-link" href="./modelling-exercise-1.html"> 
 <span class="menu-text">Exercise 1</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./advanced-patterns.html"> 
+    <a class="nav-link active" href="./advanced-patterns.html" aria-current="page"> 
 <span class="menu-text">Advanced Patterns</span></a>
   </li>  
   <li class="nav-item">
@@ -135,10 +135,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#model-this-dataset" id="toc-model-this-dataset" class="nav-link active" data-scroll-target="#model-this-dataset">Model This Dataset</a>
+  <li><a href="#patterns-involving-people" id="toc-patterns-involving-people" class="nav-link active" data-scroll-target="#patterns-involving-people">Patterns Involving People</a>
   <ul class="collapse">
-  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#identity-gender-ethnicity-religion" id="toc-identity-gender-ethnicity-religion" class="nav-link" data-scroll-target="#identity-gender-ethnicity-religion">Identity (Gender, Ethnicity, Religion, …)</a></li>
+  </ul></li>
+  <li><a href="#patterns-involving-places" id="toc-patterns-involving-places" class="nav-link" data-scroll-target="#patterns-involving-places">Patterns Involving Places</a>
+  <ul class="collapse">
+  <li><a href="#presence" id="toc-presence" class="nav-link" data-scroll-target="#presence">Presence</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -148,8 +151,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Modelling Exercise 1</h1>
-<p class="subtitle lead">Let’s try to model a simple dataset</p>
+<h1 class="title">Advanced Graph Patterns</h1>
+<p class="subtitle lead">A list of advanced CIDOC CRM graph patterns</p>
 </div>
 
 
@@ -166,52 +169,37 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="model-this-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="model-this-dataset">Model This Dataset</h2>
-<p>You want to model the following dataset.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>person</th>
-<th>birth_place</th>
-<th>birth_date</th>
-<th>lives_in</th>
-<th>works_as</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Alex</td>
-<td>Ottawa, Ontario</td>
-<td>24 June 1974</td>
-<td>Toronto, Ontario</td>
-<td>physician</td>
-</tr>
-<tr class="even">
-<td>Billie</td>
-<td>Lima, Peru</td>
-<td>10 April 1959</td>
-<td>Winnipeg, Manitoba</td>
-<td>journalist</td>
-</tr>
-<tr class="odd">
-<td>Claude</td>
-<td>Laval, Quebec</td>
-<td>3 October 1982</td>
-<td>Paris, France</td>
-<td>researcher</td>
-</tr>
-</tbody>
-</table>
-<section id="question" class="level3">
-<h3 class="anchored" data-anchor-id="question">Question</h3>
-<p>Looking at <a href="./graph-patterns.html">basic graph patterns</a>, which ones would you use?</p>
+<p>This page lists some advanced graph patterns that we encounter when modelling data in <a href="https://lincsproject.ca">LINCS</a> using the <a href="https://cidoc-crm.org">CIDOC CRM</a> ontology. This are more difficult to use compared to <a href="./basic-graph-patterns.html">basic graph patterns</a>, but offer a more detailed and comprehensive modelling.</p>
+<section id="patterns-involving-people" class="level2">
+<h2 class="anchored" data-anchor-id="patterns-involving-people">Patterns Involving People</h2>
+<section id="identity-gender-ethnicity-religion" class="level3">
+<h3 class="anchored" data-anchor-id="identity-gender-ethnicity-religion">Identity (Gender, Ethnicity, Religion, …)</h3>
+<p>A person has a certain identity. In LINCS, identities are always attributed by someone using the attribute assignment pattern.</p>
+<p><img src="./images/attribute-assignment.svg" class="img-fluid"></p>
 </section>
-<section id="solution" class="level3">
-<h3 class="anchored" data-anchor-id="solution">Solution</h3>
-<p><a href="https://nbdani.github.io/gis_modelling_workshop/images/ex-1-solution.svg"><img src="./images/ex-1-solution.svg" class="img-fluid"></a></p>
+</section>
+<section id="patterns-involving-places" class="level2">
+<h2 class="anchored" data-anchor-id="patterns-involving-places">Patterns Involving Places</h2>
+<p>The following patterns are applicable to any event or its subclasses colored in blue, such as Activity (including occupations), Birth, Death, Production, Move, etc.</p>
+<section id="presence" class="level3">
+<h3 class="anchored" data-anchor-id="presence">Presence</h3>
+<p>A presence is used to model the extent in space and time of a certain phenomenon, such as the location of an object over time, the spatiotemporal extent of an event, etc.</p>
+<p><img src="./images/presence.svg" class="img-fluid"></p>
+<section id="presence-coordinates" class="level4">
+<h4 class="anchored" data-anchor-id="presence-coordinates">Presence Coordinates</h4>
+<p>A presence may be associated to geographic coordinates.</p>
+<p><a href="./images/presence-coords.svg"><img src="./images/presence-coords.svg" class="img-fluid"></a></p>
+</section>
+<section id="presence-relations" class="level4">
+<h4 class="anchored" data-anchor-id="presence-relations">Presence Relations</h4>
+<p>A presence can also be related to another presence (in multiple ways) or to an event.</p>
+<p><a href="./images/presence-event.svg"><img src="./images/presence-event.svg" class="img-fluid"></a></p>
+<p><a href="./images/presence-overlap.svg"><img src="./images/presence-overlap.svg" class="img-fluid"></a></p>
+<p><a href="./images/presence-within.svg"><img src="./images/presence-within.svg" class="img-fluid"></a></p>
+<p><a href="./images/presence-cover.svg"><img src="./images/presence-cover.svg" class="img-fluid"></a></p>
 
 
+</section>
 </section>
 </section>
 
